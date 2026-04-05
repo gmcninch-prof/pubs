@@ -1,0 +1,15 @@
+Let $G$ be a connected, reductive group over an algebraically
+closed field of good characteristic.  For $u ∈ G$ unipotent,
+we describe the conjugacy classes in the component group
+$A(u)$ of the centralizer of $u$.  Our results extend work
+of the second author done for simple, adjoint $G$ over the
+complex numbers.
+
+When $G$ is simple and adjoint, the previous work of the
+second author makes our description combinatorial and explicit;
+moreover, it turns out that knowledge of the conjugacy classes
+suffices to determine the group structure of $A(u)$. Thus we
+obtain the result, previously known through case-checking, that
+the structure of the component group $A(u)$ is independent of
+good characteristic.
+

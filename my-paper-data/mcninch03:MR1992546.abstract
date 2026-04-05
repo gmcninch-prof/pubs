@@ -1,0 +1,24 @@
+Let $G$ be a reductive group over an algebraically closed
+field of characteristic $p$, and let $u ∈ G$ be a
+unipotent element of order $p$. Suppose that $p$ is a good
+prime for $G$. We show in this paper that there is a
+homomorphism $ϕ:\operatorname{SL}(2)_k → G$ whose image
+contains $u$. This result was first obtained by D. Testerman
+(J. Algebra, 1995) using case considerations for each type of
+simple group (and using, in some cases, computer calculations with
+explicit representatives for the unipotent orbits).
+
+The proof we give is free of case considerations (except in its
+dependence on the Bala-Carter theorem). Our construction of ϕ
+generalizes the construction of a principal homomorphism made by
+J.-P.  Serre in (Invent. Math. 1996); in particular, ϕ is obtained
+by reduction modulo $\mathfrak{P}$ from a homomorphism of
+group schemes over a valuation ring $A$ in a number field.
+This permits us to show moreover that the weight spaces of a
+maximal torus of $ϕ(\operatorname{SL}(2)$ on
+$\operatorname{Lie}(G)$ are “the same as in characteristic
+0”; the existence of a ϕ with this property was previously
+obtained, again using case considerations, by Lawther and
+Testerman (Memoirs AMS, 1999) and has been applied in some recent
+work of G.  Seitz (Invent. Math. 2000).
+

@@ -1,0 +1,20 @@
+Let $G$ be a semisimple group over an algebraically closed field of
+*very good* characteristic for $G$.  In the context of geometric
+invariant theory, G. Kempf has associated optimal cocharacters of $G$
+to an unstable vector in a linear $G$-representation. If the nilpotent
+element $X ∈ \operatorname{Lie}(G)$ lies in the image of the
+differential of a homomorphism $\operatorname{SL}(2) → G$, we say that
+homomorphism is optimal for $X$, or simply optimal, provided that its
+restriction to a suitable torus of $\operatorname{SL}(2)$ is optimal
+for X in Kempf's sense.
+
+We show here that any two $\operatorname{SL}(2)$ homomorphisms which
+are optimal for $X$ are conjugate under the connected centralizer of
+$X$.  This implies, for example, that there is a unique conjugacy
+class of *principal homomorphisms* for $G$. We show that the image of
+an optimal $\operatorname{SL}(2)$ homomorphism is a *completely
+reducible* subgroup of $G$; this is a notion defined recently by
+J-P. Serre.  Finally, if $G$ is defined over the (arbitrary) subfield
+$K$ of $k$, and if $X ∈ \operatorname{Lie}(G)(K)$ is a $K$-rational
+nilpotent element with $X^{[p]}=0$, we show that there is an optimal
+homomorphism for $X$ which is defined over $K$.

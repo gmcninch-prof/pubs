@@ -1,0 +1,10 @@
+name = "msdata"
+version = "0.1.0"
+defaultTargets = ["msdata"]
+
+[[lean_lib]]
+name = "Msdata"
+
+[[lean_exe]]
+name = "msdata"
+root = "Main"

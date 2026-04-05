@@ -1,0 +1,7 @@
+Let $G$ be a connected and reductive group over the algebraically
+closed field $K$. J-P. Serre has introduced the notion of a G
+completely reducible subgroup $H ⊂ G$.  In this note, we give a notion
+of $G$ complete reducibility -- $G$-cr for short -- for Lie
+subalgebras of $\operatorname{Lie}(G)$, and we show that if the closed
+subgroup $H ⊂ G$ is $G$-cr, then $\operatorname{Lie}(H)$ is $G$-cr as
+well.

@@ -1,0 +1,17 @@
+Let $G$ be a connected and reductive algebraic group over an
+algebraically closed field of characteristic $p\gt 0$.  An interesting
+class of representations of $G$ consists of those $G$-modules having a
+*good filtration* -- i.e. a filtration whose layers are the *standard*
+highest weight modules obtained as the space of global sections of $G$
+linearized line bundles on the flag variety of $G$. Let $H \subset G$
+be a connected and reductive subgroup of $G$. One says that $(G,H)$ is
+a *Donkin pair*, or that $H$ is a *good filtration subgroup* of $G$,
+if whenever the $G$-module $V$ has a good filtration, the $H$-module
+$\operatorname{res}^G_H V$ has a good filtration.
+
+In this paper, we show when $G$ is a “classical group” that the
+*optimal* $\operatorname{SL}(2)$ subgroups of $G$ are good filtration
+subgroups. We also consider the cases of subsystem subgroups in all
+types and determine some primes for which they are good filtration
+subgroups.  
+

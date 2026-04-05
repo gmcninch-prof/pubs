@@ -1,0 +1,19 @@
+Let $F$ be an algebraically closed field and let $G$ be a
+semisimple algebraic $F$-group for which the characteristic of
+$F$ is *very good*.  If $X ∈ \operatorname{Lie}(G) =
+\operatorname{Lie}(G)(F)$ is a nilpotent element in the Lie
+algebra of $G$, and if $C$ is the centralizer in $G$
+of $X$, we show that (i) the root datum of a Levi factor of
+$C$, and (ii) the component group $C/C^o$ both depend only
+on the Bala-Carter label of $X$; i.e. both are independent of
+very good characteristic.  The result in case (ii) depends on the
+known case when $G$ is (simple and) of adjoint type.
+  
+The proofs are achieved by studying the centralizer $C$ of a
+nilpotent section $X$ in the Lie algebra of a suitable
+semisimple group scheme over a Noetherian, normal, local ring
+$A$. When the centralizer of $X$ is equidimensional on
+$\operatorname{Spec}(A)$, a crucial result is that locally in
+the étale topology there is a smooth $A$ subgroup scheme
+$L$ of $C$ such that $L_t$ is a Levi factor of
+$C_t$ for each $t ∈ \operatorname{Spec}(A)$.

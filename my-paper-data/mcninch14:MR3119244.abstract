@@ -1,0 +1,20 @@
+Let $k$ be an arbitrary field, let $G$ be a (smooth) linear algebraic
+group over $k$, and let $U$ be a vector group over $k$ on which $G$
+acts by automorphisms of algebraic groups. The action of $G$ on $U$ is
+said to be *linear* if there is a G equivariant isomorphism of
+algebraic groups $U \simeq \operatorname{Lie}(U)$.
+  
+Suppose that $G$ is connected and that the unipotent radical of $G$ is
+defined over $k$.  If the $G$ module $\operatorname{Lie}(U)$ is
+simple, we show that the action of $G$ on $U$ is linear.  If $G$ acts
+by automorphisms on a connected, split unipotent group $U$, we deduce
+that $U$ has a filtration by $G$ invariant closed subgroups for which
+the successive factors are vector groups with a linear action of
+$G$. This verifies for such $G$ an assumption made in earlier work of
+the author on the existence of Levi factors.
+
+On the other hand, for any field $k$ of positive characteristic we
+show that if the category of representations of $G$ is not semisimple,
+there is an action of $G$ on a suitable vector group $U$ which is not
+linear.
+

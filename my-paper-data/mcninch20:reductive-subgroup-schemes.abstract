@@ -1,0 +1,18 @@
+Let $K$ be the field of fractions of a complete discrete valuation
+ring $A$ with residue field $k$, and let $G$ be a connected reductive
+algebraic group over $K$. Suppose $P$ is a parahoric group scheme
+attached to $G$. In particular, $P$ is a smooth affine $A$-group
+scheme having generic fiber $P_K = G$; the group scheme $P$ is in
+general not reductive over $A$.
+  
+If $G$ splits over an unramified extension of $K$, we find in this
+paper a closed and reductive A-subgroup scheme $M ⊂ P$ for which the
+special fiber $M_k$ is a Levi factor of $P_k$. Moreover, we show that
+the generic fiber $M_K$ is a subgroup of G which is geometrically of
+type $C(μ)$ -- i.e. after a separable field extension, $M_K$ is the
+identity component $M_K = C_G^o(φ)$ of the centralizer of the image of
+a homomorphism $φ:μ_n → H$, where $μ_n$ is the group scheme of $n$-th
+roots of unity for some $n \gt 2$.  For a connected and split
+reductive group $H$ over any field $F$, the paper describes those
+subgroups of $H$ which are of type $C(μ)$.
+

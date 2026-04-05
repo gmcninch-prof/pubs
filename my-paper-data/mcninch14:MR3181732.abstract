@@ -1,0 +1,13 @@
+Let $A$ be a Henselian discrete valuation ring with fractions $K$ and
+with *perfect* residue field $k$ of characteristic $p\gt 0$.  Let $G$
+be a connected and reductive algebraic group over $K$, and let $P$ be
+a parahoric group scheme over $A$ with generic fiber $P_K = G$. The
+special fiber $P_k$ is a linear algebraic group over $k$.
+  
+If $G$ splits over an unramified extension of $K$, we proved in some
+previous work that the special fiber $P_k$ has a Levi factor, and
+that any two Levi factors of $P_k$ are geometrically conjugate.  In
+the present paper, we extend a portion of this result. Following a
+suggestion of Gopal Prasad, we prove that if $G$ splits over a *tamely
+ramified* extension of $K$, then the *geometric* special fiber
+$P_{\overline{k}}$ has a Levi factor.

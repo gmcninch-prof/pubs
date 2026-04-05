@@ -1,0 +1,19 @@
+Let $G$ be a connected, semisimple algebraic group over a field $k$
+whose characteristic is *very good* for $G$. In a canonical manner,
+one associates to a nilpotent element $X \in \operatorname{Lie}(G)$ a
+parabolic subgroup $P$ -- in characteristic zero, $P$ may be described
+using an $\mathfrak{sl}(2)$ triple containing $X$; in general, $P$ is
+the “instability parabolic” for $X$ as in geometric invariant theory.
+In this setting, we are concerned with the center $Z(C)$ of the
+centralizer $C$ of $X$ in $G$.  Choose a Levi factor $L$ of $P$, and
+write $d$ for the dimension of the center $Z(L)$. Finally, assume that
+the nilpotent element $X$ is *even*. In this case, we can *deform*
+$\operatorname{Lie}(L)$ to $\operatorname{Lie}(C)$, and our
+deformation produces a $d$ dimensional subalgebra of
+$\operatorname{Lie}(Z(C))$. Since $Z(C)$ is a smooth group scheme, it
+follows that $\dim Z(C) \ge d = \dim Z(L)$.  In fact, Lawther and
+Testerman have proved that $\dim Z(C) = \dim Z(L)$.  Despite only
+yielding a partial result, the interest in the method found in the
+present work is that it avoids the extensive case checking carried out
+by Lawther-Testerman in the memoir [LT 11].
+

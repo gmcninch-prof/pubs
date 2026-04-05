@@ -1,0 +1,17 @@
+Let $X$ be an $F$-rational nilpotent element in the Lie
+algebra of a connected and reductive group $G$ defined over
+the ground field $F$.  Suppose that the Lie algebra has a
+non-degenerate invariant bilinear form.  We show that the
+unipotent radical of the centralizer of X is $F$-split. This
+property has several consequences.  When $F$ is complete with
+respect to a discrete valuation with either finite or
+algebraically closed residue field, we deduce a uniform proof that
+$G(F)$ has finitely many nilpotent orbits in
+$\operatorname{Lie}(G)(F)$.  When the residue field is
+finite, we obtain a proof that nilpotent orbital integrals
+converge. Under some further (fairly mild) assumptions on $G$,
+we prove convergence for arbitrary orbital integrals on the Lie
+algebra and on the group.  The convergence of orbital integrals in
+the case where $F$ has characteristic 0 was obtained by
+Deligne and Ranga Rao (1972).
+

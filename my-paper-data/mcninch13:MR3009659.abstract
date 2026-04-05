@@ -1,0 +1,21 @@
+Let $G$ be a linear algebraic group over a field $k$ of characteristic
+$p\gt0$, and suppose that the unipotent radical $R$ of $G$ is defined
+and split over $k$.  By a Levi factor of $G$, one means a closed
+subgroup $M$ which is a complement to $R$ in $G$.  In this paper, we
+give two results related to the descent of Levi factors.
+  
+First, suppose $ℓ$ is a finite Galois extension of $k$ for which the
+extension degree $[ℓ:k]$ is relatively prime to $p$. If $G_{\ell}$
+has a Levi decomposition, we show that $G$ has a Levi
+decomposition. Second, suppose that there is a $G$-equivariant
+isomorphism of algebraic groups $R \simeq \operatorname{Lie}(R)$ --
+i.e. $R$ is a vector group with a linear action of the reductive
+quotient $G/R$.  If $G_L$ has a Levi decomposition for a separable
+closure $L=k_{\operatorname{sep}}$ of $k$, then $G$ has a Levi
+decomposition.
+
+Finally, we give an example of a disconnected, abelian, linear
+algebraic group $G$ for which $G_L$ has a Levi decomposition over a
+separable closure $L$, but $G$ itself has no Levi decomposition.
+
+

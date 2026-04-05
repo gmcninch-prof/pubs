@@ -1,0 +1,10 @@
+Let $X$ and $Y$ be commuting nilpotent $K$ endomorphisms of a vector
+space $V$, where $K$ is a field of characteristic $p ≥ 0$. If $F=K(t)$
+is the field of rational functions on the projective line
+$\mathbf{P}^1_K$, consider the $K(t)$ endomorphism $A=X+tY$ of $V$. If
+$p=0$, or if $A^{p-1}=0$, we show here that $X$ and $Y$ are tangent to
+the unipotent radical of the centralizer of $A$ in
+$\operatorname{GL}(V)$.  For all geometric points $(a:b)$ of a
+suitable open subset of $\mathbf{P}^1$, it follows that $X$ and $Y$
+are tangent to the unipotent radical of the centralizer of $aX +
+bY$. This answers a question of J. Pevtsova.

@@ -1,0 +1,12 @@
+Let $K$ be any field, and let $G$ be a semisimple group
+over $K$.  Suppose the characteristic of $K$ is positive
+and is very good for $G$.  We describe all group scheme
+homomorphisms $ϕ:SL(2) → G$ whose image is geometrically
+$G$ completely reducible -- or $G$-cr -- in the sense of
+Serre; the description resembles that of irreducible modules given
+by Steinberg's tensor product theorem. In case $K$ is
+algebraically closed and $G$ is simple, the result proved here
+was previously obtained by Liebeck and Seitz using different
+methods.  A recent result shows the Lie algebra of the image of ϕ
+to be geometrically $G$-cr; this plays an important role in
+our proof.
