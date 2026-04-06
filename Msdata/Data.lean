@@ -1,53 +1,7 @@
 import Init.System.IO
-
-inductive Citation where
-  | Accepted : (journal : String) 
-             → (year : Nat) 
-             → Citation
-  | Journal : (year : Nat)
-            → (journal : String)
-            → (number : Option String)
-            → (volume : Option Nat)
-            → (pages : Option String)
-            → Citation
-  | Proceedings : (year : Nat)
-                → (booktitle : String)
-                → (series : Option String)
-                → (volume : Option Nat)
-                → (pages : Option String)
-                → Citation 
-  | PrePrint : (year : Nat) → Citation
-  | Submitted : (year : Nat) → Citation
-  | Unpublished : (year : Nat) → Citation 
-deriving Repr, BEq
-
-inductive UrlType where
-  | DOI : (doiNumber : String) → UrlType
-  | MR : (mrNumber : String) → UrlType
-  | Arxiv : (arxivId : String) → UrlType
-  | Euclid : (euclidId : String) → UrlType
-  | Local : (path : List String) → UrlType
-  | Other : (label: String) → (url: String) → UrlType
-deriving Repr, BEq
-
-structure Author where
-  institution : String
-  name : String
-  authorUrl : String
-deriving Repr, BEq
-    
-structure MS where
-  id : String
-  authors : List Author
-  citation : Citation
-  abstract : Option String
-  bibtex : Option String
-  errata : Option String
-  urls : List UrlType
-  title : String
-deriving Repr
-
 --------------------------------------------------------------------------------
+
+import Msdata.Types
 
 def mathManuscripts : String := 
   "/home/george/Prof-VC/Math-manuscripts"
@@ -97,7 +51,7 @@ def DavidHarbater : Author :=
 --------------------------------------------------------------------------------
 
 def local_global : IO MS := do
-   let abs <- IO.FS.readFile "my-paper-data/hhm26.abstract"
+   let abs ← IO.FS.readFile "my-paper-data/hhm26.abstract"
    pure { authors := [ DavidHarbater, JuliaHartmann, GeorgeMcNinch ]
         , citation := Citation.PrePrint ( year := 2026 )
         , id := "hhm26"
@@ -109,7 +63,7 @@ def local_global : IO MS := do
         }
 
 def cohomology_levi : IO MS :=  do
-   let abs <- IO.FS.readFile  "my-paper-data/mcninch24:cohomology-levi.abstract"
+   let abs ← IO.FS.readFile  "my-paper-data/mcninch24:cohomology-levi.abstract"
    
    pure { authors := [ GeorgeMcNinch ]
         , citation := Citation.Accepted
@@ -131,8 +85,8 @@ def cohomology_levi : IO MS :=  do
         }
 
 def nilpotent_orbits_over_local_field : IO MS := do
-   let abs <- IO.FS.readFile "my-paper-data/mcninch21:nilpotent-orbits-over-local-field.abstract"
-   let bib <- IO.FS.readFile "my-paper-data/mcninch21:nilpotent-orbits-over-local-field.bib"
+   let abs ← IO.FS.readFile "my-paper-data/mcninch21:nilpotent-orbits-over-local-field.abstract"
+   let bib ← IO.FS.readFile "my-paper-data/mcninch21:nilpotent-orbits-over-local-field.bib"
       
    pure { authors := [ GeorgeMcNinch ]
         , citation := Citation.Journal
@@ -169,8 +123,8 @@ def nilpotent_orbits_over_local_field : IO MS := do
 
 
 def reductive_subgroup_schemes : IO MS :=  do
-    let abs <- IO.FS.readFile "my-paper-data/mcninch20:reductive-subgroup-schemes.abstract"
-    let bib <- IO.FS.readFile "my-paper-data/mcninch20:reductive-subgroup-schemes.bib"
+    let abs ← IO.FS.readFile "my-paper-data/mcninch20:reductive-subgroup-schemes.abstract"
+    let bib ← IO.FS.readFile "my-paper-data/mcninch20:reductive-subgroup-schemes.bib"
 
     pure { authors := [ GeorgeMcNinch ]
          , citation :=
@@ -200,8 +154,8 @@ def reductive_subgroup_schemes : IO MS :=  do
          }
 
 def central_subalgebras : IO MS := do
-    let abs <- IO.FS.readFile "my-paper-data/mcninch16:MR3477055.abstract"
-    let bib <- IO.FS.readFile "my-paper-data/mcninch16:MR3477055.bib"
+    let abs ← IO.FS.readFile "my-paper-data/mcninch16:MR3477055.abstract"
+    let bib ← IO.FS.readFile "my-paper-data/mcninch16:MR3477055.bib"
     
     pure { authors := [ GeorgeMcNinch, DonnaTesterman ]
          , citation :=
@@ -232,8 +186,8 @@ def central_subalgebras : IO MS := do
 
 
 def linearity : IO MS := do
-    let abs <- IO.FS.readFile "my-paper-data/mcninch14:MR3181732.abstract"
-    let bib <- IO.FS.readFile "my-paper-data/mcninch14:MR3181732.bib"
+    let abs ← IO.FS.readFile "my-paper-data/mcninch14:MR3181732.abstract"
+    let bib ← IO.FS.readFile "my-paper-data/mcninch14:MR3181732.bib"
     
     pure { authors := [ GeorgeMcNinch ]
          , citation :=
@@ -262,8 +216,8 @@ def linearity : IO MS := do
          }
 
 def levi_special_fiber_parahoric : IO MS := do
-    let abs <- IO.FS.readFile "my-paper-data/mcninch14:MR3181732.abstract"
-    let bib <- IO.FS.readFile "my-paper-data/mcninch14:MR3181732.bib"
+    let abs ← IO.FS.readFile "my-paper-data/mcninch14:MR3181732.abstract"
+    let bib ← IO.FS.readFile "my-paper-data/mcninch14:MR3181732.bib"
 
     pure { authors := [ GeorgeMcNinch ]
          , citation :=
@@ -293,8 +247,8 @@ def levi_special_fiber_parahoric : IO MS := do
         }
 
 def descent_levi_factors : IO MS := do
-    let abs <- IO.FS.readFile "my-paper-data/mcninch13:MR3009659.abstract"
-    let bib <- IO.FS.readFile "my-paper-data/mcninch13:MR3009659.bib"
+    let abs ← IO.FS.readFile "my-paper-data/mcninch13:MR3009659.abstract"
+    let bib ← IO.FS.readFile "my-paper-data/mcninch13:MR3009659.bib"
 
     pure { authors := [ GeorgeMcNinch ]
          , citation :=
@@ -325,14 +279,14 @@ def descent_levi_factors : IO MS := do
 
 
 def papers : IO (List MS) := do
-    pure [ <- local_global
-         , <- cohomology_levi
-         , <- nilpotent_orbits_over_local_field
-         , <- reductive_subgroup_schemes
-         , <- central_subalgebras
-         , <- linearity
-         , <- levi_special_fiber_parahoric
-         , <- descent_levi_factors
+    pure [ ← local_global
+         , ← cohomology_levi
+         , ← nilpotent_orbits_over_local_field
+         , ← reductive_subgroup_schemes
+         , ← central_subalgebras
+         , ← linearity
+         , ← levi_special_fiber_parahoric
+         , ← descent_levi_factors
          ]
 
 #eval papers
