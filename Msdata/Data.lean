@@ -68,8 +68,7 @@ def cohomology_levi : IO MS :=  do
    pure { authors := [ GeorgeMcNinch ]
         , citation := Citation.Accepted
              (year := 2024)
-             (journal :=
-                 "Pacific J. Math (Special issue in memory of Gary Seitz)")
+             (journal := "Pacific J. Math (Special issue in memory of Gary Seitz)")
         , id := "mcninch24:cohomology-levi"
         , abstract := abs
         , bibtex := Option.none 
@@ -80,8 +79,7 @@ def cohomology_levi : IO MS :=  do
                     [ mathManuscripts, "cohomology-levi", "cohomology-levi.pdf" ]
                   )
               ]
-        , title :=
-            "Levi decompositions of linear algebraic groups and non-abelian cohomology"
+        , title := "Levi decompositions of linear algebraic groups and non-abelian cohomology"
         }
 
 def nilpotent_orbits_over_local_field : IO MS := do
@@ -117,8 +115,7 @@ def nilpotent_orbits_over_local_field : IO MS := do
               ( url := "https://link.springer.com/article/10.1007%2Fs10468-020-10000-2" )
           , UrlType.MR (mrNumber := "MR4340850" )
           ]
-        , title :=
-            "Nilpotent elements and reductive subgroups over a local field"
+        , title := "Nilpotent elements and reductive subgroups over a local field"
         }
 
 
@@ -180,8 +177,7 @@ def central_subalgebras : IO MS := do
            , UrlType.MR ( mrNumber := "MR3477055" )
            , UrlType.DOI ( doiNumber := "10.1090/proc/12942" )
            ]
-         , title :=
-             "Central subalgebras of the centralizer of a nilpotent element"
+         , title := "Central subalgebras of the centralizer of a nilpotent element"
          }
 
 
