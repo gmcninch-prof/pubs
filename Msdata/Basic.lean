@@ -231,14 +231,108 @@ def central_subalgebras : IO MS := do
          }
 
 
+def linearity : IO MS := do
+    let abs <- IO.FS.readFile "my-paper-data/mcninch14:MR3181732.abstract"
+    let bib <- IO.FS.readFile "my-paper-data/mcninch14:MR3181732.bib"
+    
+    pure { authors := [ GeorgeMcNinch ]
+         , citation :=
+             Citation.Journal
+               (journal := "Journal of Algebra")
+               (volume := some 397)
+               (year := 2014)
+               (pages := some "666--688")
+               (number := none)
+         , id := "mcninch14:MR3119244"
+         , abstract := some abs
+         , bibtex := some bib
+         , errata := none 
+         , urls :=
+           [ UrlType.Local
+               ( path :=
+                 [ mathManuscripts
+                 , "2014-b--Linearity-for-actions-on-vector-groups"
+                 , "Linearity for actions on vector groups - 2013 09.pdf"
+                 ]
+               )
+           , UrlType.MR ( mrNumber := "MR3119244" )
+           , UrlType.DOI ( doiNumber := "10.1016/j.jalgebra.2013.08.030" )
+           ]
+         , title := "Linearity for actions on vector groups"
+         }
+
+def levi_special_fiber_parahoric : IO MS := do
+    let abs <- IO.FS.readFile "my-paper-data/mcninch14:MR3181732.abstract"
+    let bib <- IO.FS.readFile "my-paper-data/mcninch14:MR3181732.bib"
+
+    pure { authors := [ GeorgeMcNinch ]
+         , citation :=
+             Citation.Journal
+               (journal := "Algebras and Representation Theory")
+               (volume := some 17)
+               (year := 2014)
+               (number := some "2")
+               (pages := some "469--479")
+         , id := "mcninch14:MR3181732"
+         , abstract := some abs
+         , bibtex := some bib
+         , errata := none
+         , urls :=
+           [ UrlType.Local
+               ( path :=
+                 [ mathManuscripts
+                 , "2014-a--Levi-factors-of-special-fiber-of-parahoric-and-tame-ramification"
+                 , "2013 01 - Levi factors of special fiber of parahoric and tame ramification.pdf"
+                 ]
+               )
+          , UrlType.MR ( mrNumber := "MR3181732" )
+          , UrlType.DOI ( doiNumber := "10.1007/s10468-013-9404-4" )
+          ]
+         , title :=
+            "Levi factors of the special fiber of a parahoric group scheme and tame ramification"
+        }
+
+def descent_levi_factors : IO MS := do
+    let abs <- IO.FS.readFile "my-paper-data/mcninch13:MR3009659.abstract"
+    let bib <- IO.FS.readFile "my-paper-data/mcninch13:MR3009659.bib"
+
+    pure { authors := [ GeorgeMcNinch ]
+         , citation :=
+           Citation.Journal
+             ( journal := "Archiv der Mathematik")
+             (volume := some 100)
+             (year := 2013)
+             (number := some "1")
+             (pages := some "7--24")
+         , id := "mcninch13:MR3009659"
+         , abstract := some abs
+         , bibtex := some bib
+         , errata := none
+         , urls :=
+           [ UrlType.Local
+               ( path :=
+                 [ mathManuscripts
+                 , "2013-a--On-the-descent-of-Levi-factors"
+                 , "On the descent of Levi factors.pdf"
+                 ]
+               )
+           , UrlType.MR ( mrNumber := "MR3009659" )
+           , UrlType.DOI ( doiNumber := "10.1007/s00013-012-0467-y" )
+           ]
+         , title := "On the descent of Levi factors"
+         }
+
+
+
 def papers : IO (List MS) := do
     pure [ <- local_global
          , <- cohomology_levi
          , <- nilpotent_orbits_over_local_field
          , <- reductive_subgroup_schemes
          , <- central_subalgebras
+         , <- linearity
+         , <- levi_special_fiber_parahoric
+         , <- descent_levi_factors
          ]
 
-
 #eval papers
-  
