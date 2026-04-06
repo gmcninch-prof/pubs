@@ -25,7 +25,7 @@ inductive UrlType where
   | MR : (mrNumber : String) → UrlType
   | Arxiv : (arxivId : String) → UrlType
   | Euclid : (euclidId : String) → UrlType
-  | Local : (path : List String) → UrlType
+  | Local : (path : System.FilePath) → UrlType
   | Other : (label: String) → (url: String) → UrlType
 deriving Repr, BEq
 

@@ -8,3 +8,9 @@ name = "Msdata"
 [[lean_exe]]
 name = "msdata"
 root = "Main"
+
+[[require]]
+name = "markdown"
+git = "https://github.com/predictable-machines/lean4-markdown"
+rev = "v0.1.0"
+  
