@@ -27,6 +27,10 @@ def errataPath (file : String) : String :=
   , file
   ]
  
+def getAbstract (file : System.FilePath) : IO String := do
+  let absDir : System.FilePath := "my-paper-data"
+  let abs <- IO.FS.readFile $ System.FilePath.join absDir file
+  pure abs
 --------------------------------------------------------------------------------
 
 def GeorgeMcNinch : Author :=
@@ -74,7 +78,7 @@ def DavidHarbater : Author :=
 --------------------------------------------------------------------------------
 
 def local_global : IO MS := do
-   let abs ← IO.FS.readFile "my-paper-data/hhm26.abstract"
+   let abs ← getAbstract "hhm26.abstract"
    pure { authors := [ DavidHarbater, JuliaHartmann, GeorgeMcNinch ]
         , citation := Citation.PrePrint ( year := 2026 )
         , id := "hhm26"
@@ -84,7 +88,7 @@ def local_global : IO MS := do
         }
 
 def cohomology_levi : IO MS :=  do
-   let abs ← IO.FS.readFile  "my-paper-data/mcninch24:cohomology-levi.abstract"   
+   let abs ← getAbstract  "mcninch24:cohomology-levi.abstract"   
    pure { authors := [ GeorgeMcNinch ]
         , citation := Citation.Journal
              (year := 2024)
@@ -107,7 +111,7 @@ def cohomology_levi : IO MS :=  do
         }
 
 def nilpotent_orbits_over_local_field : IO MS := do
-   let abs ← IO.FS.readFile "my-paper-data/mcninch21:nilpotent-orbits-over-local-field.abstract"
+   let abs ← getAbstract "mcninch21:nilpotent-orbits-over-local-field.abstract"
       
    pure { authors := [ GeorgeMcNinch ]
         , citation := Citation.Journal
@@ -140,7 +144,7 @@ def nilpotent_orbits_over_local_field : IO MS := do
 
 
 def reductive_subgroup_schemes : IO MS :=  do
-    let abs ← IO.FS.readFile "my-paper-data/mcninch20:reductive-subgroup-schemes.abstract"
+    let abs ← getAbstract "mcninch20:reductive-subgroup-schemes.abstract"
 
     pure { authors := [ GeorgeMcNinch ]
          , citation :=
@@ -165,7 +169,7 @@ def reductive_subgroup_schemes : IO MS :=  do
          }
 
 def central_subalgebras : IO MS := do
-    let abs ← IO.FS.readFile "my-paper-data/mcninch16:MR3477055.abstract"
+    let abs ← getAbstract "mcninch16:MR3477055.abstract"
     
     pure { authors := [ GeorgeMcNinch, DonnaTesterman ]
          , citation :=
@@ -189,7 +193,7 @@ def central_subalgebras : IO MS := do
 
 
 def linearity : IO MS := do
-    let abs ← IO.FS.readFile "my-paper-data/mcninch14:MR3181732.abstract"
+    let abs ← getAbstract "mcninch14:MR3181732.abstract"
     
     pure { authors := [ GeorgeMcNinch ]
          , citation :=
@@ -212,7 +216,7 @@ def linearity : IO MS := do
          }
 
 def levi_special_fiber_parahoric : IO MS := do
-    let abs ← IO.FS.readFile "my-paper-data/mcninch14:MR3181732.abstract"
+    let abs ← getAbstract "mcninch14:MR3181732.abstract"
 
     pure { authors := [ GeorgeMcNinch ]
          , citation :=
@@ -236,7 +240,7 @@ def levi_special_fiber_parahoric : IO MS := do
         }
 
 def descent_levi_factors : IO MS := do
-    let abs ← IO.FS.readFile "my-paper-data/mcninch13:MR3009659.abstract"
+    let abs ← getAbstract "mcninch13:MR3009659.abstract"
 
     pure { authors := [ GeorgeMcNinch ]
          , citation :=
@@ -259,7 +263,7 @@ def descent_levi_factors : IO MS := do
          }
 
 def good_filtration_subgroups :  IO MS := do
-    let abs ← IO.FS.readFile "my-paper-data/hague13:MR3057320.abstract"
+    let abs ← getAbstract "hague13:MR3057320.abstract"
 
     pure { authors:= [ ChuckHague, GeorgeMcNinch ]
          , citation:=
@@ -283,7 +287,7 @@ def good_filtration_subgroups :  IO MS := do
          }
 
 def levi_decompositions :  IO MS := do
-    let abs ← IO.FS.readFile "my-paper-data/mcninch10:MR2753264.abstract"
+    let abs ← getAbstract "mcninch10:MR2753264.abstract"
     pure { authors:= [ GeorgeMcNinch ]
          , citation:=
              Citation.Journal
@@ -301,13 +305,13 @@ def levi_decompositions :  IO MS := do
            , UrlType.DOI ( doiNumber:= "10.1007/s00031-010-9111-8" )
            , UrlType.Arxiv ( arxivId:= "1007.2777" )
            , UrlType.Bibtex ( path := bibtexPath "mcninch10:MR2753264.bib" )
-           , UrlType.Errata ( path := errataPath "Errata-Levi-decompositions.pdf" )
+           , UrlType.Errata ( path := errataPath "errata-levi-decompositions.pdf" )
            ]
          , title:= "Levi decompositions of a linear algebraic group"
          }
 
 def nilpotent_centralizers : IO MS := do
-    let abs ← IO.FS.readFile "my-paper-data/mcninch09:MR2497582.abstract"
+    let abs ← getAbstract "mcninch09:MR2497582.abstract"
     pure { authors := [ GeorgeMcNinch, DonnaTesterman ]
          , citation:=
              Citation.Journal

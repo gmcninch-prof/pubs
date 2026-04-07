@@ -7,29 +7,27 @@ import Markdown
 def authorStr (ms : MS) : String :=
    String.intercalate ", " (Author.name <$> MS.authors ms)
 
-def authorEntry (au : Author) : Markdown.MarkdownItem :=
-  Markdown.MarkdownItem.p
-    [ Markdown.TextItem.link
+def authorEntry (au : Author) : List Markdown.TextItem :=
+    let name := Markdown.TextItem.link
         (text := s!"{au.name}")
         (url := au.authorUrl)
-    , Markdown.TextItem.text s!"({au.institution})"
-    ]
+    let sp := Markdown.TextItem.text " "
+    let inst := Markdown.TextItem.text s!"({au.institution})"
+    [ name , sp, inst ]
   
-def andList (ll : List Markdown.MarkdownItem) : List Markdown.MarkdownItem :=
+def andList (ll : List (List Markdown.TextItem)) : List Markdown.TextItem :=
   match ll with
   | [] => [  ]
-  | [a] => [ a ]
-  | [a,b] => [ a
-             , Markdown.MarkdownItem.p [Markdown.TextItem.text " and "]
-             , b]
-  | (a :: al) => [a, Markdown.MarkdownItem.p [ Markdown.TextItem.text ", "] ] ++ al
+  | [a] => a 
+  | [a,b] => a ++ Markdown.TextItem.text " and " :: b
+  | a :: al => a ++ Markdown.TextItem.text ", " :: andList al
 
-def authorList (ms : MS) : List Markdown.MarkdownItem :=
+def authorList (ms : MS) : List Markdown.TextItem :=
   let au : List Author := 
      List.filter (fun a => not (a.name = "George McNinch")) ms.authors
   match au with
   | [] => []
-  | a => (Markdown.MarkdownItem.p [ Markdown.TextItem.text "  \n  With "] ) 
+  | a => Markdown.TextItem.text "  \n  With "
      :: (andList $ authorEntry <$> a)
 
 def citationStr (ms : MS) : String :=
@@ -106,10 +104,9 @@ def urlEntry (url : UrlType) : Markdown.TextItem :=
         (url := path)
   
 
-def msUrls (ms : MS) : Markdown.MarkdownItem :=
+def msUrls (ms : MS) : List Markdown.TextItem :=
   let urllist := urlEntry <$> ms.urls
-  Markdown.MarkdownItem.p  $
-    (Markdown.TextItem.text "  \n  URLs: ") :: List.intersperse (sep := Markdown.TextItem.text ", ") urllist
+  Markdown.TextItem.text "  \n  URLs: " :: List.intersperse (sep := Markdown.TextItem.text ", ") urllist
 
 def cleanup (s:String) :  String :=
   String.toLower $ String.replace (s := strip s) (pattern := " ") (replacement:= "-")
@@ -131,24 +128,23 @@ def msLinkCV (ms: MS) : Markdown.TextItem :=
     , "pages"
     , s!"manuscripts.html#{cleanup ms.title}"  
     ]
-    [ Markdown.TextItem.link 
-       (text := ms.title)
-       (url := url)
+  Markdown.TextItem.link 
+   (text := ms.title)
+   (url := url)
 
 def webTitle (ms : MS) : Markdown.TextItem :=
   Markdown.TextItem.link
     (text := s!"{ms.title} ({reprStr $ year ms})") 
     (url := s!"#{ms.title}")
        
-def cvBiblioEntry (ms : MS) : List Markdown.TextItem :=
+def cvBiblioEntry (ms : MS) : Markdown.MarkdownItem :=
+  Markdown.MarkdownItem.p $
      [ msLinkCV ms 
      , Markdown.TextItem.text ", "
      , Markdown.TextItem.text $ citationStr ms
      ]
      ++ authorList ms
      ++ msUrls ms
-  
-
 
 def cvBiblio (mss : List MS) : Markdown.MarkdownTag :=
   { element := Markdown.MarkdownItem.h1 "Bibliography"
