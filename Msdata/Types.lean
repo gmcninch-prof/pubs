@@ -25,8 +25,10 @@ inductive UrlType where
   | MR : (mrNumber : String) → UrlType
   | Arxiv : (arxivId : String) → UrlType
   | Euclid : (euclidId : String) → UrlType
-  | Local : (path : System.FilePath) → UrlType
+  | Local : (path : String) → UrlType
   | Other : (label: String) → (url: String) → UrlType
+  | Errata : (path : String) -> UrlType
+  | Bibtex : (path : String) -> UrlType
 deriving Repr, BEq
 
 structure Author where
@@ -40,8 +42,6 @@ structure MS where
   authors : List Author
   citation : Citation
   abstract : Option String
-  bibtex : Option String
-  errata : Option String
   urls : List UrlType
   title : String
 deriving Repr

@@ -3,14 +3,31 @@ import Init.System.IO
 
 import Msdata.Types
 
-def mathManuscripts : System.FilePath := 
-  "/home/george/Prof-VC/Math-manuscripts"
+def msPDFPath (file : String) : String :=
+  String.intercalate "/"
+  [ "https://gmcninch.math.tufts.edu"
+  , "assets/manuscripts"
+  , file
+  ]
 
-def msPath (dir file : System.FilePath) :=
-  System.FilePath.join
-    mathManuscripts
-    (System.FilePath.join
-      dir file)
+def abstractPath (file : String) : System.FilePath :=
+  "my-paper-data" ++ file
+
+def bibtexPath (file :String) : String :=
+  String.intercalate "/"
+  [ "https://gmcninch.math.tufts.edu"
+  , "assets/manuscripts/bibtex"
+  , file
+  ]
+
+def errataPath (file : String) : String :=
+  String.intercalate "/"
+  [ "https://gmcninch.math.tufts.edu"
+  , "assets/manuscripts/errata"
+  , file
+  ]
+ 
+--------------------------------------------------------------------------------
 
 def GeorgeMcNinch : Author :=
   {  institution := "Tufts University"
@@ -62,15 +79,12 @@ def local_global : IO MS := do
         , citation := Citation.PrePrint ( year := 2026 )
         , id := "hhm26"
         , abstract := Option.some abs
-        , bibtex := Option.none
-        , errata := Option.none
         , urls := [ UrlType.Arxiv ( arxivId := "2603.26501" ) ]
         , title := "Local-global principles for the existence of Levi factors"
         }
 
 def cohomology_levi : IO MS :=  do
-   let abs ← IO.FS.readFile  "my-paper-data/mcninch24:cohomology-levi.abstract"
-   
+   let abs ← IO.FS.readFile  "my-paper-data/mcninch24:cohomology-levi.abstract"   
    pure { authors := [ GeorgeMcNinch ]
         , citation := Citation.Journal
              (year := 2024)
@@ -80,23 +94,20 @@ def cohomology_levi : IO MS :=  do
              (pages := some "379-397")
         , id := "mcninch24:cohomology-levi"
         , abstract := abs
-        , bibtex := Option.none 
-        , errata := Option.none
         , urls :=
               [ UrlType.Local
-                  ( path := msPath
-                      "cohomology-levi" 
-                      "cohomology-levi.pdf" 
-                  )
+                  ( path := msPDFPath "cohomology-levi.pdf" )
               , UrlType.MR
                   ( mrNumber := "MR4914997" ) 
+              , UrlType.Bibtex
+                  ( path := bibtexPath "mcninch24:cohomology-levi.bib"
+                  )
               ]
         , title := "Levi decompositions of linear algebraic groups and non-abelian cohomology"
         }
 
 def nilpotent_orbits_over_local_field : IO MS := do
    let abs ← IO.FS.readFile "my-paper-data/mcninch21:nilpotent-orbits-over-local-field.abstract"
-   let bib ← IO.FS.readFile "my-paper-data/mcninch21:nilpotent-orbits-over-local-field.bib"
       
    pure { authors := [ GeorgeMcNinch ]
         , citation := Citation.Journal
@@ -108,13 +119,9 @@ def nilpotent_orbits_over_local_field : IO MS := do
             
         , id := "mcninch21:nilpotent-orbits-over-local-field"
         , abstract := some abs
-        , bibtex := some bib
-        , errata := none
         , urls :=
           [ UrlType.Local
-              ( path := msPath
-                  "2021-a--Nilpotent-elements-and-reductive-subgroups-over-a-local-field" 
-                  "Nilpotent-elements-and-reductive-subgroups-over-a-local-field.pdf"
+              ( path := msPDFPath "nilpotent-elements-and-reductive-subgroups-over-a-local-field.pdf"
               )
           , UrlType.DOI ( doiNumber := "10.1007/s10468-020-10000-2" )
           , UrlType.Other 
@@ -124,6 +131,9 @@ def nilpotent_orbits_over_local_field : IO MS := do
               ( label := "Journal" )
               ( url := "https://link.springer.com/article/10.1007%2Fs10468-020-10000-2" )
           , UrlType.MR (mrNumber := "MR4340850" )
+          , UrlType.Bibtex 
+              (path := bibtexPath "mcninch21:nilpotent-orbits-over-local-field.bib"
+              )
           ]
         , title := "Nilpotent elements and reductive subgroups over a local field"
         }
@@ -131,7 +141,6 @@ def nilpotent_orbits_over_local_field : IO MS := do
 
 def reductive_subgroup_schemes : IO MS :=  do
     let abs ← IO.FS.readFile "my-paper-data/mcninch20:reductive-subgroup-schemes.abstract"
-    let bib ← IO.FS.readFile "my-paper-data/mcninch20:reductive-subgroup-schemes.bib"
 
     pure { authors := [ GeorgeMcNinch ]
          , citation :=
@@ -143,24 +152,20 @@ def reductive_subgroup_schemes : IO MS :=  do
                (pages := some "217-249")
          , id := "mcninch20:reductive-subgroup-schemes"
          , abstract := some abs
-         , bibtex := some bib
-         , errata := some "2025-10-12--reductive-subgroups-fix.pdf"
          , urls :=
            [ UrlType.Local
-               ( path := msPath
-                   "2020-a--Reductive-subgroups-of-a-parahoric-group-scheme"
-                   "Reductive subgroups of a parahoric group scheme.pdf"
-               )
+               ( path := msPDFPath "reductive-subgroups-of-a-parahoric-group-scheme.pdf" )
            , UrlType.MR ( mrNumber := "MR4070108" )
            , UrlType.DOI ( doiNumber := "10.1007/s00031-018-9508-3" )
            , UrlType.Other (label := "Journal") (url := "https://rdcu.be/bb6vn" )
+           , UrlType.Bibtex ( path := bibtexPath "mcninch20:reductive-subgroup-schemes.bib" )           
+           , UrlType.Errata (path := errataPath "2025-10-12--reductive-subgroups-fix.pdf")
            ]
          , title := "Reductive subgroup schemes of a parahoric group scheme"
          }
 
 def central_subalgebras : IO MS := do
     let abs ← IO.FS.readFile "my-paper-data/mcninch16:MR3477055.abstract"
-    let bib ← IO.FS.readFile "my-paper-data/mcninch16:MR3477055.bib"
     
     pure { authors := [ GeorgeMcNinch, DonnaTesterman ]
          , citation :=
@@ -172,16 +177,12 @@ def central_subalgebras : IO MS := do
                (pages := some "2383--2397")
          , id := "mcninch16:MR3477055"
          , abstract := some abs
-         , bibtex := some bib
-         , errata := none
          , urls :=
            [ UrlType.Local
-               ( path := msPath
-                   "2016-a--Central-subalgebras-of-the-centralizer-of-a-nilpotent-element" 
-                   "McNinch and Testerman - Central subalgebras - Proc AMS final.pdf" 
-               )
+               ( path := msPDFPath "mcninch-and-testerman---central-subalgebras---proc-ams-final.pdf")
            , UrlType.MR ( mrNumber := "MR3477055" )
            , UrlType.DOI ( doiNumber := "10.1090/proc/12942" )
+           , UrlType.Bibtex ( path := bibtexPath "mcninch16:MR3477055.bib" )
            ]
          , title := "Central subalgebras of the centralizer of a nilpotent element"
          }
@@ -189,7 +190,6 @@ def central_subalgebras : IO MS := do
 
 def linearity : IO MS := do
     let abs ← IO.FS.readFile "my-paper-data/mcninch14:MR3181732.abstract"
-    let bib ← IO.FS.readFile "my-paper-data/mcninch14:MR3181732.bib"
     
     pure { authors := [ GeorgeMcNinch ]
          , citation :=
@@ -201,23 +201,18 @@ def linearity : IO MS := do
                (number := none)
          , id := "mcninch14:MR3119244"
          , abstract := some abs
-         , bibtex := some bib
-         , errata := none 
          , urls :=
            [ UrlType.Local
-               ( path := msPath
-                   "2014-b--Linearity-for-actions-on-vector-groups" 
-                   "Linearity for actions on vector groups - 2013 09.pdf"
-               )
+               ( path := msPDFPath "linearity-for-actions-on-vector-groups---2013-09.pdf" )
            , UrlType.MR ( mrNumber := "MR3119244" )
            , UrlType.DOI ( doiNumber := "10.1016/j.jalgebra.2013.08.030" )
+           , UrlType.Bibtex ( path := bibtexPath "mcninch14:MR3181732.bib" )
            ]
          , title := "Linearity for actions on vector groups"
          }
 
 def levi_special_fiber_parahoric : IO MS := do
     let abs ← IO.FS.readFile "my-paper-data/mcninch14:MR3181732.abstract"
-    let bib ← IO.FS.readFile "my-paper-data/mcninch14:MR3181732.bib"
 
     pure { authors := [ GeorgeMcNinch ]
          , citation :=
@@ -229,16 +224,12 @@ def levi_special_fiber_parahoric : IO MS := do
                (pages := some "469--479")
          , id := "mcninch14:MR3181732"
          , abstract := some abs
-         , bibtex := some bib
-         , errata := none
          , urls :=
            [ UrlType.Local
-               ( path := msPath
-                   "2014-a--Levi-factors-of-special-fiber-of-parahoric-and-tame-ramification"
-                   "2013 01 - Levi factors of special fiber of parahoric and tame ramification.pdf"
-               )
+               ( path := msPDFPath "2013-01---levi-factors-of-special-fiber-of-parahoric-and-tame-ramification.pdf")
           , UrlType.MR ( mrNumber := "MR3181732" )
           , UrlType.DOI ( doiNumber := "10.1007/s10468-013-9404-4" )
+          , UrlType.Bibtex ( path := bibtexPath "mcninch14:MR3181732.bib" )
           ]
          , title :=
             "Levi factors of the special fiber of a parahoric group scheme and tame ramification"
@@ -246,7 +237,6 @@ def levi_special_fiber_parahoric : IO MS := do
 
 def descent_levi_factors : IO MS := do
     let abs ← IO.FS.readFile "my-paper-data/mcninch13:MR3009659.abstract"
-    let bib ← IO.FS.readFile "my-paper-data/mcninch13:MR3009659.bib"
 
     pure { authors := [ GeorgeMcNinch ]
          , citation :=
@@ -258,23 +248,18 @@ def descent_levi_factors : IO MS := do
              (pages := some "7--24")
          , id := "mcninch13:MR3009659"
          , abstract := some abs
-         , bibtex := some bib
-         , errata := none
          , urls :=
            [ UrlType.Local
-               ( path := msPath
-                   "2013-a--On-the-descent-of-Levi-factors"
-                   "On the descent of Levi factors.pdf"
-               )
+               ( path := msPDFPath "on-the-descent-of-levi-factors.pdf")
            , UrlType.MR ( mrNumber := "MR3009659" )
            , UrlType.DOI ( doiNumber := "10.1007/s00013-012-0467-y" )
+           , UrlType.Bibtex ( path := bibtexPath "mcninch13:MR3009659.bib" ) 
            ]
          , title := "On the descent of Levi factors"
          }
 
 def good_filtration_subgroups :  IO MS := do
     let abs ← IO.FS.readFile "my-paper-data/hague13:MR3057320.abstract"
-    let bib ← IO.FS.readFile "my-paper-data/hague13:MR3057320.bib"
 
     pure { authors:= [ ChuckHague, GeorgeMcNinch ]
          , citation:=
@@ -286,24 +271,19 @@ def good_filtration_subgroups :  IO MS := do
                ( pages:= some "2400--2413")
          , id:= "hague13:MR3057320"
          , abstract:= some abs
-         , bibtex:= some bib
-         , errata:= none
          , urls:=
            [ UrlType.Local
-               ( path:= msPath
-                   "2013-b--some-good-filtration-subgroups-of-simple-algebraic-groups"
-                   "some good-filtration subgroups of simple algebraic groups - 2012 05.pdf"
-               )
+               ( path:= msPDFPath "some-good-filtration-subgroups-of-simple-algebraic-groups---2012-05.pdf" )
            , UrlType.MR ( mrNumber:= "MR3057320" )
            , UrlType.Arxiv ( arxivId:= "1205.1719" )
            , UrlType.DOI ( doiNumber:= "10.1016/j.jpaa.2013.04.005" )
+           , UrlType.Bibtex ( path := bibtexPath "hague13:MR3057320.bib" )
            ]
          , title:= "Some good-filtration subgroups of simple algebraic groups"
          }
 
 def levi_decompositions :  IO MS := do
     let abs ← IO.FS.readFile "my-paper-data/mcninch10:MR2753264.abstract"
-    let bib ← IO.FS.readFile "my-paper-data/mcninch10:MR2753264.bib"
     pure { authors:= [ GeorgeMcNinch ]
          , citation:=
              Citation.Journal
@@ -314,24 +294,20 @@ def levi_decompositions :  IO MS := do
                ( pages:= some "937--964")
          , id:= "mcninch10:MR2753264"
          , abstract:= some abs
-         , bibtex:= some bib
-         , errata:= some "Errata-Levi-decompositions.pdf"
          , urls:=
            [ UrlType.Local
-               ( path:= msPath
-                   "2010-a--Levi-decompositions-of-a-linear-algebraic-group"
-                   "Levi decompositions of a linear algebraic group.pdf"
-               )
+               ( path:= msPDFPath "levi-decompositions-of-a-linear-algebraic-group.pdf")
            , UrlType.MR ( mrNumber:= "MR2753264" )
            , UrlType.DOI ( doiNumber:= "10.1007/s00031-010-9111-8" )
            , UrlType.Arxiv ( arxivId:= "1007.2777" )
+           , UrlType.Bibtex ( path := bibtexPath "mcninch10:MR2753264.bib" )
+           , UrlType.Errata ( path := errataPath "Errata-Levi-decompositions.pdf" )
            ]
          , title:= "Levi decompositions of a linear algebraic group"
          }
 
 def nilpotent_centralizers : IO MS := do
     let abs ← IO.FS.readFile "my-paper-data/mcninch09:MR2497582.abstract"
-    let bib ← IO.FS.readFile "my-paper-data/mcninch09:MR2497582.bib"
     pure { authors := [ GeorgeMcNinch, DonnaTesterman ]
          , citation:=
              Citation.Journal
@@ -342,17 +318,13 @@ def nilpotent_centralizers : IO MS := do
                ( pages := some "1346--1363" )
          , id:= "mcninch09:MR2497582"
          , abstract := some abs
-         , bibtex := some bib
-         , errata := none
          , urls:=
            [ UrlType.Local
-               ( path:= msPath
-                   "2009-a--Nilpotent-Centralizers-and-Springer-Isomorphisms"
-                   "Nilpotent Centralizers and Springer Isomorphisms.pdf"
-               )
+               ( path:= msPDFPath "nilpotent-centralizers-and-springer-isomorphisms.pdf" )
            , UrlType.MR ( mrNumber:= "MR2497582" )
            , UrlType.DOI ( doiNumber:= "10.1016/j.jpaa.2008.12.007" )
            , UrlType.Arxiv ( arxivId:= "0805.2574" )
+           , UrlType.Bibtex ( path := bibtexPath "mcninch09:MR2497582.bib" )
            ]
          , title:= "Nilpotent centralizers and Springer isomorphisms"
          }
