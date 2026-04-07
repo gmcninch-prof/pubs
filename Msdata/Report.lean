@@ -29,7 +29,7 @@ def authorList (ms : MS) : List Markdown.TextItem :=
      List.filter (fun a => not (a.name = "George McNinch")) ms.authors
   match au with
   | [] => []
-  | a => Markdown.TextItem.text "  \n  With "
+  | a => Markdown.TextItem.text "  \nWith "
      :: (andList $ authorEntry <$> a)
 
 def citationStr (ms : MS) : String :=
@@ -108,7 +108,7 @@ def urlEntry (url : UrlType) : Markdown.TextItem :=
 
 def msUrls (ms : MS) : List Markdown.TextItem :=
   let urllist := urlEntry <$> ms.urls
-  Markdown.TextItem.text "  \n  URLs: " :: List.intersperse (sep := Markdown.TextItem.text ", ") urllist
+  Markdown.TextItem.text "  \nURLs: " :: List.intersperse (sep := Markdown.TextItem.text ", ") urllist
 
 def cleanup (s:String) :  String :=
   String.toLower $ String.replace (s := strip s) (pattern := " ") (replacement:= "-")
@@ -124,7 +124,7 @@ def cleanup (s:String) :  String :=
 def msLinkWeb (ms: MS) : String :=
   s!"#{cleanup ms.title}"  
 
-def msLinkCV (ms: MS) : Markdown.TextItem :=
+def msLink (ms: MS) : Markdown.TextItem :=
   let url := String.intercalate "/"
     [ "https://gmcninch.math.tufts.edu"
     , "pages"
@@ -141,7 +141,7 @@ def webTitle (ms : MS) : Markdown.TextItem :=
        
 def cvBiblioEntry (ms : MS) : Markdown.MarkdownItem :=
   Markdown.MarkdownItem.p $
-     [ msLinkCV ms 
+     [ msLink ms 
      , Markdown.TextItem.text ", "
      , Markdown.TextItem.text $ citationStr ms
      ]
@@ -157,6 +157,28 @@ structure CVData where
   cvtarget : String 
   timestamp : Std.Time.PlainDateTime
   
+  
+def webSummary (ms : MS) : Markdown.MarkdownTag :=
+  { element := Markdown.MarkdownItem.h2 $
+      ms.title ++ " {#" ++ cleanup ms.title ++ "}"
+    children :=
+      [ Markdown.MarkdownItem.p  $
+          [ Markdown.TextItem.text "\n\nCitation: "
+          , Markdown.TextItem.text $ citationStr ms 
+          ]
+          ++ authorList ms
+          ++ msUrls ms         
+          ++ Option.elim ms.abstract [] (fun abs =>
+              [ Markdown.TextItem.text "  \n\nAbstract: "
+              , Markdown.TextItem.text abs])
+          ++ [ Markdown.TextItem.text "\n\n------"
+             ]
+     ]        
+  }        
+    
+structure WebData where
+  mss : List MS
+  file : String
 
 open Markdown  
 
@@ -165,6 +187,13 @@ def cvd (timestamp : Std.Time.PlainDateTime ) : IO CVData := do
   pure { mss := mss
          cvtarget := "cv-manuscripts.md"
          timestamp := timestamp }
+  
+
+def webd : IO WebData := do
+  let mss ← mss
+  pure { mss := mss
+         file := "web-summaries.md"
+       }
   
 instance : Markdown.Represent CVData where
   toMarkdown r :=
@@ -177,12 +206,25 @@ instance : Markdown.Represent CVData where
     ]
 
 
-def write : IO Unit := do
+instance : Markdown.Represent WebData where
+  toMarkdown r :=
+    [ { element := .h1 "Manuscripts"}]
+    ++ webSummary <$> r.mss
+
+
+def writeCV : IO Unit := do
   let timestamp ← Std.Time.PlainDateTime.now
   let cvd ← cvd timestamp  
   IO.FS.writeFile 
     (fname := cvd.cvtarget) 
     (content:= Markdown.renderMarkdown (Markdown.Represent.toMarkdown cvd))
+
+def writeWebSummary : IO Unit := do
+  let webd ← webd
+  IO.FS.writeFile 
+    (fname := webd.file )
+    (content:= Markdown.renderMarkdown (Markdown.Represent.toMarkdown webd))
+  
   
 -- def write : IO Unit := do
 --   let stdout <- IO.getStdout
@@ -191,4 +233,5 @@ def write : IO Unit := do
 --   stdout.putStrLn s
 
 
-#eval write
+#eval writeCV
+#eval writeWebSummary
