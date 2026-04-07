@@ -14,6 +14,7 @@ inductive Citation where
                 → (series : Option String)
                 → (volume : Option Nat)
                 → (pages : Option String)
+                → (publisher : Option String)
                 → Citation 
   | PrePrint : (year : Nat) → Citation
   | Submitted : (year : Nat) → Citation

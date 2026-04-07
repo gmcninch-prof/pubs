@@ -1,8 +1,10 @@
 
 import Msdata.Types
 import Msdata.Data
+import Std.Time 
 
 import Markdown
+
 
 def authorStr (ms : MS) : String :=
    String.intercalate ", " (Author.name <$> MS.authors ms)
@@ -43,7 +45,7 @@ def citationStr (ms : MS) : String :=
         ]
   | Citation.Accepted journal year =>
       s!"{journal} ({reprStr year})."
-  | Citation.Proceedings year booktitle series volume pages =>
+  | Citation.Proceedings year booktitle series volume pages _ =>
       String.join
         [ booktitle
         , Option.elim series "" fun s => s!", {s}"
@@ -63,7 +65,7 @@ def year (ms : MS) : Nat :=
   match ms.citation with
   | Citation.Journal year _ _ _ _ => year
   | Citation.Accepted _ year => year
-  | Citation.Proceedings year _ _ _ _ => year
+  | Citation.Proceedings year _ _ _ _ _ => year
   | Citation.PrePrint year => year
   | Citation.Submitted year => year
   | Citation.Unpublished year => year
@@ -72,35 +74,35 @@ def urlEntry (url : UrlType) : Markdown.TextItem :=
   match url with
   | UrlType.DOI doiNumber => 
     Markdown.TextItem.link 
-      (text := "DOI")
+      (text := "[DOI]")
       (url := "http://dx.doi.org/" ++ doiNumber)
   | UrlType.Other label url => 
     Markdown.TextItem.link
-      (text := label)
+      (text := s!"[{label}]")
       (url := url)
   | UrlType.MR mrNumber => 
     Markdown.TextItem.link
-      (text := "MR")
+      (text := "[MR]")
       (url := "http://www.ams.org/mathscinet-getitem?mr=" ++ mrNumber)
   | UrlType.Arxiv arxivId => 
     Markdown.TextItem.link
-      (text := "arXiv")
+      (text := "[arXiv]")
       (url := "http://arxiv.org/abs/" ++ arxivId)
   | UrlType.Euclid euclidId => 
     Markdown.TextItem.link
-      (text := "Euclid")
+      (text := "[Euclid]")
       (url := "http://projecteuclid.org/euclid.nymj/" ++ euclidId)
   | UrlType.Local path => 
       Markdown.TextItem.link
-        (text := "PDF")
+        (text := "[PDF]")
         (url := path )
   | UrlType.Bibtex path =>
       Markdown.TextItem.link
-        (text := "Bibtex")
+        (text := "[Bibtex]")
         (url := path )
   | UrlType.Errata path =>
       Markdown.TextItem.link  
-        (text := "Errata")
+        (text := "[Errata]")
         (url := path)
   
 
@@ -146,16 +148,47 @@ def cvBiblioEntry (ms : MS) : Markdown.MarkdownItem :=
      ++ authorList ms
      ++ msUrls ms
 
-def cvBiblio (mss : List MS) : Markdown.MarkdownTag :=
-  { element := Markdown.MarkdownItem.h1 "Bibliography"
-  , children := [ Markdown.MarkdownItem.ol $ Functor.map cvBiblioEntry mss ]
-  }
+def cvBiblio (mss : List MS) : Markdown.MarkdownItem :=
+  Markdown.MarkdownItem.ol $ Functor.map cvBiblioEntry mss 
+
+
+structure CVData where
+  mss : List MS
+  cvtarget : String 
+  timestamp : Std.Time.PlainDateTime
+  
+
+open Markdown  
+
+def cvd (timestamp : Std.Time.PlainDateTime ) : IO CVData := do
+  let mss ← mss
+  pure { mss := mss
+         cvtarget := "cv-manuscripts.md"
+         timestamp := timestamp }
+  
+instance : Markdown.Represent CVData where
+  toMarkdown r :=
+    [ { element := .h1 "Manuscripts"
+      , children := [ cvBiblio r.mss] 
+      }
+    , { element := MarkdownItem.p 
+          [ TextItem.text "Time-stamp: "
+          , TextItem.text $ Std.Time.PlainDateTime.toLongDateFormatString r.timestamp ] }       
+    ]
+
 
 def write : IO Unit := do
-  let stdout <- IO.getStdout
-  let mss <- mss
-  let s := Markdown.renderMarkdownTag (cvBiblio mss)
-  stdout.putStrLn s
+  let timestamp ← Std.Time.PlainDateTime.now
+  let cvd ← cvd timestamp  
+  IO.FS.writeFile 
+    (fname := cvd.cvtarget) 
+    (content:= Markdown.renderMarkdown (Markdown.Represent.toMarkdown cvd))
+  
+-- def write : IO Unit := do
+--   let stdout <- IO.getStdout
+--   let mss <- mss
+--   let s := Markdown.renderMarkdownTag (cvBiblio mss)
+--   stdout.putStrLn s
 
 
 #eval write

@@ -377,7 +377,7 @@ def centralizer_nilpotent_section : IO MS := do
          , urls :=
            [ UrlType.Local
                ( path := msPDFPath
-                   "The centralizer of a nilpotent section.pdf"
+                   "the-centralizer-of-a-nilpotent-section.pdf"
                )
            , UrlType.MR ( mrNumber := "MR2423832" )
            , UrlType.Arxiv ( arxivId := "math.RT/0605626" )
@@ -387,6 +387,414 @@ def centralizer_nilpotent_section : IO MS := do
            ]
          , title := "The centralizer of a nilpotent section"
          }
+
+
+
+def CR_lie_subalgebras : IO MS := do
+    let abs ← getAbstract "mcninch07:MR2308032.abstract" 
+    pure { authors := [ GeorgeMcNinch ]
+         , citation :=
+             Citation.Journal
+               ( journal := "Transformation Groups" )
+               ( volume := some 12 )
+               ( year := 2007 )
+               ( number := some "1" )
+               ( pages := some "127--135" )
+         , id := "mcninch07:MR2308032"
+         , abstract := some abs
+         , urls :=
+           [ UrlType.Local
+               ( path := msPDFPath
+                   "completely-reducible-lie-subalgebras-revised-dec.pdf"
+               )
+           , UrlType.Bibtex ( path := bibtexPath "mcninch07:MR2308032.bib" )               
+           , UrlType.MR ( mrNumber := "MR2308032" )
+           , UrlType.DOI ( doiNumber := "10.1007/s00031-005-1130-5" )
+           , UrlType.Arxiv ( arxivId := "math.RT/0509590" )
+           ]
+         , title := "Completely reducible Lie subalgebras"
+         }
+
+def CR_sl2_homs : IO MS := do
+    let abs ← getAbstract "mcninch07:MR2309195.abstract" 
+    pure { authors := [ GeorgeMcNinch, DonnaTesterman ]
+         , citation :=
+             Citation.Journal
+               ( journal := "Transactions of the American Mathematical Society" )
+               ( volume := some 359 )
+               ( year := 2007 )
+               ( number := some "9" )
+               ( pages := some "4489--4510 (electronic)" )
+         , id := "mcninch07:MR2309195"
+         , abstract := some abs
+         , urls :=
+           [ UrlType.Local
+               ( path := msPDFPath
+                   "completely-reducible-sl(2)-homomorphisms.pdf"
+               )
+           , UrlType.Bibtex ( path := bibtexPath "mcninch07:MR2309195.bib" )               
+           , UrlType.DOI ( doiNumber := "10.1090/S0002-9947-07-04289-4" )
+           , UrlType.Arxiv ( arxivId := "math.RT/0510377" )
+           , UrlType.MR ( mrNumber := "MR2309195" )
+           ]
+         , title := "Completely reducible SL(2) homomorphisms"
+         }
+
+def centralizer_sum_commuting : IO MS := do
+    let abs ← getAbstract "mcninch06:MR2220085.abstract" 
+    pure { authors := [ GeorgeMcNinch ]
+         , citation :=
+             Citation.Journal
+               ( journal := "Journal of Pure and Applied Algebra" )
+               ( volume := some 206 )
+               ( year := 2006 )
+               ( number := some "1-2" )
+               ( pages := some "123--140" )
+               
+         , id := "mcninch06:MR2220085"
+         , abstract := some abs
+         , urls :=
+           [ UrlType.Local
+               ( path := msPDFPath
+                   "on-the-centralizer-of-the-sum-of-commuting-nilpotent-elements.pdf"
+               )
+           , UrlType.Bibtex ( path := bibtexPath "mcninch06:MR2220085.bib" )               
+           , UrlType.DOI ( doiNumber := "10.1016/j.jpaa.2005.04.016" )
+           , UrlType.Arxiv ( arxivId := "math.RT/0412283" )
+           , UrlType.MR ( mrNumber := "MR2220085" )
+           ]
+         , title :=
+             "On the centralizer of the sum of commuting nilpotent elements"
+         }
+
+def optimal_sl2 : IO MS := do
+    let abs ← getAbstract "mcninch05:MR2142248.abstract" 
+    pure { authors := [ GeorgeMcNinch ]
+         , citation :=
+             Citation.Journal
+               ( journal := "Commentarii Mathematici Helvetici" )
+               ( volume := some 80 )
+               ( year := 2005 )
+               ( number := some "2" )
+               ( pages := some "391--426" )
+               
+         , id := "mcninch05:MR2142248"
+         , abstract := some abs
+         , urls :=
+           [ UrlType.Local
+               ( path := msPDFPath
+                   "optimal-sl(2)-homomorphisms.pdf"
+               )
+           , UrlType.Bibtex ( path := bibtexPath "mcninch05:MR2142248.bib" )               
+           , UrlType.Arxiv ( arxivId := "math.RT/0309385" )
+           , UrlType.DOI ( doiNumber := "10.4171/CMH/19" )
+           , UrlType.MR ( mrNumber := "MR2142248" )
+           ]
+         , title := "Optimal SL(2) homomorphisms"
+         }
+
+def nilpotent_over_ground_field : IO MS := do
+    let abs ← getAbstract "mcninch04:MR2052869.abstract" 
+    pure { authors := [ GeorgeMcNinch ]
+         , citation :=
+             Citation.Journal
+               ( journal := "Mathematische Annalen" )
+               ( volume := some 329 )
+               ( year := 2004 )
+               ( number := some "1" )
+               ( pages := some "49--85" )
+               
+         , id := "mcninch04:MR2052869"
+         , abstract := some abs
+         , urls :=
+           [ UrlType.Local
+               ( path := msPDFPath
+                   "nilpotent-orbits-over-ground-fields-of-good-characteristic.pdf"
+               )
+           , UrlType.Bibtex ( path := bibtexPath "mcninch04:MR2052869.bib" )               
+           , UrlType.DOI ( doiNumber := "10.1007/s00208-004-0510-9" )
+           , UrlType.Arxiv ( arxivId := "math.RT/0209151" )
+           , UrlType.MR ( mrNumber := "MR2052869" )
+           ]
+         , title := "Nilpotent orbits over ground fields of good characteristic"
+         }
+
+def sub_principal : IO MS := do
+    let abs ← getAbstract "mcninch03:MR1992546.abstract" 
+    pure { authors := [ GeorgeMcNinch ]
+         , citation :=
+             Citation.Journal
+               ( journal := "Mathematische Zeitschrift" )
+               ( volume := some 244 )
+               ( year := 2003 )
+               ( number := some "2" )
+               ( pages := some "433--455" )
+               
+         , id := "mcninch03:MR1992546"
+         , abstract := some abs
+         , urls :=
+           [ UrlType.Local
+               ( path := msPDFPath
+                   "sub-principal-homomorphisms-in-positive-characteristic.pdf"
+               )
+           , UrlType.Bibtex ( path := bibtexPath "mcninch03:MR1992546.bib" )               
+           , UrlType.Arxiv ( arxivId := "math/0108140" )
+           , UrlType.DOI ( doiNumber := "10.1007/s00209-003-0508-0" )
+           , UrlType.MR ( mrNumber := "MR1992546" )
+           ]
+         , title := "Sub-principal homomorphisms in positive characteristic"
+         }
+
+def sl2_Witt : IO MS := do
+    let abs ← getAbstract "mcninch03:MR1987019.abstract" 
+    pure { authors := [ GeorgeMcNinch ]
+         , citation :=
+             Citation.Journal
+               ( journal := "Journal of Algebra" )
+               ( volume := some 265 )
+               ( year := 2003 )
+               ( number := some "2" )
+               ( pages := some "606--618" )
+               
+         , id := "mcninch03:MR1987019"
+         , abstract := some abs
+         , urls :=
+           [ UrlType.Local
+               ( path := msPDFPath
+                   "faithful-representations-of-sl2-over-truncated-witt-vectors.pdf"
+               )
+           , UrlType.Bibtex ( path := bibtexPath "mcninch03:MR1987019.bib" )               
+           , UrlType.MR ( mrNumber := "MR1987019" )
+           , UrlType.Arxiv ( arxivId := "math.RT/0109107" )
+           , UrlType.DOI ( doiNumber := "10.1016/S0021-8693(03)00269-2" )
+           ]
+         , title :=
+             "Faithful representations of SL(2) over truncated Witt vectors"
+         }
+
+def adjoint_jordan_blocks : IO MS := do
+    let abs ← getAbstract "mcninch03:arXiv.0207001.abstract" 
+    pure { authors := [ GeorgeMcNinch ]
+         , citation := Citation.Unpublished ( year := 2003 )
+         , id := "mcninch03:arXiv.0207001"
+         , abstract := some abs
+         , urls :=
+           [ UrlType.Local
+            ( path := msPDFPath
+              "2003-08---adjoint-jordan-blocks.pdf"
+            )
+           , UrlType.Bibtex ( path := bibtexPath "mcninch03:arXiv.0207001.bib" )            
+           , UrlType.Arxiv ( arxivId := "math/0207001" )
+           ]
+         , title := "Adjoint Jordan Blocks"
+         }
+
+def component_group_unipotent_centralizer : IO MS := do
+    let abs ← getAbstract "mcninch03:MR1976698.abstract" 
+    pure { authors := [ GeorgeMcNinch, EricSommers ]
+         , citation :=
+             Citation.Journal
+               ( journal := "Journal of Algebra" )
+               ( volume := some 260 )
+               ( year := 2003 )
+               ( number := some "1" )
+               ( pages := some "323--337" )
+               
+         , id := "mcninch03:MR1976698"
+         , abstract := some abs
+         , urls :=
+           [ UrlType.Local
+               ( path := msPDFPath
+                   "component-groups-of-unipotent-centralizers-in-good-characteristic.pdf"
+               )
+           , UrlType.Bibtex ( path := bibtexPath "mcninch03:MR1976698.bib" )               
+           , UrlType.MR ( mrNumber := "MR1976698" )
+           , UrlType.DOI ( doiNumber := "10.1016/S0021-8693(02)00661-0" )
+           , UrlType.Arxiv ( arxivId := "math.RT/0204275" )
+           ]
+         , title :=
+             "Component groups of unipotent centralizers in good characteristic"
+         }
+
+def second_cohomology : IO MS := do
+    let abs ← getAbstract "mcninch02:MR1907901.abstract" 
+    pure { authors := [ GeorgeMcNinch ]
+         , citation :=
+             Citation.Journal
+               ( journal := "Pacific Journal of Mathematics" )
+               ( volume := some 204 )
+               ( year := 2002 )
+               ( number := some "2" )
+               ( pages := some "459--472" )
+               
+         , id := "mcninch02:MR1907901"
+         , abstract := some abs
+         , urls :=
+           [ UrlType.Local
+               ( path := msPDFPath
+                   "the-second-cohomology-of-small-modules.pdf"
+               )
+           , UrlType.Bibtex ( path := bibtexPath "mcninch02:MR1907901.bib" )               
+           , UrlType.MR ( mrNumber := "MR1907901" )
+           , UrlType.Arxiv ( arxivId := "math.RT/0006105" )
+           , UrlType.DOI ( doiNumber := "10.2140/pjm.2002.204.459" )
+           , UrlType.Errata ( path := errataPath "Errata---Second-cohomology.pdf" )
+           ]
+         , title :=
+             "The second cohomology of small irreducible modules for simple algebraic groups"
+         }
+
+def abelian_unipotent_subgroups : IO MS := do
+    let abs ← getAbstract "mcninch02:MR1874545.abstract" 
+    pure { authors := [ GeorgeMcNinch ]
+         , citation :=
+             Citation.Journal
+               ( journal := "Journal of Pure and Applied Algebra" )
+               ( volume := some 167 )
+               ( year := 2002 )
+               ( number := some "2-3" )
+               ( pages := some "269--300" )
+               
+         , id := "mcninch02:MR1874545"
+         , abstract := some abs
+         , urls :=
+           [ UrlType.Local
+               ( path := msPDFPath
+                   "abelian-unipotent-subgroups-of-reductive-groups.pdf"
+               )
+           , UrlType.Bibtex ( path := bibtexPath "mcninch02:MR1874545.bib" )                              
+           , UrlType.DOI ( doiNumber := "10.1016/S0022-4049(01)00038-X" )
+           , UrlType.Arxiv ( arxivId := "math.RT/0007056" )
+           , UrlType.MR ( mrNumber := "MR1874545" )
+           , UrlType.Errata ( path := errataPath 
+               "abelian-unipotent-subgroups-of-reductive-groups---erratum.pdf")           
+           ]
+         , title := "Abelian unipotent subgroups of reductive groups"
+         }
+
+def howe_duality : IO MS := do
+    pure { authors := [ GeorgeMcNinch ]
+         , citation :=
+             Citation.Journal
+               ( journal := "Mathematische Zeitschrift" )
+               ( volume := some 235 )
+               ( year := 2000 )
+               ( number := some "4" )
+               ( pages := some "651--685" )
+               
+         , id := "mcninch00:MR1801579"
+         , abstract := none
+         , urls :=
+           [ UrlType.Local
+               ( path := msPDFPath
+                   "filtrations-and-positive-characteristic-howe-duality.tex"
+               )
+           , UrlType.Bibtex ( path := bibtexPath "mcninch00:MR1801579.bib" )               
+           , UrlType.MR ( mrNumber := "MR1801579" )
+           , UrlType.DOI ( doiNumber := "10.1007/s002090000157" )
+           ]
+         , title := "Filtrations and positive characteristic Howe duality"
+         }
+
+def semisimplicity_exterior_powers : IO MS := do
+    pure { authors := [ GeorgeMcNinch ]
+         , citation :=
+             Citation.Journal
+               ( journal := "Journal of Algebra" )
+               ( volume := some 225 )
+               ( year := 2000 )
+               ( number := some "2" )
+               ( pages := some "646--666" )
+               
+         , id := "mcninch00:MR1741556"
+         , abstract := none
+         , urls :=
+           [ UrlType.Local
+               ( path := msPDFPath
+                   "semisimplicity-of-exterior-powers-of-semisimple-representations-of-groups.pdf"
+               )
+           , UrlType.Bibtex ( path := bibtexPath "mcninch00:MR1741556.bib" )               
+           , UrlType.MR ( mrNumber := "MR1741556" )
+           , UrlType.DOI ( doiNumber := "10.1006/jabr.1999.8132" )
+           , UrlType.Errata ( path := errataPath "errata---exterior-powers.pdf")           
+           ]
+         , title :=
+             "Semisimplicity of exterior powers of semisimple representations of groups"
+         }
+
+def semisimple_finite_Lie : IO MS := do
+    pure { authors := [ GeorgeMcNinch ]
+         , citation :=
+             Citation.Journal
+               ( journal := "Journal of the London Mathematical Society" )
+               ( volume := some 60 )
+               ( year := 1999 )
+               ( number := some "3" )
+               ( pages := some "771--792" )
+               
+         , id := "mcninch99:MR1753813"
+         , abstract := none
+         , urls :=
+           [ UrlType.Local
+               ( path := msPDFPath
+                   "semisimple-modules-for-finite-groups-of-lie-type.pdf"
+               )
+           , UrlType.Bibtex ( path := bibtexPath "mcninch99:MR1753813.bib" )               
+           , UrlType.MR ( mrNumber := "MR1753813" )
+           , UrlType.DOI ( doiNumber := "10.1112/S0024610799007966" )
+           ]
+         , title := "Semisimple modules for finite groups of Lie type"
+         }
+
+def dimensional_criteria : IO MS := do
+    let abs ← getAbstract "mcninch98:MR1476899.abstract" 
+    pure { authors := [ GeorgeMcNinch ]
+         , citation :=
+             Citation.Journal
+               ( journal := "Proceedings of the London Mathematical Society" )
+               ( volume := some 76 )
+               ( year := 1998 )
+               ( number := some "1" )
+               ( pages := some "95--149" )
+               
+         , id := "mcninch98:MR1476899"
+         , abstract := some abs
+         , urls :=
+           [ UrlType.Local
+               ( path := msPDFPath
+                   "dimensional-criteria-for-semisimplicity-of-representations.pdf"
+               )
+           , UrlType.Bibtex ( path := bibtexPath "mcninch98:MR1476899.bib" )               
+           , UrlType.DOI ( doiNumber := "10.1112/S0024611598000045" )
+           , UrlType.MR ( mrNumber := "MR1476899" )
+           , UrlType.Errata ( path := errataPath "errata-for-dimensional-criteria.pdf")           
+           ]
+         , title := "Dimensional criteria for semisimplicity of representations"
+         }
+
+def semisimple_pos_char : IO MS := do
+    pure { authors := [ GeorgeMcNinch ]
+         , citation :=
+             Citation.Proceedings
+               ( booktitle := "Algebraic groups and their representations" )
+               ( series := some "NATO Adv. Sci. Inst. Ser. C Math. Phys. Sci." )
+               ( volume := some 517 )
+               ( year := 1998 )
+               ( pages := some "43--52" )
+               ( publisher := some "Kluwer Acad. Publ., Dordrecht" )
+         , id := "mcninch98:MR1670763"
+         , abstract := none
+         , urls :=
+           [ UrlType.Local
+               ( path := msPDFPath
+                   "semisimplicity-in-positive-characteristic-(survey).pdf"
+               )
+           , UrlType.Bibtex ( path := bibtexPath "mcninch98:MR1670763.bib" )               
+           , UrlType.MR ( mrNumber := "MR1670763" )
+           ]
+         , title := "Semisimplicity in positive characteristic"
+         }
+
 
 
 def mss : IO (List MS) := do
@@ -403,5 +811,21 @@ def mss : IO (List MS) := do
          , ← nilpotent_centralizers
          , ← nilpotent_subalgebras
          , ← centralizer_nilpotent_section
+         , ← CR_lie_subalgebras
+         , ← CR_sl2_homs
+         , ← centralizer_sum_commuting
+         , ← optimal_sl2
+         , ← nilpotent_over_ground_field
+         , ← sub_principal
+         , ← sl2_Witt
+         , ← adjoint_jordan_blocks
+         , ← component_group_unipotent_centralizer
+         , ← second_cohomology
+         , ← abelian_unipotent_subgroups
+         , ← howe_duality
+         , ← semisimplicity_exterior_powers
+         , ← semisimple_finite_Lie
+         , ← dimensional_criteria
+         , ← semisimple_pos_char
          ]
 
