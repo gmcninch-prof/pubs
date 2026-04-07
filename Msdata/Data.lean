@@ -48,11 +48,13 @@ def PaulLevy : Author :=
 def DonnaTesterman : Author := 
   { institution := "École Polytechnique Fédérale de Lausanne"
   , name := "Donna M. Testerman"
-  , authorUrl := "https://grtes.epfl.ch/~testerma/"
+  --, authorUrl := "https://grtes.epfl.ch/~testerma/"
+  , authorUrl := "https://people.epfl.ch/donna.testerman?lang=en"
   }
 
 def ChuckHague : Author := 
-  { institution := "The McKeogh Company"
+  { --institution := "The McKeogh Company"
+    institution := "PBGC"
   , name := "Chuck Hague"
   , authorUrl := "https://sites.google.com/site/chuckhague/"
   }
@@ -60,7 +62,7 @@ def ChuckHague : Author :=
 def EricSommers : Author := 
   { institution := "University of Massachusetts Amherst"
   , name := "Eric Sommers"
-  , authorUrl := "http://people.math.umass.edu/~esommers/"
+  , authorUrl := "https://sites.google.com/view/ericsommers1/home"
   }
 
 def JuliaHartmann : Author := 
@@ -334,6 +336,58 @@ def nilpotent_centralizers : IO MS := do
          }
 
 
+def nilpotent_subalgebras : IO MS := do
+    let abs ← getAbstract "levy09:MR2576893.abstract"
+    pure { authors := [ PaulLevy, GeorgeMcNinch, DonnaTesterman ]
+         , citation :=
+             Citation.Journal
+               ( journal :=
+                   "Comptes Rendus Mathématique, Académie des Sciences, Paris")
+               ( volume := some 347)
+               ( year := 2009)
+               ( number := some "9-10")
+               ( pages := some "477--482")
+
+         , id := "levy09:MR2576893"
+         , abstract := some abs
+         , urls :=
+           [ UrlType.Local
+               ( path := msPDFPath
+                  "levy-mcninch-and-testerman---nilpotent-subalgebras-of-semisimple-lie-algebras.pdf"
+               )
+           , UrlType.MR ( mrNumber := "mr2576893" )
+           , UrlType.DOI ( doiNumber := "10.1016/j.crma.2009.03.015" )
+           , UrlType.Bibtex ( path := bibtexPath "levy09:MR2576893.bib" )
+           ]
+         , title := "Nilpotent subalgebras of semisimple Lie algebras"
+         }
+
+def centralizer_nilpotent_section : IO MS := do
+    let abs ← getAbstract "mcninch08:MR2423832.abstract" 
+    pure { authors := [ GeorgeMcNinch ]
+         , citation :=
+             Citation.Journal
+               ( journal := "Nagoya Mathematical Journal")
+               ( volume := some 190)
+               ( year := 2008)
+               ( number := none )
+               ( pages := some "129--181")
+         , id := "mcninch08:MR2423832"
+         , abstract := some abs
+         , urls :=
+           [ UrlType.Local
+               ( path := msPDFPath
+                   "The centralizer of a nilpotent section.pdf"
+               )
+           , UrlType.MR ( mrNumber := "MR2423832" )
+           , UrlType.Arxiv ( arxivId := "math.RT/0605626" )
+           , UrlType.Euclid ( euclidId := "euclid.nmj/1214229081" )
+           , UrlType.Bibtex ( path := bibtexPath "mcninch08:MR2423832.bib" )
+           , UrlType.Errata ( path := errataPath "errata--the-centralizer-of-a-nilpotent-section.pdf" )
+           ]
+         , title := "The centralizer of a nilpotent section"
+         }
+
 
 def mss : IO (List MS) := do
     pure [ ← local_global
@@ -347,5 +401,7 @@ def mss : IO (List MS) := do
          , ← good_filtration_subgroups
          , ← levi_decompositions
          , ← nilpotent_centralizers
+         , ← nilpotent_subalgebras
+         , ← centralizer_nilpotent_section
          ]
 

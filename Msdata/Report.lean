@@ -18,8 +18,8 @@ def authorEntry (au : Author) : List Markdown.TextItem :=
 def andList (ll : List (List Markdown.TextItem)) : List Markdown.TextItem :=
   match ll with
   | [] => [  ]
-  | [a] => a 
-  | [a,b] => a ++ Markdown.TextItem.text " and " :: b
+  | [a] => a ++ [ Markdown.TextItem.text "." ] 
+  | [a,b] => a ++ Markdown.TextItem.text " and " :: andList [ b ]
   | a :: al => a ++ Markdown.TextItem.text ", " :: andList al
 
 def authorList (ms : MS) : List Markdown.TextItem :=
