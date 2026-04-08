@@ -130,12 +130,12 @@ def nilpotent_orbits_over_local_field : IO MS := do
               ( path := msPDFPath "nilpotent-elements-and-reductive-subgroups-over-a-local-field.pdf"
               )
           , UrlType.DOI ( doiNumber := "10.1007/s10468-020-10000-2" )
+          , UrlType.Other
+              ( label := "ART" )
+              ( url := "https://link.springer.com/article/10.1007%2Fs10468-020-10000-2" )
           , UrlType.Other 
               ( label := "Springer" ) 
-              ( url := "https://rdcu.be/b8AHO" )
-          , UrlType.Other
-              ( label := "Journal" )
-              ( url := "https://link.springer.com/article/10.1007%2Fs10468-020-10000-2" )
+              ( url := "https://rdcu.be/b8AHO" )              
           , UrlType.MR (mrNumber := "MR4340850" )
           , UrlType.Bibtex 
               (path := bibtexPath "mcninch21:nilpotent-orbits-over-local-field.bib"
@@ -163,7 +163,7 @@ def reductive_subgroup_schemes : IO MS :=  do
                ( path := msPDFPath "reductive-subgroups-of-a-parahoric-group-scheme.pdf" )
            , UrlType.MR ( mrNumber := "MR4070108" )
            , UrlType.DOI ( doiNumber := "10.1007/s00031-018-9508-3" )
-           , UrlType.Other (label := "Journal") (url := "https://rdcu.be/bb6vn" )
+           , UrlType.Other (label := "TG") (url := "https://rdcu.be/bb6vn" )
            , UrlType.Bibtex ( path := bibtexPath "mcninch20:reductive-subgroup-schemes.bib" )           
            , UrlType.Errata (path := errataPath "2025-10-12--reductive-subgroups-fix.pdf")
            ]

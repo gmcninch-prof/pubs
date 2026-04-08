@@ -3,24 +3,26 @@ import Msdata.Report
 import Msdata.Data
 
 
-def cvd : IO CVData := do
+def cv : IO MSReport := do
   let timestamp ← Std.Time.PlainDateTime.now
-  let mss ← mss
-  pure { mss := mss
-         cvtarget := "results/cv-manuscripts.md"
-         timestamp := timestamp }
+  pure { msList := ← mss
+         filename := "results/cv-manuscripts.md"
+         timestamp := some timestamp 
+         proc := cvBiblio "Manuscripts" 
+       }
   
 
-def webd : IO WebData := do
-  let mss ← mss
-  pure { mss := mss
-         file := "results/web-summaries.md"
+def web : IO MSReport := do
+  pure { msList := ← mss
+         filename := "results/web-summaries.md"
+         timestamp := none
+         proc := fun mss => webSummary <$> mss
        }
 
 
 def main : IO Unit :=  do
-  writeCV (← cvd)
-  writeWebSummary (← webd)
-  IO.println "ran!"
+  writeReport (← cv)
+  writeReport (← web)
+  IO.println "Finished!"
 
   

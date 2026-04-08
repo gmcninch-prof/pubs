@@ -1,13 +1,11 @@
-# Manuscripts
-
 ## Local-global principles for the existence of Levi factors {#local-global-principles-for-the-existence-of-levi-factors}
 
 
-Citation: Preprint (2026).  
+**Citation**: Preprint (2026).  
 With [David Harbater](https://www2.math.upenn.edu/~harbater/) (University of Pennsylvania) and [Julia Hartmann](https://www2.math.upenn.edu/~hartmann/) (University of Pennsylvania).  
-URLs: [[arXiv]](http://arxiv.org/abs/2603.26501)  
+**Links**: [[arXiv]](http://arxiv.org/abs/2603.26501)  
 
-Abstract: We discuss local-global principles for the existence of Levi factors
+**Abstract**: We discuss local-global principles for the existence of Levi factors
 (i.e., complements to the unipotent radical) for linear algebraic
 groups over one-variable function fields. We give examples of
 disconnected groups that fail the local-global principle, and prove a
@@ -18,10 +16,10 @@ strong local-global principle in the presence of Levi descent.
 ## Levi decompositions of linear algebraic groups and non-abelian cohomology {#levi-decompositions-of-linear-algebraic-groups-and-non-abelian-cohomology}
 
 
-Citation: Pacific J. Math 336 (2024), no. 1-2, pp. 379-397.  
-URLs: [[PDF]](https://gmcninch.math.tufts.edu/assets/manuscripts/cohomology-levi.pdf), [[MR]](http://www.ams.org/mathscinet-getitem?mr=MR4914997), [[Bibtex]](https://gmcninch.math.tufts.edu/assets/manuscripts/bibtex/mcninch24:cohomology-levi.bib)  
+**Citation**: Pacific J. Math 336 (2024), no. 1-2, pp. 379-397.  
+**Links**: [[PDF]](https://gmcninch.math.tufts.edu/assets/manuscripts/cohomology-levi.pdf), [[MR]](http://www.ams.org/mathscinet-getitem?mr=MR4914997), [[BibTeX]](https://gmcninch.math.tufts.edu/assets/manuscripts/bibtex/mcninch24:cohomology-levi.bib)  
 
-Abstract: Let $k$ be a field, and let $G$ be a linear algebraic group over $k$
+**Abstract**: Let $k$ be a field, and let $G$ be a linear algebraic group over $k$
 for which the unipotent radical $U$ of $G$ is defined and split over
 $k$.  Consider a finite, separable field extension $\ell$ of $k$ and
 suppose that the group $G_\ell$ obtained by base-change has a *Levi
@@ -40,10 +38,10 @@ decomposition over $k$.
 ## Nilpotent elements and reductive subgroups over a local field {#nilpotent-elements-and-reductive-subgroups-over-a-local-field}
 
 
-Citation: Algebras and Representation Theory 24 (2021), pp. 1479-1522.  
-URLs: [[PDF]](https://gmcninch.math.tufts.edu/assets/manuscripts/nilpotent-elements-and-reductive-subgroups-over-a-local-field.pdf), [[DOI]](http://dx.doi.org/10.1007/s10468-020-10000-2), [[Springer]](https://rdcu.be/b8AHO), [[Journal]](https://link.springer.com/article/10.1007%2Fs10468-020-10000-2), [[MR]](http://www.ams.org/mathscinet-getitem?mr=MR4340850), [[Bibtex]](https://gmcninch.math.tufts.edu/assets/manuscripts/bibtex/mcninch21:nilpotent-orbits-over-local-field.bib)  
+**Citation**: Algebras and Representation Theory 24 (2021), pp. 1479-1522.  
+**Links**: [[PDF]](https://gmcninch.math.tufts.edu/assets/manuscripts/nilpotent-elements-and-reductive-subgroups-over-a-local-field.pdf), [[DOI]](http://dx.doi.org/10.1007/s10468-020-10000-2), [[ART]](https://link.springer.com/article/10.1007%2Fs10468-020-10000-2), [[Springer]](https://rdcu.be/b8AHO), [[MR]](http://www.ams.org/mathscinet-getitem?mr=MR4340850), [[BibTeX]](https://gmcninch.math.tufts.edu/assets/manuscripts/bibtex/mcninch21:nilpotent-orbits-over-local-field.bib)  
 
-Abstract: Let $\mathcal{K}$ be a *local field* -- i.e. the field of fractions of
+**Abstract**: Let $\mathcal{K}$ be a *local field* -- i.e. the field of fractions of
 a complete DVR $\mathscr{A}$ whose residue field $\mathcal{k}$ has
 characteristic $p > 0$ -- and let $G$ be a connected, absolutely
 simple algebraic $\mathcal{K}$-group $G$ which splits over an
@@ -72,10 +70,10 @@ associated with $G$.
 ## Reductive subgroup schemes of a parahoric group scheme {#reductive-subgroup-schemes-of-a-parahoric-group-scheme}
 
 
-Citation: Transformation Groups 25 (2020), no. 1, pp. 217-249.  
-URLs: [[PDF]](https://gmcninch.math.tufts.edu/assets/manuscripts/reductive-subgroups-of-a-parahoric-group-scheme.pdf), [[MR]](http://www.ams.org/mathscinet-getitem?mr=MR4070108), [[DOI]](http://dx.doi.org/10.1007/s00031-018-9508-3), [[Journal]](https://rdcu.be/bb6vn), [[Bibtex]](https://gmcninch.math.tufts.edu/assets/manuscripts/bibtex/mcninch20:reductive-subgroup-schemes.bib), [[Errata]](https://gmcninch.math.tufts.edu/assets/manuscripts/errata/2025-10-12--reductive-subgroups-fix.pdf)  
+**Citation**: Transformation Groups 25 (2020), no. 1, pp. 217-249.  
+**Links**: [[PDF]](https://gmcninch.math.tufts.edu/assets/manuscripts/reductive-subgroups-of-a-parahoric-group-scheme.pdf), [[MR]](http://www.ams.org/mathscinet-getitem?mr=MR4070108), [[DOI]](http://dx.doi.org/10.1007/s00031-018-9508-3), [[TG]](https://rdcu.be/bb6vn), [[BibTeX]](https://gmcninch.math.tufts.edu/assets/manuscripts/bibtex/mcninch20:reductive-subgroup-schemes.bib), [[**Errata**]](https://gmcninch.math.tufts.edu/assets/manuscripts/errata/2025-10-12--reductive-subgroups-fix.pdf)  
 
-Abstract: Let $K$ be the field of fractions of a complete discrete valuation
+**Abstract**: Let $K$ be the field of fractions of a complete discrete valuation
 ring $A$ with residue field $k$, and let $G$ be a connected reductive
 algebraic group over $K$. Suppose $P$ is a parahoric group scheme
 attached to $G$. In particular, $P$ is a smooth affine $A$-group
@@ -100,11 +98,11 @@ subgroups of $H$ which are of type $C(μ)$.
 ## Central subalgebras of the centralizer of a nilpotent element {#central-subalgebras-of-the-centralizer-of-a-nilpotent-element}
 
 
-Citation: Proceedings of the American Mathematical Society 144 (2016), no. 6, pp. 2383--2397.  
+**Citation**: Proceedings of the American Mathematical Society 144 (2016), no. 6, pp. 2383--2397.  
 With [Donna M. Testerman](https://people.epfl.ch/donna.testerman?lang=en) (École Polytechnique Fédérale de Lausanne).  
-URLs: [[PDF]](https://gmcninch.math.tufts.edu/assets/manuscripts/mcninch-and-testerman---central-subalgebras---proc-ams-final.pdf), [[MR]](http://www.ams.org/mathscinet-getitem?mr=MR3477055), [[DOI]](http://dx.doi.org/10.1090/proc/12942), [[Bibtex]](https://gmcninch.math.tufts.edu/assets/manuscripts/bibtex/mcninch16:MR3477055.bib)  
+**Links**: [[PDF]](https://gmcninch.math.tufts.edu/assets/manuscripts/mcninch-and-testerman---central-subalgebras---proc-ams-final.pdf), [[MR]](http://www.ams.org/mathscinet-getitem?mr=MR3477055), [[DOI]](http://dx.doi.org/10.1090/proc/12942), [[BibTeX]](https://gmcninch.math.tufts.edu/assets/manuscripts/bibtex/mcninch16:MR3477055.bib)  
 
-Abstract: Let $G$ be a connected, semisimple algebraic group over a field $k$
+**Abstract**: Let $G$ be a connected, semisimple algebraic group over a field $k$
 whose characteristic is *very good* for $G$. In a canonical manner,
 one associates to a nilpotent element $X \in \operatorname{Lie}(G)$ a
 parabolic subgroup $P$ -- in characteristic zero, $P$ may be described
@@ -130,10 +128,10 @@ by Lawther-Testerman in the memoir [LT 11].
 ## Linearity for actions on vector groups {#linearity-for-actions-on-vector-groups}
 
 
-Citation: Journal of Algebra 397 (2014), pp. 666--688.  
-URLs: [[PDF]](https://gmcninch.math.tufts.edu/assets/manuscripts/linearity-for-actions-on-vector-groups---2013-09.pdf), [[MR]](http://www.ams.org/mathscinet-getitem?mr=MR3119244), [[DOI]](http://dx.doi.org/10.1016/j.jalgebra.2013.08.030), [[Bibtex]](https://gmcninch.math.tufts.edu/assets/manuscripts/bibtex/mcninch14:MR3181732.bib)  
+**Citation**: Journal of Algebra 397 (2014), pp. 666--688.  
+**Links**: [[PDF]](https://gmcninch.math.tufts.edu/assets/manuscripts/linearity-for-actions-on-vector-groups---2013-09.pdf), [[MR]](http://www.ams.org/mathscinet-getitem?mr=MR3119244), [[DOI]](http://dx.doi.org/10.1016/j.jalgebra.2013.08.030), [[BibTeX]](https://gmcninch.math.tufts.edu/assets/manuscripts/bibtex/mcninch14:MR3181732.bib)  
 
-Abstract: Let $A$ be a Henselian discrete valuation ring with fractions $K$ and
+**Abstract**: Let $A$ be a Henselian discrete valuation ring with fractions $K$ and
 with *perfect* residue field $k$ of characteristic $p\gt 0$.  Let $G$
 be a connected and reductive algebraic group over $K$, and let $P$ be
 a parahoric group scheme over $A$ with generic fiber $P_K = G$. The
@@ -153,10 +151,10 @@ $P_{\overline{k}}$ has a Levi factor.
 ## Levi factors of the special fiber of a parahoric group scheme and tame ramification {#levi-factors-of-the-special-fiber-of-a-parahoric-group-scheme-and-tame-ramification}
 
 
-Citation: Algebras and Representation Theory 17 (2014), no. 2, pp. 469--479.  
-URLs: [[PDF]](https://gmcninch.math.tufts.edu/assets/manuscripts/2013-01---levi-factors-of-special-fiber-of-parahoric-and-tame-ramification.pdf), [[MR]](http://www.ams.org/mathscinet-getitem?mr=MR3181732), [[DOI]](http://dx.doi.org/10.1007/s10468-013-9404-4), [[Bibtex]](https://gmcninch.math.tufts.edu/assets/manuscripts/bibtex/mcninch14:MR3181732.bib)  
+**Citation**: Algebras and Representation Theory 17 (2014), no. 2, pp. 469--479.  
+**Links**: [[PDF]](https://gmcninch.math.tufts.edu/assets/manuscripts/2013-01---levi-factors-of-special-fiber-of-parahoric-and-tame-ramification.pdf), [[MR]](http://www.ams.org/mathscinet-getitem?mr=MR3181732), [[DOI]](http://dx.doi.org/10.1007/s10468-013-9404-4), [[BibTeX]](https://gmcninch.math.tufts.edu/assets/manuscripts/bibtex/mcninch14:MR3181732.bib)  
 
-Abstract: Let $A$ be a Henselian discrete valuation ring with fractions $K$ and
+**Abstract**: Let $A$ be a Henselian discrete valuation ring with fractions $K$ and
 with *perfect* residue field $k$ of characteristic $p\gt 0$.  Let $G$
 be a connected and reductive algebraic group over $K$, and let $P$ be
 a parahoric group scheme over $A$ with generic fiber $P_K = G$. The
@@ -176,10 +174,10 @@ $P_{\overline{k}}$ has a Levi factor.
 ## On the descent of Levi factors {#on-the-descent-of-levi-factors}
 
 
-Citation: Archiv der Mathematik 100 (2013), no. 1, pp. 7--24.  
-URLs: [[PDF]](https://gmcninch.math.tufts.edu/assets/manuscripts/on-the-descent-of-levi-factors.pdf), [[MR]](http://www.ams.org/mathscinet-getitem?mr=MR3009659), [[DOI]](http://dx.doi.org/10.1007/s00013-012-0467-y), [[Bibtex]](https://gmcninch.math.tufts.edu/assets/manuscripts/bibtex/mcninch13:MR3009659.bib)  
+**Citation**: Archiv der Mathematik 100 (2013), no. 1, pp. 7--24.  
+**Links**: [[PDF]](https://gmcninch.math.tufts.edu/assets/manuscripts/on-the-descent-of-levi-factors.pdf), [[MR]](http://www.ams.org/mathscinet-getitem?mr=MR3009659), [[DOI]](http://dx.doi.org/10.1007/s00013-012-0467-y), [[BibTeX]](https://gmcninch.math.tufts.edu/assets/manuscripts/bibtex/mcninch13:MR3009659.bib)  
 
-Abstract: Let $G$ be a linear algebraic group over a field $k$ of characteristic
+**Abstract**: Let $G$ be a linear algebraic group over a field $k$ of characteristic
 $p\gt0$, and suppose that the unipotent radical $R$ of $G$ is defined
 and split over $k$.  By a Levi factor of $G$, one means a closed
 subgroup $M$ which is a complement to $R$ in $G$.  In this paper, we
@@ -207,11 +205,11 @@ separable closure $L$, but $G$ itself has no Levi decomposition.
 ## Some good-filtration subgroups of simple algebraic groups {#some-good-filtration-subgroups-of-simple-algebraic-groups}
 
 
-Citation: Journal of Pure and Applied Algebra 217 (2013), no. 12, pp. 2400--2413.  
+**Citation**: Journal of Pure and Applied Algebra 217 (2013), no. 12, pp. 2400--2413.  
 With [Chuck Hague](https://sites.google.com/site/chuckhague/) (PBGC).  
-URLs: [[PDF]](https://gmcninch.math.tufts.edu/assets/manuscripts/some-good-filtration-subgroups-of-simple-algebraic-groups---2012-05.pdf), [[MR]](http://www.ams.org/mathscinet-getitem?mr=MR3057320), [[arXiv]](http://arxiv.org/abs/1205.1719), [[DOI]](http://dx.doi.org/10.1016/j.jpaa.2013.04.005), [[Bibtex]](https://gmcninch.math.tufts.edu/assets/manuscripts/bibtex/hague13:MR3057320.bib)  
+**Links**: [[PDF]](https://gmcninch.math.tufts.edu/assets/manuscripts/some-good-filtration-subgroups-of-simple-algebraic-groups---2012-05.pdf), [[MR]](http://www.ams.org/mathscinet-getitem?mr=MR3057320), [[arXiv]](http://arxiv.org/abs/1205.1719), [[DOI]](http://dx.doi.org/10.1016/j.jpaa.2013.04.005), [[BibTeX]](https://gmcninch.math.tufts.edu/assets/manuscripts/bibtex/hague13:MR3057320.bib)  
 
-Abstract: Let $G$ be a connected and reductive algebraic group over an
+**Abstract**: Let $G$ be a connected and reductive algebraic group over an
 algebraically closed field of characteristic $p\gt 0$.  An interesting
 class of representations of $G$ consists of those $G$-modules having a
 *good filtration* -- i.e. a filtration whose layers are the *standard*
@@ -235,10 +233,10 @@ subgroups.
 ## Levi decompositions of a linear algebraic group {#levi-decompositions-of-a-linear-algebraic-group}
 
 
-Citation: Transformation Groups 15 (2010), no. 4, pp. 937--964.  
-URLs: [[PDF]](https://gmcninch.math.tufts.edu/assets/manuscripts/levi-decompositions-of-a-linear-algebraic-group.pdf), [[MR]](http://www.ams.org/mathscinet-getitem?mr=MR2753264), [[DOI]](http://dx.doi.org/10.1007/s00031-010-9111-8), [[arXiv]](http://arxiv.org/abs/1007.2777), [[Bibtex]](https://gmcninch.math.tufts.edu/assets/manuscripts/bibtex/mcninch10:MR2753264.bib), [[Errata]](https://gmcninch.math.tufts.edu/assets/manuscripts/errata/errata-levi-decompositions.pdf)  
+**Citation**: Transformation Groups 15 (2010), no. 4, pp. 937--964.  
+**Links**: [[PDF]](https://gmcninch.math.tufts.edu/assets/manuscripts/levi-decompositions-of-a-linear-algebraic-group.pdf), [[MR]](http://www.ams.org/mathscinet-getitem?mr=MR2753264), [[DOI]](http://dx.doi.org/10.1007/s00031-010-9111-8), [[arXiv]](http://arxiv.org/abs/1007.2777), [[BibTeX]](https://gmcninch.math.tufts.edu/assets/manuscripts/bibtex/mcninch10:MR2753264.bib), [[**Errata**]](https://gmcninch.math.tufts.edu/assets/manuscripts/errata/errata-levi-decompositions.pdf)  
 
-Abstract: If $G$ is a connected linear algebraic group over the field $k$, a
+**Abstract**: If $G$ is a connected linear algebraic group over the field $k$, a
 Levi factor of $G$ is a reductive complement to the unipotent radical
 of $G$.  If $k$ has positive characteristic, $G$ may have no Levi
 factor, or $G$ may have Levi factors which are not geometrically
@@ -261,11 +259,11 @@ two Levi factors of $P_k$ are geometrically conjugate.
 ## Nilpotent centralizers and Springer isomorphisms {#nilpotent-centralizers-and-springer-isomorphisms}
 
 
-Citation: Journal of Pure and Applied Algebra 213 (2009), no. 7, pp. 1346--1363.  
+**Citation**: Journal of Pure and Applied Algebra 213 (2009), no. 7, pp. 1346--1363.  
 With [Donna M. Testerman](https://people.epfl.ch/donna.testerman?lang=en) (École Polytechnique Fédérale de Lausanne).  
-URLs: [[PDF]](https://gmcninch.math.tufts.edu/assets/manuscripts/nilpotent-centralizers-and-springer-isomorphisms.pdf), [[MR]](http://www.ams.org/mathscinet-getitem?mr=MR2497582), [[DOI]](http://dx.doi.org/10.1016/j.jpaa.2008.12.007), [[arXiv]](http://arxiv.org/abs/0805.2574), [[Bibtex]](https://gmcninch.math.tufts.edu/assets/manuscripts/bibtex/mcninch09:MR2497582.bib)  
+**Links**: [[PDF]](https://gmcninch.math.tufts.edu/assets/manuscripts/nilpotent-centralizers-and-springer-isomorphisms.pdf), [[MR]](http://www.ams.org/mathscinet-getitem?mr=MR2497582), [[DOI]](http://dx.doi.org/10.1016/j.jpaa.2008.12.007), [[arXiv]](http://arxiv.org/abs/0805.2574), [[BibTeX]](https://gmcninch.math.tufts.edu/assets/manuscripts/bibtex/mcninch09:MR2497582.bib)  
 
-Abstract: Let $G$ be a semisimple algebraic group over a field $K$ whose
+**Abstract**: Let $G$ be a semisimple algebraic group over a field $K$ whose
 characteristic is *very good* for $G$, and let σ be any $G$
 equivariant isomorphism from the nilpotent variety to the unipotent
 variety; the map σ is known as a Springer isomorphism.  Let $y \in
@@ -288,11 +286,11 @@ of J-P. Serre.
 ## Nilpotent subalgebras of semisimple Lie algebras {#nilpotent-subalgebras-of-semisimple-lie-algebras}
 
 
-Citation: Comptes Rendus Mathématique, Académie des Sciences, Paris 347 (2009), no. 9-10, pp. 477--482.  
+**Citation**: Comptes Rendus Mathématique, Académie des Sciences, Paris 347 (2009), no. 9-10, pp. 477--482.  
 With [Paul Levy](http://www.maths.lancs.ac.uk/~levyp/) (Lancaster University) and [Donna M. Testerman](https://people.epfl.ch/donna.testerman?lang=en) (École Polytechnique Fédérale de Lausanne).  
-URLs: [[PDF]](https://gmcninch.math.tufts.edu/assets/manuscripts/levy-mcninch-and-testerman---nilpotent-subalgebras-of-semisimple-lie-algebras.pdf), [[MR]](http://www.ams.org/mathscinet-getitem?mr=mr2576893), [[DOI]](http://dx.doi.org/10.1016/j.crma.2009.03.015), [[Bibtex]](https://gmcninch.math.tufts.edu/assets/manuscripts/bibtex/levy09:MR2576893.bib)  
+**Links**: [[PDF]](https://gmcninch.math.tufts.edu/assets/manuscripts/levy-mcninch-and-testerman---nilpotent-subalgebras-of-semisimple-lie-algebras.pdf), [[MR]](http://www.ams.org/mathscinet-getitem?mr=mr2576893), [[DOI]](http://dx.doi.org/10.1016/j.crma.2009.03.015), [[BibTeX]](https://gmcninch.math.tufts.edu/assets/manuscripts/bibtex/levy09:MR2576893.bib)  
 
-Abstract: Let $\operatorname{Lie}(G)$ be the Lie algebra of a
+**Abstract**: Let $\operatorname{Lie}(G)$ be the Lie algebra of a
 semisimple linear algebraic group. Under mild conditions on the
 characteristic of the underlying field, one can show that any
 subalgebra of $\operatorname{Lie}(G)$ consisting of nilpotent
@@ -308,10 +306,10 @@ Borel subalgebra of $\operatorname{Lie}(G)$.
 ## The centralizer of a nilpotent section {#the-centralizer-of-a-nilpotent-section}
 
 
-Citation: Nagoya Mathematical Journal 190 (2008), pp. 129--181.  
-URLs: [[PDF]](https://gmcninch.math.tufts.edu/assets/manuscripts/the-centralizer-of-a-nilpotent-section.pdf), [[MR]](http://www.ams.org/mathscinet-getitem?mr=MR2423832), [[arXiv]](http://arxiv.org/abs/math.RT/0605626), [[Euclid]](http://projecteuclid.org/euclid.nymj/euclid.nmj/1214229081), [[Bibtex]](https://gmcninch.math.tufts.edu/assets/manuscripts/bibtex/mcninch08:MR2423832.bib), [[Errata]](https://gmcninch.math.tufts.edu/assets/manuscripts/errata/errata--the-centralizer-of-a-nilpotent-section.pdf)  
+**Citation**: Nagoya Mathematical Journal 190 (2008), pp. 129--181.  
+**Links**: [[PDF]](https://gmcninch.math.tufts.edu/assets/manuscripts/the-centralizer-of-a-nilpotent-section.pdf), [[MR]](http://www.ams.org/mathscinet-getitem?mr=MR2423832), [[arXiv]](http://arxiv.org/abs/math.RT/0605626), [[Euclid]](http://projecteuclid.org/euclid.nymj/euclid.nmj/1214229081), [[BibTeX]](https://gmcninch.math.tufts.edu/assets/manuscripts/bibtex/mcninch08:MR2423832.bib), [[**Errata**]](https://gmcninch.math.tufts.edu/assets/manuscripts/errata/errata--the-centralizer-of-a-nilpotent-section.pdf)  
 
-Abstract: Let $F$ be an algebraically closed field and let $G$ be a
+**Abstract**: Let $F$ be an algebraically closed field and let $G$ be a
 semisimple algebraic $F$-group for which the characteristic of
 $F$ is *very good*.  If $X ∈ \operatorname{Lie}(G) =
 \operatorname{Lie}(G)(F)$ is a nilpotent element in the Lie
@@ -337,10 +335,10 @@ $C_t$ for each $t ∈ \operatorname{Spec}(A)$.
 ## Completely reducible Lie subalgebras {#completely-reducible-lie-subalgebras}
 
 
-Citation: Transformation Groups 12 (2007), no. 1, pp. 127--135.  
-URLs: [[PDF]](https://gmcninch.math.tufts.edu/assets/manuscripts/completely-reducible-lie-subalgebras-revised-dec.pdf), [[Bibtex]](https://gmcninch.math.tufts.edu/assets/manuscripts/bibtex/mcninch07:MR2308032.bib), [[MR]](http://www.ams.org/mathscinet-getitem?mr=MR2308032), [[DOI]](http://dx.doi.org/10.1007/s00031-005-1130-5), [[arXiv]](http://arxiv.org/abs/math.RT/0509590)  
+**Citation**: Transformation Groups 12 (2007), no. 1, pp. 127--135.  
+**Links**: [[PDF]](https://gmcninch.math.tufts.edu/assets/manuscripts/completely-reducible-lie-subalgebras-revised-dec.pdf), [[BibTeX]](https://gmcninch.math.tufts.edu/assets/manuscripts/bibtex/mcninch07:MR2308032.bib), [[MR]](http://www.ams.org/mathscinet-getitem?mr=MR2308032), [[DOI]](http://dx.doi.org/10.1007/s00031-005-1130-5), [[arXiv]](http://arxiv.org/abs/math.RT/0509590)  
 
-Abstract: Let $G$ be a connected and reductive group over the algebraically
+**Abstract**: Let $G$ be a connected and reductive group over the algebraically
 closed field $K$. J-P. Serre has introduced the notion of a G
 completely reducible subgroup $H ⊂ G$.  In this note, we give a notion
 of $G$ complete reducibility -- $G$-cr for short -- for Lie
@@ -354,11 +352,11 @@ well.
 ## Completely reducible SL(2) homomorphisms {#completely-reducible-sl2-homomorphisms}
 
 
-Citation: Transactions of the American Mathematical Society 359 (2007), no. 9, pp. 4489--4510 (electronic).  
+**Citation**: Transactions of the American Mathematical Society 359 (2007), no. 9, pp. 4489--4510 (electronic).  
 With [Donna M. Testerman](https://people.epfl.ch/donna.testerman?lang=en) (École Polytechnique Fédérale de Lausanne).  
-URLs: [[PDF]](https://gmcninch.math.tufts.edu/assets/manuscripts/completely-reducible-sl(2)-homomorphisms.pdf), [[Bibtex]](https://gmcninch.math.tufts.edu/assets/manuscripts/bibtex/mcninch07:MR2309195.bib), [[DOI]](http://dx.doi.org/10.1090/S0002-9947-07-04289-4), [[arXiv]](http://arxiv.org/abs/math.RT/0510377), [[MR]](http://www.ams.org/mathscinet-getitem?mr=MR2309195)  
+**Links**: [[PDF]](https://gmcninch.math.tufts.edu/assets/manuscripts/completely-reducible-sl(2)-homomorphisms.pdf), [[BibTeX]](https://gmcninch.math.tufts.edu/assets/manuscripts/bibtex/mcninch07:MR2309195.bib), [[DOI]](http://dx.doi.org/10.1090/S0002-9947-07-04289-4), [[arXiv]](http://arxiv.org/abs/math.RT/0510377), [[MR]](http://www.ams.org/mathscinet-getitem?mr=MR2309195)  
 
-Abstract: Let $K$ be any field, and let $G$ be a semisimple group
+**Abstract**: Let $K$ be any field, and let $G$ be a semisimple group
 over $K$.  Suppose the characteristic of $K$ is positive
 and is very good for $G$.  We describe all group scheme
 homomorphisms $ϕ:SL(2) → G$ whose image is geometrically
@@ -377,10 +375,10 @@ our proof.
 ## On the centralizer of the sum of commuting nilpotent elements {#on-the-centralizer-of-the-sum-of-commuting-nilpotent-elements}
 
 
-Citation: Journal of Pure and Applied Algebra 206 (2006), no. 1-2, pp. 123--140.  
-URLs: [[PDF]](https://gmcninch.math.tufts.edu/assets/manuscripts/on-the-centralizer-of-the-sum-of-commuting-nilpotent-elements.pdf), [[Bibtex]](https://gmcninch.math.tufts.edu/assets/manuscripts/bibtex/mcninch06:MR2220085.bib), [[DOI]](http://dx.doi.org/10.1016/j.jpaa.2005.04.016), [[arXiv]](http://arxiv.org/abs/math.RT/0412283), [[MR]](http://www.ams.org/mathscinet-getitem?mr=MR2220085)  
+**Citation**: Journal of Pure and Applied Algebra 206 (2006), no. 1-2, pp. 123--140.  
+**Links**: [[PDF]](https://gmcninch.math.tufts.edu/assets/manuscripts/on-the-centralizer-of-the-sum-of-commuting-nilpotent-elements.pdf), [[BibTeX]](https://gmcninch.math.tufts.edu/assets/manuscripts/bibtex/mcninch06:MR2220085.bib), [[DOI]](http://dx.doi.org/10.1016/j.jpaa.2005.04.016), [[arXiv]](http://arxiv.org/abs/math.RT/0412283), [[MR]](http://www.ams.org/mathscinet-getitem?mr=MR2220085)  
 
-Abstract: Let $X$ and $Y$ be commuting nilpotent $K$ endomorphisms of a vector
+**Abstract**: Let $X$ and $Y$ be commuting nilpotent $K$ endomorphisms of a vector
 space $V$, where $K$ is a field of characteristic $p ≥ 0$. If $F=K(t)$
 is the field of rational functions on the projective line
 $\mathbf{P}^1_K$, consider the $K(t)$ endomorphism $A=X+tY$ of $V$. If
@@ -397,10 +395,10 @@ bY$. This answers a question of J. Pevtsova.
 ## Optimal SL(2) homomorphisms {#optimal-sl2-homomorphisms}
 
 
-Citation: Commentarii Mathematici Helvetici 80 (2005), no. 2, pp. 391--426.  
-URLs: [[PDF]](https://gmcninch.math.tufts.edu/assets/manuscripts/optimal-sl(2)-homomorphisms.pdf), [[Bibtex]](https://gmcninch.math.tufts.edu/assets/manuscripts/bibtex/mcninch05:MR2142248.bib), [[arXiv]](http://arxiv.org/abs/math.RT/0309385), [[DOI]](http://dx.doi.org/10.4171/CMH/19), [[MR]](http://www.ams.org/mathscinet-getitem?mr=MR2142248)  
+**Citation**: Commentarii Mathematici Helvetici 80 (2005), no. 2, pp. 391--426.  
+**Links**: [[PDF]](https://gmcninch.math.tufts.edu/assets/manuscripts/optimal-sl(2)-homomorphisms.pdf), [[BibTeX]](https://gmcninch.math.tufts.edu/assets/manuscripts/bibtex/mcninch05:MR2142248.bib), [[arXiv]](http://arxiv.org/abs/math.RT/0309385), [[DOI]](http://dx.doi.org/10.4171/CMH/19), [[MR]](http://www.ams.org/mathscinet-getitem?mr=MR2142248)  
 
-Abstract: Let $G$ be a semisimple group over an algebraically closed field of
+**Abstract**: Let $G$ be a semisimple group over an algebraically closed field of
 *very good* characteristic for $G$.  In the context of geometric
 invariant theory, G. Kempf has associated optimal cocharacters of $G$
 to an unstable vector in a linear $G$-representation. If the nilpotent
@@ -427,10 +425,10 @@ homomorphism for $X$ which is defined over $K$.
 ## Nilpotent orbits over ground fields of good characteristic {#nilpotent-orbits-over-ground-fields-of-good-characteristic}
 
 
-Citation: Mathematische Annalen 329 (2004), no. 1, pp. 49--85.  
-URLs: [[PDF]](https://gmcninch.math.tufts.edu/assets/manuscripts/nilpotent-orbits-over-ground-fields-of-good-characteristic.pdf), [[Bibtex]](https://gmcninch.math.tufts.edu/assets/manuscripts/bibtex/mcninch04:MR2052869.bib), [[DOI]](http://dx.doi.org/10.1007/s00208-004-0510-9), [[arXiv]](http://arxiv.org/abs/math.RT/0209151), [[MR]](http://www.ams.org/mathscinet-getitem?mr=MR2052869)  
+**Citation**: Mathematische Annalen 329 (2004), no. 1, pp. 49--85.  
+**Links**: [[PDF]](https://gmcninch.math.tufts.edu/assets/manuscripts/nilpotent-orbits-over-ground-fields-of-good-characteristic.pdf), [[BibTeX]](https://gmcninch.math.tufts.edu/assets/manuscripts/bibtex/mcninch04:MR2052869.bib), [[DOI]](http://dx.doi.org/10.1007/s00208-004-0510-9), [[arXiv]](http://arxiv.org/abs/math.RT/0209151), [[MR]](http://www.ams.org/mathscinet-getitem?mr=MR2052869)  
 
-Abstract: Let $X$ be an $F$-rational nilpotent element in the Lie
+**Abstract**: Let $X$ be an $F$-rational nilpotent element in the Lie
 algebra of a connected and reductive group $G$ defined over
 the ground field $F$.  Suppose that the Lie algebra has a
 non-degenerate invariant bilinear form.  We show that the
@@ -454,10 +452,10 @@ Deligne and Ranga Rao (1972).
 ## Sub-principal homomorphisms in positive characteristic {#sub-principal-homomorphisms-in-positive-characteristic}
 
 
-Citation: Mathematische Zeitschrift 244 (2003), no. 2, pp. 433--455.  
-URLs: [[PDF]](https://gmcninch.math.tufts.edu/assets/manuscripts/sub-principal-homomorphisms-in-positive-characteristic.pdf), [[Bibtex]](https://gmcninch.math.tufts.edu/assets/manuscripts/bibtex/mcninch03:MR1992546.bib), [[arXiv]](http://arxiv.org/abs/math/0108140), [[DOI]](http://dx.doi.org/10.1007/s00209-003-0508-0), [[MR]](http://www.ams.org/mathscinet-getitem?mr=MR1992546)  
+**Citation**: Mathematische Zeitschrift 244 (2003), no. 2, pp. 433--455.  
+**Links**: [[PDF]](https://gmcninch.math.tufts.edu/assets/manuscripts/sub-principal-homomorphisms-in-positive-characteristic.pdf), [[BibTeX]](https://gmcninch.math.tufts.edu/assets/manuscripts/bibtex/mcninch03:MR1992546.bib), [[arXiv]](http://arxiv.org/abs/math/0108140), [[DOI]](http://dx.doi.org/10.1007/s00209-003-0508-0), [[MR]](http://www.ams.org/mathscinet-getitem?mr=MR1992546)  
 
-Abstract: Let $G$ be a reductive group over an algebraically closed
+**Abstract**: Let $G$ be a reductive group over an algebraically closed
 field of characteristic $p$, and let $u ∈ G$ be a
 unipotent element of order $p$. Suppose that $p$ is a good
 prime for $G$. We show in this paper that there is a
@@ -488,10 +486,10 @@ work of G.  Seitz (Invent. Math. 2000).
 ## Faithful representations of SL(2) over truncated Witt vectors {#faithful-representations-of-sl2-over-truncated-witt-vectors}
 
 
-Citation: Journal of Algebra 265 (2003), no. 2, pp. 606--618.  
-URLs: [[PDF]](https://gmcninch.math.tufts.edu/assets/manuscripts/faithful-representations-of-sl2-over-truncated-witt-vectors.pdf), [[Bibtex]](https://gmcninch.math.tufts.edu/assets/manuscripts/bibtex/mcninch03:MR1987019.bib), [[MR]](http://www.ams.org/mathscinet-getitem?mr=MR1987019), [[arXiv]](http://arxiv.org/abs/math.RT/0109107), [[DOI]](http://dx.doi.org/10.1016/S0021-8693(03)00269-2)  
+**Citation**: Journal of Algebra 265 (2003), no. 2, pp. 606--618.  
+**Links**: [[PDF]](https://gmcninch.math.tufts.edu/assets/manuscripts/faithful-representations-of-sl2-over-truncated-witt-vectors.pdf), [[BibTeX]](https://gmcninch.math.tufts.edu/assets/manuscripts/bibtex/mcninch03:MR1987019.bib), [[MR]](http://www.ams.org/mathscinet-getitem?mr=MR1987019), [[arXiv]](http://arxiv.org/abs/math.RT/0109107), [[DOI]](http://dx.doi.org/10.1016/S0021-8693(03)00269-2)  
 
-Abstract: Let $Γ_2$ be the six dimensional linear algebraic $k$-group
+**Abstract**: Let $Γ_2$ be the six dimensional linear algebraic $k$-group
 $\operatorname{SL}_2(W_2)$, where $W_2$ is the ring of Witt vectors of
 length two over the algebraically closed field $k$ of characteristic
 $p>2$.  Then the minimal dimension of a faithful rational
@@ -504,10 +502,10 @@ k-representation of $Γ_2$ is $p+3$.
 ## Adjoint Jordan Blocks {#adjoint-jordan-blocks}
 
 
-Citation: Unpublished (2003).  
-URLs: [[PDF]](https://gmcninch.math.tufts.edu/assets/manuscripts/2003-08---adjoint-jordan-blocks.pdf), [[Bibtex]](https://gmcninch.math.tufts.edu/assets/manuscripts/bibtex/mcninch03:arXiv.0207001.bib), [[arXiv]](http://arxiv.org/abs/math/0207001)  
+**Citation**: Unpublished (2003).  
+**Links**: [[PDF]](https://gmcninch.math.tufts.edu/assets/manuscripts/2003-08---adjoint-jordan-blocks.pdf), [[BibTeX]](https://gmcninch.math.tufts.edu/assets/manuscripts/bibtex/mcninch03:arXiv.0207001.bib), [[arXiv]](http://arxiv.org/abs/math/0207001)  
 
-Abstract: Let $G$ be a quasisimple algebraic group over an algebraically closed
+**Abstract**: Let $G$ be a quasisimple algebraic group over an algebraically closed
 field of characteristic $p>0$. We suppose that $p$ is *very good* for
 G; since $p$ is good, there is a bijection between the nilpotent
 orbits in the Lie algebra and the unipotent classes in $G$. If the
@@ -530,11 +528,11 @@ formal group law $F$ are independent of $F$.
 ## Component groups of unipotent centralizers in good characteristic {#component-groups-of-unipotent-centralizers-in-good-characteristic}
 
 
-Citation: Journal of Algebra 260 (2003), no. 1, pp. 323--337.  
+**Citation**: Journal of Algebra 260 (2003), no. 1, pp. 323--337.  
 With [Eric Sommers](https://sites.google.com/view/ericsommers1/home) (University of Massachusetts Amherst).  
-URLs: [[PDF]](https://gmcninch.math.tufts.edu/assets/manuscripts/component-groups-of-unipotent-centralizers-in-good-characteristic.pdf), [[Bibtex]](https://gmcninch.math.tufts.edu/assets/manuscripts/bibtex/mcninch03:MR1976698.bib), [[MR]](http://www.ams.org/mathscinet-getitem?mr=MR1976698), [[DOI]](http://dx.doi.org/10.1016/S0021-8693(02)00661-0), [[arXiv]](http://arxiv.org/abs/math.RT/0204275)  
+**Links**: [[PDF]](https://gmcninch.math.tufts.edu/assets/manuscripts/component-groups-of-unipotent-centralizers-in-good-characteristic.pdf), [[BibTeX]](https://gmcninch.math.tufts.edu/assets/manuscripts/bibtex/mcninch03:MR1976698.bib), [[MR]](http://www.ams.org/mathscinet-getitem?mr=MR1976698), [[DOI]](http://dx.doi.org/10.1016/S0021-8693(02)00661-0), [[arXiv]](http://arxiv.org/abs/math.RT/0204275)  
 
-Abstract: Let $G$ be a connected, reductive group over an algebraically
+**Abstract**: Let $G$ be a connected, reductive group over an algebraically
 closed field of good characteristic.  For $u ∈ G$ unipotent,
 we describe the conjugacy classes in the component group
 $A(u)$ of the centralizer of $u$.  Our results extend work
@@ -556,10 +554,10 @@ good characteristic.
 ## The second cohomology of small irreducible modules for simple algebraic groups {#the-second-cohomology-of-small-irreducible-modules-for-simple-algebraic-groups}
 
 
-Citation: Pacific Journal of Mathematics 204 (2002), no. 2, pp. 459--472.  
-URLs: [[PDF]](https://gmcninch.math.tufts.edu/assets/manuscripts/the-second-cohomology-of-small-modules.pdf), [[Bibtex]](https://gmcninch.math.tufts.edu/assets/manuscripts/bibtex/mcninch02:MR1907901.bib), [[MR]](http://www.ams.org/mathscinet-getitem?mr=MR1907901), [[arXiv]](http://arxiv.org/abs/math.RT/0006105), [[DOI]](http://dx.doi.org/10.2140/pjm.2002.204.459), [[Errata]](https://gmcninch.math.tufts.edu/assets/manuscripts/errata/Errata---Second-cohomology.pdf)  
+**Citation**: Pacific Journal of Mathematics 204 (2002), no. 2, pp. 459--472.  
+**Links**: [[PDF]](https://gmcninch.math.tufts.edu/assets/manuscripts/the-second-cohomology-of-small-modules.pdf), [[BibTeX]](https://gmcninch.math.tufts.edu/assets/manuscripts/bibtex/mcninch02:MR1907901.bib), [[MR]](http://www.ams.org/mathscinet-getitem?mr=MR1907901), [[arXiv]](http://arxiv.org/abs/math.RT/0006105), [[DOI]](http://dx.doi.org/10.2140/pjm.2002.204.459), [[**Errata**]](https://gmcninch.math.tufts.edu/assets/manuscripts/errata/Errata---Second-cohomology.pdf)  
 
-Abstract: Let $G$ be a connected, simply connected, quasisimple algebraic group
+**Abstract**: Let $G$ be a connected, simply connected, quasisimple algebraic group
 over an algebraically closed field of characteristic $p>0$, and let
 $V$ be a rational $G$-module such that $\dim V ≤ p$.  According to a
 result of Jantzen, $V$ is completely reducible, and $H^1(G,V)=0$.  In
@@ -574,10 +572,10 @@ of $G$.
 ## Abelian unipotent subgroups of reductive groups {#abelian-unipotent-subgroups-of-reductive-groups}
 
 
-Citation: Journal of Pure and Applied Algebra 167 (2002), no. 2-3, pp. 269--300.  
-URLs: [[PDF]](https://gmcninch.math.tufts.edu/assets/manuscripts/abelian-unipotent-subgroups-of-reductive-groups.pdf), [[Bibtex]](https://gmcninch.math.tufts.edu/assets/manuscripts/bibtex/mcninch02:MR1874545.bib), [[DOI]](http://dx.doi.org/10.1016/S0022-4049(01)00038-X), [[arXiv]](http://arxiv.org/abs/math.RT/0007056), [[MR]](http://www.ams.org/mathscinet-getitem?mr=MR1874545), [[Errata]](https://gmcninch.math.tufts.edu/assets/manuscripts/errata/abelian-unipotent-subgroups-of-reductive-groups---erratum.pdf)  
+**Citation**: Journal of Pure and Applied Algebra 167 (2002), no. 2-3, pp. 269--300.  
+**Links**: [[PDF]](https://gmcninch.math.tufts.edu/assets/manuscripts/abelian-unipotent-subgroups-of-reductive-groups.pdf), [[BibTeX]](https://gmcninch.math.tufts.edu/assets/manuscripts/bibtex/mcninch02:MR1874545.bib), [[DOI]](http://dx.doi.org/10.1016/S0022-4049(01)00038-X), [[arXiv]](http://arxiv.org/abs/math.RT/0007056), [[MR]](http://www.ams.org/mathscinet-getitem?mr=MR1874545), [[**Errata**]](https://gmcninch.math.tufts.edu/assets/manuscripts/errata/abelian-unipotent-subgroups-of-reductive-groups---erratum.pdf)  
 
-Abstract: Let $G$ be a connected reductive group defined over an algebraically
+**Abstract**: Let $G$ be a connected reductive group defined over an algebraically
 closed field $k$ of characteristic $p > 0$. The purpose of this paper
 is two-fold. First, when $p$ is a good prime, we give a new proof of
 the “order formula” of D. Testerman for unipotent elements in $G$;
@@ -605,34 +603,34 @@ condition $p > 2h-2$ is always good enough.
 ## Filtrations and positive characteristic Howe duality {#filtrations-and-positive-characteristic-howe-duality}
 
 
-Citation: Mathematische Zeitschrift 235 (2000), no. 4, pp. 651--685.  
-URLs: [[PDF]](https://gmcninch.math.tufts.edu/assets/manuscripts/filtrations-and-positive-characteristic-howe-duality.tex), [[Bibtex]](https://gmcninch.math.tufts.edu/assets/manuscripts/bibtex/mcninch00:MR1801579.bib), [[MR]](http://www.ams.org/mathscinet-getitem?mr=MR1801579), [[DOI]](http://dx.doi.org/10.1007/s002090000157)
+**Citation**: Mathematische Zeitschrift 235 (2000), no. 4, pp. 651--685.  
+**Links**: [[PDF]](https://gmcninch.math.tufts.edu/assets/manuscripts/filtrations-and-positive-characteristic-howe-duality.tex), [[BibTeX]](https://gmcninch.math.tufts.edu/assets/manuscripts/bibtex/mcninch00:MR1801579.bib), [[MR]](http://www.ams.org/mathscinet-getitem?mr=MR1801579), [[DOI]](http://dx.doi.org/10.1007/s002090000157)
 
 ------
 
 ## Semisimplicity of exterior powers of semisimple representations of groups {#semisimplicity-of-exterior-powers-of-semisimple-representations-of-groups}
 
 
-Citation: Journal of Algebra 225 (2000), no. 2, pp. 646--666.  
-URLs: [[PDF]](https://gmcninch.math.tufts.edu/assets/manuscripts/semisimplicity-of-exterior-powers-of-semisimple-representations-of-groups.pdf), [[Bibtex]](https://gmcninch.math.tufts.edu/assets/manuscripts/bibtex/mcninch00:MR1741556.bib), [[MR]](http://www.ams.org/mathscinet-getitem?mr=MR1741556), [[DOI]](http://dx.doi.org/10.1006/jabr.1999.8132), [[Errata]](https://gmcninch.math.tufts.edu/assets/manuscripts/errata/errata---exterior-powers.pdf)
+**Citation**: Journal of Algebra 225 (2000), no. 2, pp. 646--666.  
+**Links**: [[PDF]](https://gmcninch.math.tufts.edu/assets/manuscripts/semisimplicity-of-exterior-powers-of-semisimple-representations-of-groups.pdf), [[BibTeX]](https://gmcninch.math.tufts.edu/assets/manuscripts/bibtex/mcninch00:MR1741556.bib), [[MR]](http://www.ams.org/mathscinet-getitem?mr=MR1741556), [[DOI]](http://dx.doi.org/10.1006/jabr.1999.8132), [[**Errata**]](https://gmcninch.math.tufts.edu/assets/manuscripts/errata/errata---exterior-powers.pdf)
 
 ------
 
 ## Semisimple modules for finite groups of Lie type {#semisimple-modules-for-finite-groups-of-lie-type}
 
 
-Citation: Journal of the London Mathematical Society 60 (1999), no. 3, pp. 771--792.  
-URLs: [[PDF]](https://gmcninch.math.tufts.edu/assets/manuscripts/semisimple-modules-for-finite-groups-of-lie-type.pdf), [[Bibtex]](https://gmcninch.math.tufts.edu/assets/manuscripts/bibtex/mcninch99:MR1753813.bib), [[MR]](http://www.ams.org/mathscinet-getitem?mr=MR1753813), [[DOI]](http://dx.doi.org/10.1112/S0024610799007966)
+**Citation**: Journal of the London Mathematical Society 60 (1999), no. 3, pp. 771--792.  
+**Links**: [[PDF]](https://gmcninch.math.tufts.edu/assets/manuscripts/semisimple-modules-for-finite-groups-of-lie-type.pdf), [[BibTeX]](https://gmcninch.math.tufts.edu/assets/manuscripts/bibtex/mcninch99:MR1753813.bib), [[MR]](http://www.ams.org/mathscinet-getitem?mr=MR1753813), [[DOI]](http://dx.doi.org/10.1112/S0024610799007966)
 
 ------
 
 ## Dimensional criteria for semisimplicity of representations {#dimensional-criteria-for-semisimplicity-of-representations}
 
 
-Citation: Proceedings of the London Mathematical Society 76 (1998), no. 1, pp. 95--149.  
-URLs: [[PDF]](https://gmcninch.math.tufts.edu/assets/manuscripts/dimensional-criteria-for-semisimplicity-of-representations.pdf), [[Bibtex]](https://gmcninch.math.tufts.edu/assets/manuscripts/bibtex/mcninch98:MR1476899.bib), [[DOI]](http://dx.doi.org/10.1112/S0024611598000045), [[MR]](http://www.ams.org/mathscinet-getitem?mr=MR1476899), [[Errata]](https://gmcninch.math.tufts.edu/assets/manuscripts/errata/errata-for-dimensional-criteria.pdf)  
+**Citation**: Proceedings of the London Mathematical Society 76 (1998), no. 1, pp. 95--149.  
+**Links**: [[PDF]](https://gmcninch.math.tufts.edu/assets/manuscripts/dimensional-criteria-for-semisimplicity-of-representations.pdf), [[BibTeX]](https://gmcninch.math.tufts.edu/assets/manuscripts/bibtex/mcninch98:MR1476899.bib), [[DOI]](http://dx.doi.org/10.1112/S0024611598000045), [[MR]](http://www.ams.org/mathscinet-getitem?mr=MR1476899), [[**Errata**]](https://gmcninch.math.tufts.edu/assets/manuscripts/errata/errata-for-dimensional-criteria.pdf)  
 
-Abstract: This paper is concerned with rational representations of reductive
+**Abstract**: This paper is concerned with rational representations of reductive
 algebraic groups over fields of positive characteristic $p$.  Let $G$
 be a simple algebraic group of rank $\ell$.  It is shown that a
 rational representation of $G$ is semisimple provided that its
@@ -659,7 +657,7 @@ needed control of the extension theory.
 ## Semisimplicity in positive characteristic {#semisimplicity-in-positive-characteristic}
 
 
-Citation: Algebraic groups and their representations, NATO Adv. Sci. Inst. Ser. C Math. Phys. Sci., no. 517 (1998), pp. 43--52.  
-URLs: [[PDF]](https://gmcninch.math.tufts.edu/assets/manuscripts/semisimplicity-in-positive-characteristic-(survey).pdf), [[Bibtex]](https://gmcninch.math.tufts.edu/assets/manuscripts/bibtex/mcninch98:MR1670763.bib), [[MR]](http://www.ams.org/mathscinet-getitem?mr=MR1670763)
+**Citation**: Algebraic groups and their representations, NATO Adv. Sci. Inst. Ser. C Math. Phys. Sci., no. 517 (1998), pp. 43--52.  
+**Links**: [[PDF]](https://gmcninch.math.tufts.edu/assets/manuscripts/semisimplicity-in-positive-characteristic-(survey).pdf), [[BibTeX]](https://gmcninch.math.tufts.edu/assets/manuscripts/bibtex/mcninch98:MR1670763.bib), [[MR]](http://www.ams.org/mathscinet-getitem?mr=MR1670763)
 
 ------

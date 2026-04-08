@@ -99,17 +99,17 @@ def urlEntry (url : UrlType) : Markdown.TextItem :=
         (url := path )
   | .Bibtex path =>
       .link
-        (text := "[Bibtex]")
+        (text := "[BibTeX]")
         (url := path )
   | .Errata path =>
       .link  
-        (text := "[Errata]")
+        (text := "[**Errata**]")
         (url := path)
   
 
 def msUrls (ms : MS) : List Markdown.TextItem :=
   let urllist := urlEntry <$> ms.urls
-  .text "  \nURLs: " :: List.intersperse (sep := Markdown.TextItem.text ", ") urllist
+  .text "  \n**Links**: " :: List.intersperse (sep := Markdown.TextItem.text ", ") urllist
 
 def cleanup (s:String) :  String :=
   String.toLower $ .replace (s := strip s) (pattern := " ") (replacement:= "-")
@@ -148,45 +148,46 @@ def cvBiblioEntry (ms : MS) : Markdown.MarkdownItem :=
        ++ msUrls ms
 
 def cvBiblio (title : String) (mss : List MS) : List Markdown.MarkdownTag :=
-  [ { element := .p [ .text title ]
+  [ { element := .h1 title 
       children := [ .ol $ cvBiblioEntry <$> mss ]
     }
   ]
 
 def webSummary (ms : MS) : Markdown.MarkdownTag :=
-  { element := .h2 $
-      ms.title ++ " {#" ++ cleanup ms.title ++ "}"
-    children :=
-      [ .p  $
-          [ .text "\n\nCitation: "
-          , .text $ citationStr ms 
+  { element := .h2 $ ms.title ++ " {#" ++ cleanup ms.title ++ "}"
+    children := [ .p  $
+       [ .text "\n\n**Citation**: "
+       , .text $ citationStr ms 
+       ]
+       ++ authorList ms
+       ++ msUrls ms         
+       ++ Option.elim ms.abstract [] (fun abs =>
+           [ .text "  \n\n**Abstract**: "
+           , .text abs])
+       ++ [ .text "\n\n------"
           ]
-          ++ authorList ms
-          ++ msUrls ms         
-          ++ Option.elim ms.abstract [] (fun abs =>
-              [ .text "  \n\nAbstract: "
-              , .text abs])
-          ++ [ .text "\n\n------"
-             ]
      ]        
-  }        
+    }
 
 
 structure MSReport where
   msList : List MS
   filename : System.FilePath
-  timestamp : Std.Time.PlainDateTime
-  proc : List MS -> List MarkdownItem
+  timestamp : Option Std.Time.PlainDateTime
+  proc : List MS -> List MarkdownTag
 
 instance : Markdown.Represent MSReport where
   toMarkdown r :=
-    [ { element := .h1 "Manuscripts"
-      , children := r.proc r.msList
-      }
-    , { element := MarkdownItem.p 
-          [ TextItem.text "Time-stamp: "
-          , TextItem.text $ Std.Time.PlainDateTime.toLongDateFormatString r.timestamp ] }       
-    ]
+    (r.proc r.msList)
+    ++ Option.elim 
+         r.timestamp
+         [] 
+         (fun ts => 
+             [{ element := MarkdownItem.p 
+                 [ TextItem.text "Time-stamp: "
+                 , TextItem.text $ Std.Time.PlainDateTime.toLongDateFormatString ts ] 
+             }])
+         
 
 def writeReport (msr : MSReport) : IO Unit := do
   IO.FS.writeFile 
