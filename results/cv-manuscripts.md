@@ -65,4 +65,4 @@ URLs: [[PDF]](https://gmcninch.math.tufts.edu/assets/manuscripts/dimensional-cri
 29. [Semisimplicity in positive characteristic](https://gmcninch.math.tufts.edu/pages/manuscripts.html#semisimplicity-in-positive-characteristic), Algebraic groups and their representations, NATO Adv. Sci. Inst. Ser. C Math. Phys. Sci., no. 517 (1998), pp. 43--52.  
 URLs: [[PDF]](https://gmcninch.math.tufts.edu/assets/manuscripts/semisimplicity-in-positive-characteristic-(survey).pdf), [[Bibtex]](https://gmcninch.math.tufts.edu/assets/manuscripts/bibtex/mcninch98:MR1670763.bib), [[MR]](http://www.ams.org/mathscinet-getitem?mr=MR1670763)
 
-Time-stamp: Tuesday, April 7, 2026 15:18:25
+Time-stamp: Tuesday, April 7, 2026 22:20:51

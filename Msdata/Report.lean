@@ -1,40 +1,41 @@
 
 import Msdata.Types
-import Msdata.Data
+
 import Std.Time 
 
 import Markdown
 
+open Markdown
 
 def authorStr (ms : MS) : String :=
    String.intercalate ", " (Author.name <$> MS.authors ms)
 
 def authorEntry (au : Author) : List Markdown.TextItem :=
-    let name := Markdown.TextItem.link
+    let name := .link
         (text := s!"{au.name}")
         (url := au.authorUrl)
-    let sp := Markdown.TextItem.text " "
-    let inst := Markdown.TextItem.text s!"({au.institution})"
+    let sp := .text " "
+    let inst := .text s!"({au.institution})"
     [ name , sp, inst ]
   
 def andList (ll : List (List Markdown.TextItem)) : List Markdown.TextItem :=
   match ll with
   | [] => [  ]
-  | [a] => a ++ [ Markdown.TextItem.text "." ] 
-  | [a,b] => a ++ Markdown.TextItem.text " and " :: andList [ b ]
-  | a :: al => a ++ Markdown.TextItem.text ", " :: andList al
+  | [a] => a ++ [ .text "." ] 
+  | [a,b] => a ++ .text " and " :: andList [ b ]
+  | a :: al => a ++ .text ", " :: andList al
 
 def authorList (ms : MS) : List Markdown.TextItem :=
   let au : List Author := 
      List.filter (fun a => not (a.name = "George McNinch")) ms.authors
   match au with
   | [] => []
-  | a => Markdown.TextItem.text "  \nWith "
+  | a => .text "  \nWith "
      :: (andList $ authorEntry <$> a)
 
 def citationStr (ms : MS) : String :=
   match ms.citation with
-  | Citation.Journal year journal number volume pages => 
+  | .Journal year journal number volume pages => 
       String.join
         [ journal
         , Option.elim volume "" fun v => s!" {reprStr v}"
@@ -43,9 +44,9 @@ def citationStr (ms : MS) : String :=
         , Option.elim pages  "" fun p => s!", pp. {p}"
         , "."
         ]
-  | Citation.Accepted journal year =>
+  | .Accepted journal year =>
       s!"{journal} ({reprStr year})."
-  | Citation.Proceedings year booktitle series volume pages _ =>
+  | .Proceedings year booktitle series volume pages _ =>
       String.join
         [ booktitle
         , Option.elim series "" fun s => s!", {s}"
@@ -53,79 +54,78 @@ def citationStr (ms : MS) : String :=
         , s!" ({reprStr year})"
         , Option.elim pages  "" fun p => s!", pp. {p}"
         , "."        ]        
-  | Citation.PrePrint year => 
+  | .PrePrint year => 
     s!"Preprint ({reprStr year})."
-  | Citation.Submitted year => 
+  | .Submitted year => 
     s!"Submitted ({reprStr year})."  
-  | Citation.Unpublished year => 
+  | .Unpublished year => 
     s!"Unpublished ({reprStr year})."  
         
 
 def year (ms : MS) : Nat :=
   match ms.citation with
-  | Citation.Journal year _ _ _ _ => year
-  | Citation.Accepted _ year => year
-  | Citation.Proceedings year _ _ _ _ _ => year
-  | Citation.PrePrint year => year
-  | Citation.Submitted year => year
-  | Citation.Unpublished year => year
+  | .Journal year _ _ _ _ => year
+  | .Accepted _ year => year
+  | .Proceedings year _ _ _ _ _ => year
+  | .PrePrint year => year
+  | .Submitted year => year
+  | .Unpublished year => year
 
 def urlEntry (url : UrlType) : Markdown.TextItem :=
   match url with
-  | UrlType.DOI doiNumber => 
-    Markdown.TextItem.link 
+  | .DOI doiNumber => 
+    .link 
       (text := "[DOI]")
       (url := "http://dx.doi.org/" ++ doiNumber)
-  | UrlType.Other label url => 
-    Markdown.TextItem.link
+  | .Other label url => 
+    .link
       (text := s!"[{label}]")
       (url := url)
-  | UrlType.MR mrNumber => 
-    Markdown.TextItem.link
+  | .MR mrNumber => 
+    .link
       (text := "[MR]")
       (url := "http://www.ams.org/mathscinet-getitem?mr=" ++ mrNumber)
-  | UrlType.Arxiv arxivId => 
-    Markdown.TextItem.link
+  | .Arxiv arxivId => 
+    .link
       (text := "[arXiv]")
       (url := "http://arxiv.org/abs/" ++ arxivId)
-  | UrlType.Euclid euclidId => 
-    Markdown.TextItem.link
+  | .Euclid euclidId => 
+    .link
       (text := "[Euclid]")
       (url := "http://projecteuclid.org/euclid.nymj/" ++ euclidId)
-  | UrlType.Local path => 
-      Markdown.TextItem.link
+  | .Local path => 
+      .link
         (text := "[PDF]")
         (url := path )
-  | UrlType.Bibtex path =>
-      Markdown.TextItem.link
+  | .Bibtex path =>
+      .link
         (text := "[Bibtex]")
         (url := path )
-  | UrlType.Errata path =>
-      Markdown.TextItem.link  
+  | .Errata path =>
+      .link  
         (text := "[Errata]")
         (url := path)
   
 
 def msUrls (ms : MS) : List Markdown.TextItem :=
   let urllist := urlEntry <$> ms.urls
-  Markdown.TextItem.text "  \nURLs: " :: List.intersperse (sep := Markdown.TextItem.text ", ") urllist
+  .text "  \nURLs: " :: List.intersperse (sep := Markdown.TextItem.text ", ") urllist
 
 def cleanup (s:String) :  String :=
-  String.toLower $ String.replace (s := strip s) (pattern := " ") (replacement:= "-")
+  String.toLower $ .replace (s := strip s) (pattern := " ") (replacement:= "-")
   where
     strip t := 
       List.foldr 
-        (fun c acc => String.replace ( s := acc) (pattern := c) (replacement := ""))
+        (fun c acc => .replace ( s := acc) (pattern := c) (replacement := ""))
         t 
         ["(", ")", "/", "\\"]
-
 
 
 def msLinkWeb (ms: MS) : String :=
   s!"#{cleanup ms.title}"  
 
 def msLink (ms: MS) : Markdown.TextItem :=
-  let url := String.intercalate "/"
+  let url := .intercalate "/"
     [ "https://gmcninch.math.tufts.edu"
     , "pages"
     , s!"manuscripts.html#{cleanup ms.title}"  
@@ -140,98 +140,56 @@ def webTitle (ms : MS) : Markdown.TextItem :=
     (url := s!"#{ms.title}")
        
 def cvBiblioEntry (ms : MS) : Markdown.MarkdownItem :=
-  Markdown.MarkdownItem.p $
-     [ msLink ms 
-     , Markdown.TextItem.text ", "
-     , Markdown.TextItem.text $ citationStr ms
-     ]
-     ++ authorList ms
-     ++ msUrls ms
+  .p $ [ msLink ms 
+       , .text ", "
+       , .text $ citationStr ms
+       ]
+       ++ authorList ms
+       ++ msUrls ms
 
-def cvBiblio (mss : List MS) : Markdown.MarkdownItem :=
-  Markdown.MarkdownItem.ol $ Functor.map cvBiblioEntry mss 
+def cvBiblio (title : String) (mss : List MS) : List Markdown.MarkdownTag :=
+  [ { element := .p [ .text title ]
+      children := [ .ol $ cvBiblioEntry <$> mss ]
+    }
+  ]
 
-
-structure CVData where
-  mss : List MS
-  cvtarget : String 
-  timestamp : Std.Time.PlainDateTime
-  
-  
 def webSummary (ms : MS) : Markdown.MarkdownTag :=
-  { element := Markdown.MarkdownItem.h2 $
+  { element := .h2 $
       ms.title ++ " {#" ++ cleanup ms.title ++ "}"
     children :=
-      [ Markdown.MarkdownItem.p  $
-          [ Markdown.TextItem.text "\n\nCitation: "
-          , Markdown.TextItem.text $ citationStr ms 
+      [ .p  $
+          [ .text "\n\nCitation: "
+          , .text $ citationStr ms 
           ]
           ++ authorList ms
           ++ msUrls ms         
           ++ Option.elim ms.abstract [] (fun abs =>
-              [ Markdown.TextItem.text "  \n\nAbstract: "
-              , Markdown.TextItem.text abs])
-          ++ [ Markdown.TextItem.text "\n\n------"
+              [ .text "  \n\nAbstract: "
+              , .text abs])
+          ++ [ .text "\n\n------"
              ]
      ]        
   }        
-    
-structure WebData where
-  mss : List MS
-  file : String
 
-open Markdown  
 
-def cvd (timestamp : Std.Time.PlainDateTime ) : IO CVData := do
-  let mss ← mss
-  pure { mss := mss
-         cvtarget := "cv-manuscripts.md"
-         timestamp := timestamp }
-  
+structure MSReport where
+  msList : List MS
+  filename : System.FilePath
+  timestamp : Std.Time.PlainDateTime
+  proc : List MS -> List MarkdownItem
 
-def webd : IO WebData := do
-  let mss ← mss
-  pure { mss := mss
-         file := "web-summaries.md"
-       }
-  
-instance : Markdown.Represent CVData where
+instance : Markdown.Represent MSReport where
   toMarkdown r :=
     [ { element := .h1 "Manuscripts"
-      , children := [ cvBiblio r.mss] 
+      , children := r.proc r.msList
       }
     , { element := MarkdownItem.p 
           [ TextItem.text "Time-stamp: "
           , TextItem.text $ Std.Time.PlainDateTime.toLongDateFormatString r.timestamp ] }       
     ]
 
-
-instance : Markdown.Represent WebData where
-  toMarkdown r :=
-    [ { element := .h1 "Manuscripts"}]
-    ++ webSummary <$> r.mss
-
-
-def writeCV : IO Unit := do
-  let timestamp ← Std.Time.PlainDateTime.now
-  let cvd ← cvd timestamp  
+def writeReport (msr : MSReport) : IO Unit := do
   IO.FS.writeFile 
-    (fname := cvd.cvtarget) 
-    (content:= Markdown.renderMarkdown (Markdown.Represent.toMarkdown cvd))
+    (fname := msr.filename ) 
+    (content := renderMarkdown (Markdown.Represent.toMarkdown msr))
 
-def writeWebSummary : IO Unit := do
-  let webd ← webd
-  IO.FS.writeFile 
-    (fname := webd.file )
-    (content:= Markdown.renderMarkdown (Markdown.Represent.toMarkdown webd))
-  
-  
--- def write : IO Unit := do
---   let stdout <- IO.getStdout
---   let mss <- mss
---   let s := Markdown.renderMarkdownTag (cvBiblio mss)
---   stdout.putStrLn s
-
-
-#eval writeCV
-#eval writeWebSummary
