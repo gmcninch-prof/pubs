@@ -19,6 +19,10 @@ inductive Citation where
   | PrePrint : (year : Nat) → Citation
   | Submitted : (year : Nat) → Citation
   | Unpublished : (year : Nat) → Citation 
+  | PhDThesis : (year : Nat) 
+              → (institution : String) 
+              → (advisor : String)
+              → Citation
 deriving Repr, BEq
 
 inductive UrlType where

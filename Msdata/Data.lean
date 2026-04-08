@@ -132,7 +132,7 @@ def nilpotent_orbits_over_local_field : IO MS := do
               )
           , UrlType.DOI ( doiNumber := "10.1007/s10468-020-10000-2" )
           , UrlType.Other
-              ( label := "ART" )
+              ( label := "AlgRepTheory" )
               ( url := "https://link.springer.com/article/10.1007%2Fs10468-020-10000-2" )
           , UrlType.Other 
               ( label := "Springer" ) 
@@ -164,7 +164,7 @@ def reductive_subgroup_schemes : IO MS :=  do
                ( path := msPDFPath "reductive-subgroups-of-a-parahoric-group-scheme.pdf" )
            , UrlType.MR ( mrNumber := "MR4070108" )
            , UrlType.DOI ( doiNumber := "10.1007/s00031-018-9508-3" )
-           , UrlType.Other (label := "TG") (url := "https://rdcu.be/bb6vn" )
+           , UrlType.Other (label := "TransfGroups") (url := "https://rdcu.be/bb6vn" )
            , UrlType.Bibtex ( path := bibtexPath "mcninch20:reductive-subgroup-schemes.bib" )           
            , UrlType.Errata (path := errataPath "2025-10-12--reductive-subgroups-fix.pdf")
            ]
@@ -196,7 +196,7 @@ def central_subalgebras : IO MS := do
 
 
 def linearity : IO MS := do
-    let abs ← getAbstract "mcninch14:MR3181732.abstract"
+    let abs ← getAbstract "mcninch14:MR3119244.abstract"
     
     pure { authors := [ GeorgeMcNinch ]
          , citation :=
@@ -800,6 +800,24 @@ def semisimple_pos_char : IO MS := do
          }
 
 
+def dimensional_criteria_thesis : IO MS := do
+    pure { authors := [ GeorgeMcNinch ]
+         , citation :=
+             Citation.PhDThesis
+               ( year := 1996 )
+               ( institution := "University of Oregon" )
+               ( advisor := "Gary M. Seitz" )
+         , id := "mcninch96:thesis"
+         , abstract := none
+         , urls :=
+           [ UrlType.MR ( mrNumber := "MR2694588" )               
+           , UrlType.Other 
+              ( label := "Thesis" )
+              ( url := "https://www.proquest.com/docview/304300584")
+           ]
+         , title := "Dimensional criteria for semisimplicity of representations"
+         }
+
 
 def mss : IO (List MS) := do
     pure [ ← local_global
@@ -831,5 +849,6 @@ def mss : IO (List MS) := do
          , ← semisimple_finite_Lie
          , ← dimensional_criteria
          , ← semisimple_pos_char
+         , ← dimensional_criteria_thesis
          ]
 

@@ -62,7 +62,8 @@ def citationStr (ms : MS) : String :=
     s!"Submitted ({reprStr year})."  
   | .Unpublished year => 
     s!"Unpublished ({reprStr year})."  
-        
+  | .PhDThesis year institution advisor =>
+    s!"Ph.D. Thesis, {institution} ({reprStr year}), advisor {advisor}."
 
 def year (ms : MS) : Nat :=
   match ms.citation with
@@ -72,6 +73,7 @@ def year (ms : MS) : Nat :=
   | .PrePrint year => year
   | .Submitted year => year
   | .Unpublished year => year
+  | .PhDThesis year _ _ => year
 
 def urlEntry (url : UrlType) : Markdown.TextItem :=
   match url with
@@ -85,7 +87,7 @@ def urlEntry (url : UrlType) : Markdown.TextItem :=
       (url := url)
   | .MR mrNumber => 
     .link
-      (text := "[MR]")
+      (text := "[MathReview]")
       (url := "http://www.ams.org/mathscinet-getitem?mr=" ++ mrNumber)
   | .Arxiv arxivId => 
     .link
