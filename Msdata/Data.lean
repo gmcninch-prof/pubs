@@ -390,7 +390,7 @@ def centralizer_nilpotent_section : IO MS := do
 
 
 
-def CR_lie_subalgebras : IO MS := do
+def cr_lie_subalgebras : IO MS := do
     let abs ← getAbstract "mcninch07:MR2308032.abstract" 
     pure { authors := [ GeorgeMcNinch ]
          , citation :=
@@ -415,7 +415,7 @@ def CR_lie_subalgebras : IO MS := do
          , title := "Completely reducible Lie subalgebras"
          }
 
-def CR_sl2_homs : IO MS := do
+def cr_sl2_homs : IO MS := do
     let abs ← getAbstract "mcninch07:MR2309195.abstract" 
     pure { authors := [ GeorgeMcNinch, DonnaTesterman ]
          , citation :=
@@ -811,8 +811,8 @@ def mss : IO (List MS) := do
          , ← nilpotent_centralizers
          , ← nilpotent_subalgebras
          , ← centralizer_nilpotent_section
-         , ← CR_lie_subalgebras
-         , ← CR_sl2_homs
+         , ← cr_lie_subalgebras
+         , ← cr_sl2_homs
          , ← centralizer_sum_commuting
          , ← optimal_sl2
          , ← nilpotent_over_ground_field
