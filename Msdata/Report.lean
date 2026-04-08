@@ -94,7 +94,7 @@ def urlEntry (url : UrlType) : Markdown.TextItem :=
   | .Euclid euclidId => 
     .link
       (text := "[Euclid]")
-      (url := "http://projecteuclid.org/euclid.nymj/" ++ euclidId)
+      (url := "http://projecteuclid.org/" ++ euclidId)
   | .Local path => 
       .link
         (text := "[PDF]")
@@ -110,7 +110,8 @@ def urlEntry (url : UrlType) : Markdown.TextItem :=
   
 
 def msUrls (ms : MS) : List Markdown.TextItem :=
-  let urllist := urlEntry <$> ms.urls
+  let sortedUrls := ms.urls.mergeSort (fun a b => compare a b |>.isLT)
+  let urllist := urlEntry <$> sortedUrls
   .text "  \n**Links**: " :: List.intersperse (sep := Markdown.TextItem.text ", ") urllist
 
 def cleanup (s:String) :  String :=

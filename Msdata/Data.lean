@@ -106,8 +106,9 @@ def cohomology_levi : IO MS :=  do
               , UrlType.MR
                   ( mrNumber := "MR4914997" ) 
               , UrlType.Bibtex
-                  ( path := bibtexPath "mcninch24:cohomology-levi.bib"
-                  )
+                  ( path := bibtexPath "mcninch24:cohomology-levi.bib")
+              , UrlType.DOI
+                  ( doiNumber := " 10.2140/pjm.2025.336.379" )
               ]
         , title := "Levi decompositions of linear algebraic groups and non-abelian cohomology"
         }
@@ -771,6 +772,9 @@ def dimensional_criteria : IO MS := do
            ]
          , title := "Dimensional criteria for semisimplicity of representations"
          }
+
+--def dimensional_criteria_thesis : IO MS := do
+  
 
 def semisimple_pos_char : IO MS := do
     pure { authors := [ GeorgeMcNinch ]
