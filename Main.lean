@@ -9,18 +9,21 @@ def cv : IO MSReport := do
          filename := "results/cv-manuscripts.md"
          timestamp := some timestamp 
          proc := cvBiblio "Manuscripts" 
+         yaml := none
        }
   
 
 def web : IO MSReport := do
   pure { msList := ← mss
-         filename := "results/web-summaries.md"
+         filename := "results/manuscripts.md"
          timestamp := none
          proc := fun mss => 
-           webBiblio "Manuscripts" mss
+           webBiblio "Publication List" mss
            ++ [ { element := .h1 "Manuscript Details"  }
               ]
            ++ webDetails <$> mss
+         yaml := some [ ("author", "George McNinch")
+                      , ("title", "Manuscripts") ]
        }
 
 

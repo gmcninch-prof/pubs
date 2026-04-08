@@ -1,9 +1,11 @@
 
 import Msdata.Types
+import Msdata.Yaml
 
 import Std.Time 
 
 import Markdown
+
 
 open Markdown
 
@@ -193,6 +195,7 @@ structure MSReport where
   filename : System.FilePath
   timestamp : Option Std.Time.PlainDateTime
   proc : List MS -> List MarkdownTag
+  yaml : Option Yaml
 
 instance : Markdown.Represent MSReport where
   toMarkdown r :=
@@ -210,5 +213,7 @@ instance : Markdown.Represent MSReport where
 def writeReport (msr : MSReport) : IO Unit := do
   IO.FS.writeFile 
     (fname := msr.filename ) 
-    (content := renderMarkdown (Markdown.Represent.toMarkdown msr))
+    (content := 
+        Option.elim msr.yaml "" (fun y => emitYaml y)
+        ++ renderMarkdown (Markdown.Represent.toMarkdown msr))
 
