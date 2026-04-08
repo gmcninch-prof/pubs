@@ -16,7 +16,11 @@ def web : IO MSReport := do
   pure { msList := ← mss
          filename := "results/web-summaries.md"
          timestamp := none
-         proc := fun mss => webSummary <$> mss
+         proc := fun mss => 
+           webBiblio "Manuscripts" mss
+           ++ [ { element := .h1 "Manuscript Details"  }
+              ]
+           ++ webDetails <$> mss
        }
 
 

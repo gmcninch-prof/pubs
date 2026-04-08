@@ -121,10 +121,7 @@ def cleanup (s:String) :  String :=
         ["(", ")", "/", "\\"]
 
 
-def msLinkWeb (ms: MS) : String :=
-  s!"#{cleanup ms.title}"  
-
-def msLink (ms: MS) : Markdown.TextItem :=
+def msLinkCV (ms: MS) : Markdown.TextItem :=
   let url := .intercalate "/"
     [ "https://gmcninch.math.tufts.edu"
     , "pages"
@@ -134,26 +131,47 @@ def msLink (ms: MS) : Markdown.TextItem :=
    (text := ms.title)
    (url := url)
 
+def msLinkWeb (ms: MS) : Markdown.TextItem :=
+  let url := s!"#{cleanup ms.title}"  
+  Markdown.TextItem.link 
+    (text := ms.title)
+    (url := url)
+
+
 def webTitle (ms : MS) : Markdown.TextItem :=
   Markdown.TextItem.link
     (text := s!"{ms.title} ({reprStr $ year ms})") 
     (url := s!"#{ms.title}")
        
-def cvBiblioEntry (ms : MS) : Markdown.MarkdownItem :=
-  .p $ [ msLink ms 
+def biblioEntryCV  (ms : MS) : Markdown.MarkdownItem :=
+  .p $ [ msLinkCV ms 
        , .text ", "
        , .text $ citationStr ms
        ]
        ++ authorList ms
        ++ msUrls ms
 
+def biblioEntryWeb  (ms : MS) : Markdown.MarkdownItem :=
+  .p $ [ msLinkWeb ms 
+       , .text ", "
+       , .text $ citationStr ms
+       ]
+       ++ authorList ms
+
+
 def cvBiblio (title : String) (mss : List MS) : List Markdown.MarkdownTag :=
   [ { element := .h1 title 
-      children := [ .ol $ cvBiblioEntry <$> mss ]
+      children := [ .ol $ biblioEntryCV <$> mss ]
     }
   ]
 
-def webSummary (ms : MS) : Markdown.MarkdownTag :=
+def webBiblio (title : String) (mss : List MS) : List Markdown.MarkdownTag :=
+  [ { element := .h1 title 
+      children := [ .ol $ biblioEntryWeb <$> mss ]
+    }
+  ]
+
+def webDetails (ms : MS) : Markdown.MarkdownTag :=
   { element := .h2 $ ms.title ++ " {#" ++ cleanup ms.title ++ "}"
     children := [ .p  $
        [ .text "\n\n**Citation**: "
