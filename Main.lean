@@ -22,8 +22,8 @@ def web : IO MSReport := do
            ++ [ { element := .h1 "Manuscript Details"  }
               ]
            ++ webDetails <$> mss
-         yaml := some [ ("author", "George McNinch")
-                      , ("title", "Manuscripts") ]
+         yaml := some [ ( "author" , "George McNinch" )
+                      , ( "title"  , "Manuscripts"    ) ]
        }
 
 
