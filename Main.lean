@@ -4,10 +4,9 @@ import Msdata.Data
 
 
 def cv : IO MSReport := do
-  let timestamp ← Std.Time.PlainDateTime.now
   pure { msList := ← mss
-         filename := "results/cv-manuscripts.md"
-         timestamp := some timestamp 
+         filename := "cv-manuscripts.md"
+         targetDirs := [ "results", "/home/george/Prof-VC/cv-and-ms" ]
          proc := cvBiblio "Manuscripts" 
          yaml := none
        }
@@ -15,8 +14,8 @@ def cv : IO MSReport := do
 
 def web : IO MSReport := do
   pure { msList := ← mss
-         filename := "results/manuscripts.md"
-         timestamp := none
+         filename := "manuscripts.md"
+         targetDirs := [ "results", "/home/george/Web-hakyll/prof/assets/" ]         
          proc := fun mss => 
            webBiblio "Publication List" mss
            ++ [ { element := .h1 "Manuscript Details"  }

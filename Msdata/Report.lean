@@ -196,27 +196,36 @@ def webDetails (ms : MS) : Markdown.MarkdownTag :=
 structure MSReport where
   msList : List MS
   filename : System.FilePath
-  timestamp : Option Std.Time.PlainDateTime
+  targetDirs : List System.FilePath
   proc : List MS -> List MarkdownTag
   yaml : Option Yaml
 
 instance : Markdown.Represent MSReport where
   toMarkdown r :=
     (r.proc r.msList)
-    ++ Option.elim 
-         r.timestamp
-         [] 
-         (fun ts => 
-             [{ element := MarkdownItem.p 
-                 [ TextItem.text "Time-stamp: "
-                 , TextItem.text $ Std.Time.PlainDateTime.toLongDateFormatString ts ] 
-             }])
          
 
 def writeReport (msr : MSReport) : IO Unit := do
-  IO.FS.writeFile 
-    (fname := msr.filename ) 
-    (content := 
-        Option.elim msr.yaml "" (fun y => emitYaml y)
-        ++ renderMarkdown (Markdown.Represent.toMarkdown msr))
+  let write (dir : System.FilePath) : IO Unit :=  do
+    let target := System.FilePath.join dir msr.filename 
+    IO.FS.writeFile 
+      (fname := target) 
+      (content := 
+          Option.elim msr.yaml "" (fun y => emitYaml y)
+          ++ renderMarkdown (Markdown.Represent.toMarkdown msr))
+    IO.println s!"Wrote {target}."
+  List.forM msr.targetDirs write
 
+
+-- times stamp code
+
+--  timestamp : Option Std.Time.PlainDateTime
+
+    -- ++ Option.elim 
+    --      r.timestamp
+    --      [] 
+    --      (fun ts => 
+    --          [{ element := MarkdownItem.p 
+    --              [ TextItem.text "Time-stamp: "
+    --              , TextItem.text $ Std.Time.PlainDateTime.toLongDateFormatString ts ] 
+    --          }])
