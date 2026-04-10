@@ -37,14 +37,14 @@ inductive UrlType where
 deriving Repr, BEq
 
 def UrlType.rank : UrlType → Nat
-  | .Errata _    => 0
+  | .Local _     => 0    
   | .DOI _       => 1
   | .Euclid _    => 2  
-  | .Local _     => 3    
-  | .Arxiv _     => 4
-  | .Other _ _   => 5
-  | .MR _        => 6  
-  | .Bibtex _    => 7
+  | .Arxiv _     => 3
+  | .Other _ _   => 4
+  | .MR _        => 5  
+  | .Bibtex _    => 6  
+  | .Errata _    => 7
 
 instance : Ord UrlType where
   compare a b := compare a.rank b.rank

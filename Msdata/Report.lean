@@ -29,9 +29,9 @@ def authorEntry (au : Author) : List Markdown.TextItem :=
     let inst := .text s!"({au.institution})"
     [ name , sp, inst ]
   
-def authorList (ms : MS) : List Markdown.TextItem :=
+def authorList (excludeAuthors : List Author) (ms : MS) : List Markdown.TextItem :=
   let au : List Author := 
-     List.filter (fun a => not (a.name = "George McNinch")) ms.authors
+     List.filter (fun a => not (List.elem a excludeAuthors)) ms.authors
   match au with
   | [] => []
   | a => .text "  \nWith "
@@ -150,41 +150,41 @@ def webTitle (ms : MS) : Markdown.TextItem :=
     (text := s!"{ms.title} ({reprStr $ year ms})") 
     (url := s!"#{ms.title}")
        
-def biblioEntryCV  (ms : MS) : Markdown.MarkdownItem :=
+def biblioEntryCV  (excludeAuthors : List Author) (ms : MS) : Markdown.MarkdownItem :=
   .p $ [ msLinkCV ms 
        , .text ", "
        , .text $ citationStr ms
        ]
-       ++ authorList ms
+       ++ authorList excludeAuthors ms
        ++ msUrls ms
 
-def biblioEntryWeb  (ms : MS) : Markdown.MarkdownItem :=
+def biblioEntryWeb (excludeAuthors : List Author) (ms : MS) : Markdown.MarkdownItem :=
   .p $ [ msLinkWeb ms 
        , .text ", "
        , .text $ citationStr ms
        ]
-       ++ authorList ms
+       ++ authorList excludeAuthors ms
 
 
-def cvBiblio (title : String) (mss : List MS) : List Markdown.MarkdownTag :=
+def cvBiblio (excludeAuthors : List Author) (title : String) (mss : List MS) : List Markdown.MarkdownTag :=
   [ { element := .h1 title 
-      children := [ .ol $ biblioEntryCV <$> mss ]
+      children := [ .ol $ biblioEntryCV excludeAuthors <$> mss ]
     }
   ]
 
-def webBiblio (title : String) (mss : List MS) : List Markdown.MarkdownTag :=
+def webBiblio (excludeAuthors : List Author) (title : String) (mss : List MS) : List Markdown.MarkdownTag :=
   [ { element := .h1 title 
-      children := [ .ol $ biblioEntryWeb <$> mss ]
+      children := [ .ol $ biblioEntryWeb excludeAuthors <$> mss ]
     }
   ]
 
-def webDetails (ms : MS) : Markdown.MarkdownTag :=
+def webDetails (excludeAuthors : List Author) (ms : MS) : Markdown.MarkdownTag :=
   { element := .h2 $ ms.title ++ " {#" ++ cleanup ms.title ++ "}"
     children := [ .p  $
        [ .text "\n\n**Citation**: "
        , .text $ citationStr ms 
        ]
-       ++ authorList ms
+       ++ authorList excludeAuthors ms
        ++ msUrls ms         
        ++ Option.elim ms.abstract [] (fun abs =>
            [ .text "  \n\n**Abstract**: "
@@ -193,7 +193,6 @@ def webDetails (ms : MS) : Markdown.MarkdownTag :=
           ]
      ]        
     }
-
 
 structure MSReport  where
   msList : List MS
