@@ -38,45 +38,45 @@ def getAbstract (file : System.FilePath) : IO String := do
 def GeorgeMcNinch : Author :=
   {  institution := "Tufts University"
   ,  name := "George McNinch"
-  ,  authorUrl := "https://gmcninch.math.tufts.edu"
+  ,  url := "https://gmcninch.math.tufts.edu"
   }
 
 def PaulLevy : Author :=
   { institution := "Lancaster University"
   , name := "Paul Levy"
-  , authorUrl := "http://www.maths.lancs.ac.uk/~levyp/"
+  , url := "http://www.maths.lancs.ac.uk/~levyp/"
   }
 
 def DonnaTesterman : Author := 
   { institution := "École Polytechnique Fédérale de Lausanne"
   , name := "Donna M. Testerman"
-  --, authorUrl := "https://grtes.epfl.ch/~testerma/"
-  , authorUrl := "https://people.epfl.ch/donna.testerman?lang=en"
+  --, url := "https://grtes.epfl.ch/~testerma/"
+  , url := "https://people.epfl.ch/donna.testerman?lang=en"
   }
 
 def ChuckHague : Author := 
   { --institution := "The McKeogh Company"
     institution := "PBGC"
   , name := "Chuck Hague"
-  , authorUrl := "https://sites.google.com/site/chuckhague/"
+  , url := "https://sites.google.com/site/chuckhague/"
   }
 
 def EricSommers : Author := 
   { institution := "University of Massachusetts Amherst"
   , name := "Eric Sommers"
-  , authorUrl := "https://sites.google.com/view/ericsommers1/home"
+  , url := "https://sites.google.com/view/ericsommers1/home"
   }
 
 def JuliaHartmann : Author := 
   { institution := "University of Pennsylvania"
   , name := "Julia Hartmann"
-  , authorUrl := "https://www2.math.upenn.edu/~hartmann/"
+  , url := "https://www2.math.upenn.edu/~hartmann/"
   }
 
 def DavidHarbater : Author := 
   { institution := "University of Pennsylvania"
   , name := "David Harbater"
-  , authorUrl := "https://www2.math.upenn.edu/~harbater/"
+  , url := "https://www2.math.upenn.edu/~harbater/"
   }
 
 --------------------------------------------------------------------------------

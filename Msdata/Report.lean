@@ -23,8 +23,8 @@ def andList (ll : List (List Markdown.TextItem)) : List Markdown.TextItem :=
 
 def authorEntry (au : Author) : List Markdown.TextItem :=
     let name := .link
-        (text := s!"{au.name}")
-        (url := au.authorUrl)
+        (text := au.name)
+        (url := au.url)
     let sp := .text " "
     let inst := .text s!"({au.institution})"
     [ name , sp, inst ]

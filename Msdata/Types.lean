@@ -52,7 +52,7 @@ instance : Ord UrlType where
 structure Author where
   institution : String
   name : String
-  authorUrl : String
+  url : String
 deriving Repr, BEq
     
 structure MS where
