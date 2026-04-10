@@ -1,4 +1,6 @@
 
+namespace SimpleYaml
+
 def Yaml := List (String × String)
 
 def emitYaml (yaml : Yaml) : String := 

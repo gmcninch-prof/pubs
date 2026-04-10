@@ -2,20 +2,23 @@ import Msdata
 import Msdata.Report
 import Msdata.Data
 
+open Report
 
 def cv : IO MSReport := do
-  pure { msList := ← mss
+  pure { msList := ← Data.all_manuscripts
          filename := "cv-manuscripts.md"
-         targetDirs := [ "results", "/home/george/Prof-VC/cv-and-ms" ]
+         targetDirs := [ "results"
+                       , "/home/george/Prof-VC/cv-and-ms" ]
          proc := cvBiblio "Manuscripts" 
          yaml := none
        }
   
 
 def web : IO MSReport := do
-  pure { msList := ← mss
+  pure { msList := ← Data.all_manuscripts
          filename := "manuscripts.md"
-         targetDirs := [ "results", "/home/george/Web-hakyll/prof/assets/" ]         
+         targetDirs := [ "results"
+                       , "/home/george/Web-hakyll/prof/assets/" ]         
          proc := fun mss => 
            webBiblio "Publication List" mss
            ++ [ { element := .h1 "Manuscript Details"  }

@@ -9,8 +9,17 @@ import Markdown
 
 open Markdown
 
+namespace Report
+
 def authorStr (ms : MS) : String :=
    String.intercalate ", " (Author.name <$> MS.authors ms)
+
+def andList (ll : List (List Markdown.TextItem)) : List Markdown.TextItem :=
+  match ll with
+  | [] => [  ]
+  | [a] => a ++ [ .text "." ] 
+  | [a,b] => a ++ .text " and " :: andList [ b ]
+  | a :: al => a ++ .text ", " :: andList al
 
 def authorEntry (au : Author) : List Markdown.TextItem :=
     let name := .link
@@ -20,13 +29,6 @@ def authorEntry (au : Author) : List Markdown.TextItem :=
     let inst := .text s!"({au.institution})"
     [ name , sp, inst ]
   
-def andList (ll : List (List Markdown.TextItem)) : List Markdown.TextItem :=
-  match ll with
-  | [] => [  ]
-  | [a] => a ++ [ .text "." ] 
-  | [a,b] => a ++ .text " and " :: andList [ b ]
-  | a :: al => a ++ .text ", " :: andList al
-
 def authorList (ms : MS) : List Markdown.TextItem :=
   let au : List Author := 
      List.filter (fun a => not (a.name = "George McNinch")) ms.authors
@@ -193,12 +195,12 @@ def webDetails (ms : MS) : Markdown.MarkdownTag :=
     }
 
 
-structure MSReport where
+structure MSReport  where
   msList : List MS
   filename : System.FilePath
   targetDirs : List System.FilePath
   proc : List MS -> List MarkdownTag
-  yaml : Option Yaml
+  yaml : Option SimpleYaml.Yaml
 
 instance : Markdown.Represent MSReport where
   toMarkdown r :=
@@ -211,7 +213,7 @@ def writeReport (msr : MSReport) : IO Unit := do
     IO.FS.writeFile 
       (fname := target) 
       (content := 
-          Option.elim msr.yaml "" (fun y => emitYaml y)
+          Option.elim msr.yaml "" (fun y => SimpleYaml.emitYaml y)
           ++ renderMarkdown (Markdown.Represent.toMarkdown msr))
     IO.println s!"Wrote {target}."
   List.forM msr.targetDirs write

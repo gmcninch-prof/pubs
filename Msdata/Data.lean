@@ -3,6 +3,8 @@ import Init.System.IO
 
 import Msdata.Types
 
+namespace Data
+
 def msPDFPath (file : String) : String :=
   String.intercalate "/"
   [ "https://gmcninch.math.tufts.edu"
@@ -819,7 +821,7 @@ def dimensional_criteria_thesis : IO MS := do
          }
 
 
-def mss : IO (List MS) := do
+def all_manuscripts : IO (List MS) := do
     pure [ ← local_global
          , ← cohomology_levi
          , ← nilpotent_orbits_over_local_field
