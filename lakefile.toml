@@ -2,6 +2,9 @@ name = "msdata"
 version = "0.1.0"
 defaultTargets = ["msdata"]
 
+[leanOptions]
+pp.unicode.fun = true # pretty-prints `fun a ↦ b`
+
 [[lean_lib]]
 name = "Msdata"
 

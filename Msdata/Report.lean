@@ -37,7 +37,7 @@ def authorList (excludeAuthors : List Author) (ms : MS) : List Markdown.TextItem
   | a => .text "  \nWith "
      :: (andList $ authorEntry <$> a)
 
-def citationStr (ms : MS) : String :=
+def citation (ms : MS) : String :=
   match ms.citation with
   | .Journal year journal number volume pages => 
       String.join
@@ -80,25 +80,25 @@ def year (ms : MS) : Nat :=
 def urlEntry (url : UrlType) : Markdown.TextItem :=
   match url with
   | .DOI doiNumber => 
-    .link 
-      (text := "[DOI]")
-      (url := "http://dx.doi.org/" ++ doiNumber)
+      .link 
+        (text := "[DOI]")
+        (url := "http://dx.doi.org/" ++ doiNumber)
   | .Other label url => 
-    .link
-      (text := s!"[{label}]")
-      (url := url)
+      .link
+        (text := s!"[{label}]")
+        (url := url)
   | .MR mrNumber => 
-    .link
-      (text := "[MathReview]")
-      (url := "http://www.ams.org/mathscinet-getitem?mr=" ++ mrNumber)
+      .link
+        (text := "[MathReview]")
+        (url := "http://www.ams.org/mathscinet-getitem?mr=" ++ mrNumber)
   | .Arxiv arxivId => 
-    .link
-      (text := "[arXiv]")
-      (url := "http://arxiv.org/abs/" ++ arxivId)
+      .link
+        (text := "[arXiv]")
+        (url := "http://arxiv.org/abs/" ++ arxivId)
   | .Euclid euclidId => 
-    .link
-      (text := "[Euclid]")
-      (url := "http://projecteuclid.org/" ++ euclidId)
+      .link
+        (text := "[Euclid]")
+        (url := "http://projecteuclid.org/" ++ euclidId)
   | .Local path => 
       .link
         (text := "[PDF]")
@@ -153,7 +153,7 @@ def webTitle (ms : MS) : Markdown.TextItem :=
 def biblioEntryCV  (excludeAuthors : List Author) (ms : MS) : Markdown.MarkdownItem :=
   .p $ [ msLinkCV ms 
        , .text ", "
-       , .text $ citationStr ms
+       , .text $ citation ms
        ]
        ++ authorList excludeAuthors ms
        ++ msUrls ms
@@ -161,7 +161,7 @@ def biblioEntryCV  (excludeAuthors : List Author) (ms : MS) : Markdown.MarkdownI
 def biblioEntryWeb (excludeAuthors : List Author) (ms : MS) : Markdown.MarkdownItem :=
   .p $ [ msLinkWeb ms 
        , .text ", "
-       , .text $ citationStr ms
+       , .text $ citation ms
        ]
        ++ authorList excludeAuthors ms
 
@@ -182,7 +182,7 @@ def webDetails (excludeAuthors : List Author) (ms : MS) : Markdown.MarkdownTag :
   { element := .h2 $ ms.title ++ " {#" ++ cleanup ms.title ++ "}"
     children := [ .p  $
        [ .text "\n\n**Citation**: "
-       , .text $ citationStr ms 
+       , .text $ citation ms 
        ]
        ++ authorList excludeAuthors ms
        ++ msUrls ms         
