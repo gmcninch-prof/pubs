@@ -1,6 +1,4 @@
-import Msdata
-import Msdata.Report
-import Msdata.Data
+import Pubs
 
 open Report
 

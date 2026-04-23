@@ -1,15 +1,15 @@
-name = "msdata"
+name = "pubs"
 version = "0.1.0"
-defaultTargets = ["msdata"]
+defaultTargets = ["pubs"]
 
 [leanOptions]
 pp.unicode.fun = true # pretty-prints `fun a ↦ b`
 
 [[lean_lib]]
-name = "Msdata"
+name = "Pubs"
 
 [[lean_exe]]
-name = "msdata"
+name = "pubs"
 root = "Main"
 
 [[require]]

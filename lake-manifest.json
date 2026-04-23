@@ -11,6 +11,6 @@
    "inputRev": "gm-extensions",
    "inherited": false,
    "configFile": "lakefile.lean"}],
- "name": "msdata",
+ "name": "pubs",
  "lakeDir": ".lake",
  "fixedToolchain": false}
