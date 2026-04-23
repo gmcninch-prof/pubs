@@ -14,28 +14,38 @@ namespace Report
 def authorStr (ms : MS) : String :=
    String.intercalate ", " (Author.name <$> MS.authors ms)
 
-def andList (ll : List (List Markdown.TextItem)) : List Markdown.TextItem :=
-  match ll with
-  | [] => [  ]
-  | [a] => a ++ [ .text "." ] 
-  | [a,b] => a ++ .text " and " :: andList [ b ]
-  | a :: al => a ++ .text ", " :: andList al
+def initLast : List α → Option (List α × α)
+  | [] => none
+  | [a] => some ([], a)
+  | a :: rest => initLast rest |>.map (fun (i, l) => (a :: i, l))
 
-def authorEntry (au : Author) : List Markdown.TextItem :=
+def commaList (ll : List Markdown.TextItem) : Markdown.TextItem :=
+  match ll with 
+  | [] => .text ""
+  | [a] => a
+  | a :: al => .seq <| a :: TextItem.text ", " :: al
+
+def andList (ll : List TextItem) : TextItem :=
+  match initLast ll with
+  | none => .text ""
+  | some ([], last) => .seq [last, .text "."]
+  | some ([prev], last) => .seq [prev, .text " and ", last, .text "."]
+  | some (rest, last) => .seq [commaList rest, .text ", and ", last, .text "."] 
+
+def authorEntry (au : Author) : Markdown.TextItem :=
     let name := .link
         (text := au.name)
         (url := au.url)
     let sp := .text " "
     let inst := .text s!"({au.institution})"
-    [ name , sp, inst ]
+    .seq [ name , sp , inst]
   
-def authorList (excludeAuthors : List Author) (ms : MS) : List Markdown.TextItem :=
+def authorList (excludeAuthors : List Author) (ms : MS) : Markdown.TextItem :=
   let au : List Author := 
      List.filter (fun a => not (List.elem a excludeAuthors)) ms.authors
   match au with
-  | [] => []
-  | a => .text "  \nWith "
-     :: (andList $ authorEntry <$> a)
+  | [] => .text ""
+  | a => .seq [ .text "  \nWith ", andList $ authorEntry <$> a ]
 
 def citation (ms : MS) : String :=
   match ms.citation with
@@ -151,20 +161,18 @@ def webTitle (ms : MS) : Markdown.TextItem :=
     (url := s!"#{ms.title}")
        
 def biblioEntryCV  (excludeAuthors : List Author) (ms : MS) : Markdown.MarkdownItem :=
-  .p $ [ msLinkCV ms 
-       , .text ", "
-       , .text $ citation ms
-       ]
-       ++ authorList excludeAuthors ms
-       ++ msUrls ms
+  .p <| [ msLinkCV ms
+        , .text ", " 
+        , .text <| citation ms 
+        , authorList excludeAuthors ms
+        ] ++ msUrls ms
 
 def biblioEntryWeb (excludeAuthors : List Author) (ms : MS) : Markdown.MarkdownItem :=
   .p $ [ msLinkWeb ms 
        , .text ", "
-       , .text $ citation ms
+       , .text <| citation ms
+       , authorList excludeAuthors ms
        ]
-       ++ authorList excludeAuthors ms
-
 
 def cvBiblio (excludeAuthors : List Author) (title : String) (mss : List MS) : List Markdown.MarkdownTag :=
   [ { element := .h1 title 
@@ -180,17 +188,17 @@ def webBiblio (excludeAuthors : List Author) (title : String) (mss : List MS) : 
 
 def webDetails (excludeAuthors : List Author) (ms : MS) : Markdown.MarkdownTag :=
   { element := .h2 $ ms.title ++ " {#" ++ cleanup ms.title ++ "}"
+  
     children := [ .p  $
        [ .text "\n\n**Citation**: "
        , .text $ citation ms 
+       , authorList excludeAuthors ms
        ]
-       ++ authorList excludeAuthors ms
        ++ msUrls ms         
        ++ Option.elim ms.abstract [] (fun abs =>
            [ .text "  \n\n**Abstract**: "
            , .text abs])
-       ++ [ .text "\n\n------"
-          ]
+       ++ [ .text "\n\n------" ]
      ]        
     }
 
