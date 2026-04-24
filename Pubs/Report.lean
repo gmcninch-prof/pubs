@@ -23,14 +23,14 @@ def commaList (ll : List Markdown.TextItem) : Markdown.TextItem :=
   match ll with 
   | [] => .text ""
   | [a] => a
-  | a :: al => .seq <| a :: TextItem.text ", " :: al
+  | a :: al => a ++ TextItem.text ", " ++ .seq al
 
 def andList (ll : List TextItem) : TextItem :=
   match initLast ll with
   | none => .text ""
-  | some ([], last) => .seq [last, .text "."]
-  | some ([prev], last) => .seq [prev, .text " and ", last, .text "."]
-  | some (rest, last) => .seq [commaList rest, .text ", and ", last, .text "."] 
+  | some ([], last) => last ++ .text "."
+  | some ([prev], last) => prev ++ .text " and " ++ last ++ .text "."
+  | some (rest, last) => commaList rest ++ .text ", and " ++ last ++ .text "."
 
 def authorEntry (au : Author) : Markdown.TextItem :=
     let name := .link
@@ -38,14 +38,14 @@ def authorEntry (au : Author) : Markdown.TextItem :=
         (url := au.url)
     let sp := .text " "
     let inst := .text s!"({au.institution})"
-    .seq [ name , sp , inst]
+    name ++ sp ++ inst
   
 def authorList (excludeAuthors : List Author) (ms : MS) : Markdown.TextItem :=
   let au : List Author := 
      List.filter (fun a => not (List.elem a excludeAuthors)) ms.authors
   match au with
   | [] => .text ""
-  | a => .seq [ .text "  \nWith ", andList $ authorEntry <$> a ]
+  | a => .text "  \nWith " ++ (a.map authorEntry |> andList)
 
 def citation (ms : MS) : String :=
   match ms.citation with

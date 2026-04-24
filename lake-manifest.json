@@ -5,7 +5,7 @@
    "type": "git",
    "subDir": null,
    "scope": "",
-   "rev": "806cd1ce0b1b04a29a0e2b2d83760bf8893be77d",
+   "rev": "51df99566d9fe3568947cf75d44edc4dbfc586f7",
    "name": "markdown",
    "manifestFile": "lake-manifest.json",
    "inputRev": "gm-extensions",
