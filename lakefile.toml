@@ -5,6 +5,11 @@ defaultTargets = ["pubs"]
 [leanOptions]
 pp.unicode.fun = true # pretty-prints `fun a ↦ b`
 
+[[require]]
+name = "mlml"
+git = "https://github.com/gmcninch-prof/mlml"
+rev = "main"
+
 [[lean_lib]]
 name = "Pubs"
 
