@@ -7,7 +7,10 @@ A [Lean 4](https://lean4-lang.org/) tool that generates the publications section
 `pubs` reads a structured publication data file (in `.mlml` format, parsed via [mlml](https://github.com/gmcninch-tufts/mlml)) and writes two nearly-identical Markdown files:
 
 - **`cv-manuscripts.md`** — a bibliography formatted for a CV (built with pandoc/Makefile)
+  see [mcninch-cv](https://gmcninch.math.tufts.edu/assets/curriculum-vita-short.pdf)
 - **`manuscripts.md`** — a publication list for a Hakyll-based personal website, including a detailed section with per-paper metadata
+  see [mcninch-manuscripts](https://gmcninch.math.tufts.edu/pages/manuscripts.html)
+
 
 Both outputs are written directly into their respective downstream repositories. Because git tracks content hashes, regenerating with no publication changes produces no spurious diffs.
 
