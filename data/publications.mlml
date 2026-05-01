@@ -4,7 +4,7 @@ let msPDF  = "https://gmcninch.math.tufts.edu/assets/manuscripts/"
 
 let bibtex = "https://gmcninch.math.tufts.edu/assets/manuscripts/bibtex/"
 
-def errata = "https://gmcninch.math.tufts.edu/assets/manuscripts/errata/"
+let errata = "https://gmcninch.math.tufts.edu/assets/manuscripts/errata/"
 
 ;; authors
 

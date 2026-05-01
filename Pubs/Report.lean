@@ -39,10 +39,10 @@ def authorEntry (au : Author) : Markdown.TextItem :=
     let sp := .text " "
     let inst := .text s!"({au.institution})"
     name ++ sp ++ inst
-  
-def authorList (excludeAuthors : List Author) (ms : MS) : Markdown.TextItem :=
+
+def authorList (excludeAuthors : List String) (ms : MS) : Markdown.TextItem :=
   let au : List Author := 
-     List.filter (fun a => not (List.elem a excludeAuthors)) ms.authors
+     List.filter (fun a => not (List.any excludeAuthors (fun s => a.name.contains s))) ms.authors     
   match au with
   | [] => .text ""
   | a => .text "  \nWith " ++ (a.map authorEntry |> andList)
@@ -112,15 +112,15 @@ def urlEntry (url : UrlType) : Markdown.TextItem :=
   | .Local path => 
       .link
         (text := "[PDF]")
-        (url := path )
+        (url := .intercalate "/" path)
   | .Bibtex path =>
       .link
         (text := "[BibTeX]")
-        (url := path )
+        (url := .intercalate "/" path)
   | .Errata path =>
       .link  
         (text := "[**Errata**]")
-        (url := path)
+        (url := .intercalate "/" path)
   
 
 def msUrls (ms : MS) : List Markdown.TextItem :=
@@ -160,33 +160,33 @@ def webTitle (ms : MS) : Markdown.TextItem :=
     (text := s!"{ms.title} ({reprStr $ year ms})") 
     (url := s!"#{ms.title}")
        
-def biblioEntryCV  (excludeAuthors : List Author) (ms : MS) : Markdown.MarkdownItem :=
+def biblioEntryCV  (excludeAuthors : List String) (ms : MS) : Markdown.MarkdownItem :=
   .p <| [ msLinkCV ms
         , .text ", " 
         , .text <| citation ms 
         , authorList excludeAuthors ms
         ] ++ msUrls ms
 
-def biblioEntryWeb (excludeAuthors : List Author) (ms : MS) : Markdown.MarkdownItem :=
+def biblioEntryWeb (excludeAuthors : List String) (ms : MS) : Markdown.MarkdownItem :=
   .p $ [ msLinkWeb ms 
        , .text ", "
        , .text <| citation ms
        , authorList excludeAuthors ms
        ]
 
-def cvBiblio (excludeAuthors : List Author) (title : String) (mss : List MS) : List Markdown.MarkdownTag :=
+def cvBiblio (excludeAuthors : List String) (title : String) (mss : List MS) : List Markdown.MarkdownTag :=
   [ { element := .h1 title 
       children := [ .ol $ biblioEntryCV excludeAuthors <$> mss ]
     }
   ]
 
-def webBiblio (excludeAuthors : List Author) (title : String) (mss : List MS) : List Markdown.MarkdownTag :=
+def webBiblio (excludeAuthors : List String) (title : String) (mss : List MS) : List Markdown.MarkdownTag :=
   [ { element := .h1 title 
       children := [ .ol $ biblioEntryWeb excludeAuthors <$> mss ]
     }
   ]
 
-def webDetails (excludeAuthors : List Author) (ms : MS) : Markdown.MarkdownTag :=
+def webDetails (excludeAuthors : List String) (ms : MS) : Markdown.MarkdownTag :=
   { element := .h2 $ ms.title ++ " {#" ++ cleanup ms.title ++ "}"
   
     children := [ .p  $
