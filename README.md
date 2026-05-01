@@ -6,13 +6,12 @@ A [Lean 4](https://lean4-lang.org/) tool that generates the publications section
 
 `pubs` reads a structured publication data file (in `.mlml` format, parsed via [mlml](https://github.com/gmcninch-tufts/mlml)) and writes two nearly-identical Markdown files:
 
-- **`cv-manuscripts.md`** — a bibliography formatted for a CV (built with pandoc/Makefile).
-  See e.g. the last bit of [mcninch-cv](https://gmcninch.math.tufts.edu/assets/curriculum-vita-short.pdf)
-- **`manuscripts.md`** — a publication list for a Hakyll-based personal website, including a detailed section with per-paper metadata
-  See e.g. [mcninch-manuscripts](https://gmcninch.math.tufts.edu/pages/manuscripts.html)
-
-
-Both outputs are written directly into their respective downstream repositories. Because git tracks content hashes, regenerating with no publication changes produces no spurious diffs.
+- **`cv-manuscripts.md`** — a bibliography formatted for a CV (built
+  with pandoc/Makefile).  See e.g. the last bit of
+  [mcninch-cv](https://gmcninch.math.tufts.edu/assets/curriculum-vita-short.pdf)
+- **`manuscripts.md`** — a publication list for my professional
+  website, including a detailed section with per-paper metadata. See
+  e.g. [mcninch-manuscripts](https://gmcninch.math.tufts.edu/pages/manuscripts.html)
 
 ## Usage
 
@@ -49,6 +48,48 @@ Publications are encoded as `MS` records in the `.mlml` format. Each record incl
 - URLs with typed constructors: `DOI`, `MR`, `Arxiv`, `Euclid`, `Local`, `Other`, `Errata`, `Bibtex`
 
 URLs are sorted by type using a `rank`-based ordering before output, so links appear in a consistent priority order (e.g. DOI first, errata last).
+
+For example:
+
+``` conf
+
+let msPDF  = "https://gmcninch.math.tufts.edu/assets/manuscripts/"
+
+let bibtex = "https://gmcninch.math.tufts.edu/assets/manuscripts/bibtex/"
+
+let errata = "https://gmcninch.math.tufts.edu/assets/manuscripts/errata/"
+
+;; authors
+
+let georgeMcNinch =  Author {
+    institution = "Tufts University"
+    name        = "George McNinch"
+    url         = "https://gmcninch.math.tufts.edu"
+  }
+
+  MS  {
+    authors   = [ georgeMcNinch ]
+    citation  = Journal {
+        year    = 2024
+        journal = "Pacific J. Math"
+        volume  = 336
+        number  = "1-2"
+        pages   = "379-397"
+      }
+    id       = "mcninch24:cohomology-levi"
+    abstract = mcninch24:cohomology-levi
+    urls     = [
+      Local  { path      = [ msPDF  "cohomology-levi.pdf" ] }
+      DOI    { doiNumber = "10.2140/pjm.2025.336.379" }
+      MR     { mrNumber  = "MR4914997" }
+      Bibtex { path      = [ bibtex "mcninch24:cohomology-levi.bib" ] }
+      ]
+    title    = "Levi decompositions of linear algebraic groups and non-abelian cohomology"
+    }
+	
+let mcninch24:cohomology-levi = "Let $k$ be a field, and let $G$ be a linear algebraic group over $k$ for which the unipotent radical $U$ of $G$ is defined and split over $k$.  Consider a finite, separable field extension $\ell$ of $k$ and suppose that the group $G_\ell$ obtained by base-change has a *Levi decomposition* (over $\ell$). We continue here our study of the question previously investigated in (McNinch 2013): does $G$ have a *Levi decomposition* (over $k$)?	
+
+```
 
 ## Output structure
 
