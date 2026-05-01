@@ -93,26 +93,11 @@ let mcninch24:cohomology-levi = "Let $k$ be a field, and let $G$ be a linear alg
 
 ## Output structure
 
-### CV output (`cvBiblio`)
+Publication reports are exported as `Markdown` documents:
 
-Produces a standard bibliography list. Author names matching a supplied exclusion list (e.g. `["McNinch"]`) are suppressed to avoid redundancy in a personal CV context.
-
-### Web output (`webBiblio` + `webDetails`)
-
-Produces two sections:
-1. A bibliography list
-2. A per-paper detail section (under an `# Manuscript Details` heading), with full metadata including all typed URLs
-
-YAML front matter (author, title) is prepended for Hakyll processing.
-
-## Target directories
-
-Each report (`MSReport`) specifies one or more `targetDirs`. On each run, the generated Markdown is written to all of them. Current targets:
-
-| Report | Targets                                 |
-|--------|-----------------------------------------|
-| CV     | `results/`, `~/Prof-VC/cv-and-ms/`      |
-| Web    | `results/`, `~/Web-hakyll/prof/assets/` |
+- a standard bibliography list suitable for a CV
+- bibliography list with details (e.g. abstracts) suitable for
+  professional website.
 
 ## Dependencies
 
