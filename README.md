@@ -67,25 +67,25 @@ let georgeMcNinch =  Author {
     url         = "https://gmcninch.math.tufts.edu"
   }
 
-  MS  {
-    authors   = [ georgeMcNinch ]
-    citation  = Journal {
-        year    = 2024
-        journal = "Pacific J. Math"
-        volume  = 336
-        number  = "1-2"
-        pages   = "379-397"
-      }
-    id       = "mcninch24:cohomology-levi"
-    abstract = mcninch24:cohomology-levi
-    urls     = [
-      Local  { path      = [ msPDF  "cohomology-levi.pdf" ] }
-      DOI    { doiNumber = "10.2140/pjm.2025.336.379" }
-      MR     { mrNumber  = "MR4914997" }
-      Bibtex { path      = [ bibtex "mcninch24:cohomology-levi.bib" ] }
-      ]
-    title    = "Levi decompositions of linear algebraic groups and non-abelian cohomology"
+MS  {
+  authors   = [ georgeMcNinch ]
+  citation  = Journal {
+      year    = 2024
+      journal = "Pacific J. Math"
+      volume  = 336
+      number  = "1-2"
+      pages   = "379-397"
     }
+  id       = "mcninch24:cohomology-levi"
+  abstract = mcninch24:cohomology-levi
+  urls     = [
+    Local  { path      = [ msPDF  "cohomology-levi.pdf" ] }
+    DOI    { doiNumber = "10.2140/pjm.2025.336.379" }
+    MR     { mrNumber  = "MR4914997" }
+    Bibtex { path      = [ bibtex "mcninch24:cohomology-levi.bib" ] }
+    ]
+  title    = "Levi decompositions of linear algebraic groups and non-abelian cohomology"
+  }
 	
 let mcninch24:cohomology-levi = "Let $k$ be a field, and let $G$ be a linear algebraic group over $k$ for which the unipotent radical $U$ of $G$ is defined and split over $k$.  Consider a finite, separable field extension $\ell$ of $k$ and suppose that the group $G_\ell$ obtained by base-change has a *Levi decomposition* (over $\ell$). We continue here our study of the question previously investigated in (McNinch 2013): does $G$ have a *Levi decomposition* (over $k$)?	
 
