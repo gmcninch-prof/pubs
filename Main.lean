@@ -45,4 +45,4 @@ def main (args : List String) : IO Unit :=  do
     IO.println "usage: pubs <pubfile.mll>"
 
   
-#eval main ["/home/george/Prof-VC/cv-and-ms/publications.mlml"]
+--#eval main ["/home/george/Prof-VC/cv-and-ms/publications.mlml"]
