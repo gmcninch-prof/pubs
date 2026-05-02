@@ -6,9 +6,12 @@ INSTALL_DIR = $(HOME)/.local/bin
 
 OUTPUT_DIR = results 
 
+DATA_FILE = $(HOME)/Prof-VC/cv-and-ms/publications.mlml
+TEST_FILE = Test/test.mlml
+
 .PHONY: all build install clean reports
 
-all: build
+all: build test
 
 build:
 	lake build
@@ -19,8 +22,8 @@ install: build
 $(OUTPUT_DIR):
 	mkdir -p $(OUTPUT_DIR)
 
-reports: $(OUTPUT_DIR)
-	$(INSTALL_DIR)/$(BINARY) $(COURSE_FILE)
+reports: $(OUTPUT_DIR) $(DATA_FILE)
+	$(INSTALL_DIR)/$(BINARY) $(DATA_FILE) 
 
 clean:
 	lake clean
@@ -28,3 +31,6 @@ clean:
 
 update:
 	lake update
+
+test:
+	lake exe test $(TEST_FILE)

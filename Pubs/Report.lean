@@ -224,17 +224,3 @@ def writeReport (msr : MSReport) : IO Unit := do
           ++ renderMarkdown (Markdown.Represent.toMarkdown msr))
     IO.println s!"Wrote {target}."
   List.forM msr.targetDirs write
-
-
--- times stamp code
-
---  timestamp : Option Std.Time.PlainDateTime
-
-    -- ++ Option.elim 
-    --      r.timestamp
-    --      [] 
-    --      (fun ts => 
-    --          [{ element := MarkdownItem.p 
-    --              [ TextItem.text "Time-stamp: "
-    --              , TextItem.text $ Std.Time.PlainDateTime.toLongDateFormatString ts ] 
-    --          }])
