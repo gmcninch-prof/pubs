@@ -13,6 +13,8 @@ A [Lean 4](https://lean4-lang.org/) tool that generates the publications section
   website, including a detailed section with per-paper metadata. See
   e.g. [mcninch-manuscripts](https://gmcninch.math.tufts.edu/pages/manuscripts.html)
 
+See also `Test.lean` and the markdown output contained in the `Test` directory.
+
 ## Usage
 
 ```
