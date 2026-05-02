@@ -67,29 +67,64 @@ let georgeMcNinch =  Author {
     url         = "https://gmcninch.math.tufts.edu"
   }
 
-MS  {
-  authors   = [ georgeMcNinch ]
-  citation  = Journal {
-      year    = 2024
-      journal = "Pacific J. Math"
-      volume  = 336
-      number  = "1-2"
-      pages   = "379-397"
+[
+  MS  {
+    authors   = [ georgeMcNinch ]
+    citation  = Journal {
+        year    = 2024
+        journal = "Pacific J. Math"
+        volume  = 336
+        number  = "1-2"
+        pages   = "379-397"
+      }
+    id       = "mcninch24:cohomology-levi"
+    abstract = mcninch24:cohomology-levi
+    urls     = [
+      Local  { path      = [ msPDF  "cohomology-levi.pdf" ] }
+      DOI    { doiNumber = "10.2140/pjm.2025.336.379" }
+      MR     { mrNumber  = "MR4914997" }
+      Bibtex { path      = [ bibtex "mcninch24:cohomology-levi.bib" ] }
+      ]
+    title    = "Levi decompositions of linear algebraic groups and non-abelian cohomology"
     }
-  id       = "mcninch24:cohomology-levi"
-  abstract = mcninch24:cohomology-levi
-  urls     = [
-    Local  { path      = [ msPDF  "cohomology-levi.pdf" ] }
-    DOI    { doiNumber = "10.2140/pjm.2025.336.379" }
-    MR     { mrNumber  = "MR4914997" }
-    Bibtex { path      = [ bibtex "mcninch24:cohomology-levi.bib" ] }
-    ]
-  title    = "Levi decompositions of linear algebraic groups and non-abelian cohomology"
-  }
-	
+
+  MS {
+    authors  = [ georgeMcNinch ]
+    citation = Journal {
+        journal = "Algebras and Representation Theory"
+        year    = 2021
+        volume  = 24
+        pages   = "1479-1522"
+      }
+    id       = "mcninch21:nilpotent-orbits-over-local-field"
+    abstract = mcninch21:nilpotent-orbits-over-local-field
+    urls     =
+      [ Local  { path = [ msPDF "nilpotent-elements-and-reductive-subgroups-over-a-local-field.pdf" ] }
+        DOI    { doiNumber = "10.1007/s10468-020-10000-2" }
+        Other  { label = "AlgRepTheory"
+	         url   = "https://link.springer.com/article/10.1007%2Fs10468-020-10000-2"
+               }
+	Other  { label = "Springer"
+	         url   = "https://rdcu.be/b8AHO"
+	       }
+        MR     { mrNumber = "MR4340850" }
+        Bibtex { path = [ bibtex "mcninch21:nilpotent-orbits-over-local-field.bib" ] }
+      ]
+    title    = "Nilpotent elements and reductive subgroups over a local field"
+    }
+
+
+]
+
+let mcninch21:nilpotent-orbits-over-local-field = "Let $\mathcal{K}$ be a *local field* -- i.e. the field of fractions of a complete DVR $\mathscr{A}$ whose residue field $\mathcal{k}$ has characteristic $p > 0$ -- and let $G$ be a connected, absolutely simple algebraic $\mathcal{K}$-group $G$ which splits over an unramified extension of $\mathcal{K}$. We study the rational nilpotent orbits of $G$-- i.e. the orbits of $G(\mathcal{K})$ in the nilpotent elements of $\operatorname{Lie}(G)(\mathcal{K})$ -- under the assumption $p>2h-2$ where $h$ is the Coxeter number of $G$.
+
 let mcninch24:cohomology-levi = "Let $k$ be a field, and let $G$ be a linear algebraic group over $k$ for which the unipotent radical $U$ of $G$ is defined and split over $k$.  Consider a finite, separable field extension $\ell$ of $k$ and suppose that the group $G_\ell$ obtained by base-change has a *Levi decomposition* (over $\ell$). We continue here our study of the question previously investigated in (McNinch 2013): does $G$ have a *Levi decomposition* (over $k$)?	
 
 ```
+
+This gets parsed to a `List MS` (with two elements). In
+parsing/decoding, thee `let` statements are handled in a first pass,
+so the order of the let statements and the "content" is irrelevant.
 
 ## Output structure
 
