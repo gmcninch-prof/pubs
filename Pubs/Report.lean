@@ -220,5 +220,5 @@ def writeReport (msr : MSReport) (outputDir : String): IO Unit := do
     (content := 
         Option.elim msr.yaml "" (fun y => SimpleYaml.emitYaml y)
         ++ renderMarkdown (Markdown.Represent.toMarkdown msr))
-  IO.println s!"Wrote {target}."
+  IO.println s!"Wrote report: {target}"
 

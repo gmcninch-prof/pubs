@@ -35,18 +35,7 @@ def main (args : List String) : IO Unit :=  do
     | .ok mslist => do
       writeReport (outputDir := cvOutputDir) <| cv mslist 
       writeReport (outputDir := webOutputDir) <| web mslist 
-      IO.println "Finished!"
     | .error e => IO.println e
   | _ => do
     IO.println "usage: pubs <pubfile.mll>"
 
-  
---#eval main ["/home/george/Prof-VC/cv-and-ms/publications.mlml"]
-
-
-    -- targetDirs := [ "results"
-    --               , "/home/george/Prof-VC/cv-and-ms" ]
-
-
-    -- targetDirs := [ "results"
-    --               , "/home/george/Web-hakyll/prof/assets/" ]         
