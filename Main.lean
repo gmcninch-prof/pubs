@@ -11,8 +11,6 @@ def loadData (filename : String) : IO (Except String (List MS)) :=  do
 def cv (mslist : List MS) : MSReport := 
   { msList := mslist
     filename := "cv-manuscripts.md"
-    targetDirs := [ "results"
-                  , "/home/george/Prof-VC/cv-and-ms" ]
     proc := cvBiblio (excludeAuthors := ["McNinch"]) "Manuscripts" 
     yaml := none
   }
@@ -21,8 +19,6 @@ def cv (mslist : List MS) : MSReport :=
 def web (mslist : List MS) : MSReport := 
   { msList := mslist
     filename := "manuscripts.md"
-    targetDirs := [ "results"
-                  , "/home/george/Web-hakyll/prof/assets/" ]         
     proc := fun mss => 
       webBiblio (excludeAuthors := ["McNinch"]) "Publication List" mss
       ++ [ { element := .h1 "Manuscript Details"  }
@@ -34,11 +30,11 @@ def web (mslist : List MS) : MSReport :=
 
 def main (args : List String) : IO Unit :=  do
   match args with 
-  | [ pubfile ] => do
+  | [ pubfile, cvOutputDir, webOutputDir ] => do
     match (← loadData pubfile) with
     | .ok mslist => do
-      writeReport <| cv mslist
-      writeReport <| web mslist
+      writeReport (outputDir := cvOutputDir) <| cv mslist 
+      writeReport (outputDir := webOutputDir) <| web mslist 
       IO.println "Finished!"
     | .error e => IO.println e
   | _ => do
@@ -46,3 +42,11 @@ def main (args : List String) : IO Unit :=  do
 
   
 --#eval main ["/home/george/Prof-VC/cv-and-ms/publications.mlml"]
+
+
+    -- targetDirs := [ "results"
+    --               , "/home/george/Prof-VC/cv-and-ms" ]
+
+
+    -- targetDirs := [ "results"
+    --               , "/home/george/Web-hakyll/prof/assets/" ]         

@@ -205,7 +205,6 @@ def webDetails (excludeAuthors : List String) (ms : MS) : Markdown.MarkdownTag :
 structure MSReport  where
   msList : List MS
   filename : System.FilePath
-  targetDirs : List System.FilePath
   proc : List MS -> List MarkdownTag
   yaml : Option SimpleYaml.Yaml
 
@@ -214,13 +213,12 @@ instance : Markdown.Represent MSReport where
     (r.proc r.msList)
          
 
-def writeReport (msr : MSReport) : IO Unit := do
-  let write (dir : System.FilePath) : IO Unit :=  do
-    let target := System.FilePath.join dir msr.filename 
-    IO.FS.writeFile 
-      (fname := target) 
-      (content := 
-          Option.elim msr.yaml "" (fun y => SimpleYaml.emitYaml y)
-          ++ renderMarkdown (Markdown.Represent.toMarkdown msr))
-    IO.println s!"Wrote {target}."
-  List.forM msr.targetDirs write
+def writeReport (msr : MSReport) (outputDir : String): IO Unit := do
+  let target := System.FilePath.join outputDir msr.filename 
+  IO.FS.writeFile 
+    (fname := target) 
+    (content := 
+        Option.elim msr.yaml "" (fun y => SimpleYaml.emitYaml y)
+        ++ renderMarkdown (Markdown.Represent.toMarkdown msr))
+  IO.println s!"Wrote {target}."
+

@@ -31,18 +31,18 @@ deriving Repr, BEq
 
 instance : Decode Citation where
   decode 
-    | .Constructor "Accepted" fs => do
+    | .Record "Accepted" fs => do
       let journal ← Codec.decodeField "journal" fs
       let year    ← Codec.decodeField "year" fs
       pure <| .Accepted journal year 
-    | .Constructor "Journal" fs => do
+    | .Record "Journal" fs => do
       let year    ← Codec.decodeField "year" fs 
       let journal ← Codec.decodeField "journal" fs
       let number  ← Codec.decodeFieldOpt "number" fs
       let volume  ← Codec.decodeFieldOpt "volume" fs
       let pages   ← Codec.decodeFieldOpt "pages" fs
       pure <| .Journal year journal number volume pages
-    | .Constructor "Proceedings" fs => do
+    | .Record "Proceedings" fs => do
       let year      ← Codec.decodeField "year" fs
       let booktitle ← Codec.decodeField "booktitle" fs
       let series    ← Codec.decodeFieldOpt "series" fs
@@ -50,16 +50,16 @@ instance : Decode Citation where
       let pages     ← Codec.decodeFieldOpt "pages" fs
       let publisher ← Codec.decodeFieldOpt "publisher" fs      
       pure <| .Proceedings year booktitle series volume pages publisher
-    | .Constructor "PrePrint" fs => do
+    | .Record "PrePrint" fs => do
       let year ← Codec.decodeField "year" fs
       pure <| .PrePrint year
-    | .Constructor "Submitted" fs => do
+    | .Record "Submitted" fs => do
       let year ← Codec.decodeField "year" fs
       pure <| .Submitted year      
-    | .Constructor "Unpublished" fs => do
+    | .Record "Unpublished" fs => do
       let year ← Codec.decodeField "year" fs
       pure <| .Unpublished year            
-    | .Constructor "PhDThesis" fs => do
+    | .Record "PhDThesis" fs => do
       let institution ← Codec.decodeField "institution" fs
       let advisor     ← Codec.decodeField "advisor" fs      
       let year        ← Codec.decodeField "year" fs
@@ -92,28 +92,28 @@ instance : Ord UrlType where
 
 instance : Decode UrlType where
   decode 
-    | .Constructor "DOI" fs => do
+    | .Record "DOI" fs => do
       let doiNumber ← Codec.decodeField "doiNumber" fs
       pure <| .DOI doiNumber
-    | .Constructor "MR" fs => do
+    | .Record "MR" fs => do
       let mrNumber  ← Codec.decodeField "mrNumber" fs
       pure <| .MR mrNumber 
-    | .Constructor "Arxiv" fs => do
+    | .Record "Arxiv" fs => do
       let arxivId  ← Codec.decodeField "arxivId" fs
       pure <| .Arxiv arxivId
-    | .Constructor "Euclid" fs => do
+    | .Record "Euclid" fs => do
       let euclidId  ← Codec.decodeField "euclidId" fs
       pure <| .Euclid euclidId       
-    | .Constructor "Local" fs => do
+    | .Record "Local" fs => do
       let path  ← Codec.decodeField "path" fs
       pure <| .Local path
-    | .Constructor "Errata" fs => do
+    | .Record "Errata" fs => do
       let path  ← Codec.decodeField "path" fs
       pure <| .Errata path
-    | .Constructor "Bibtex" fs => do
+    | .Record "Bibtex" fs => do
       let path  ← Codec.decodeField "path" fs
       pure <| .Bibtex path      
-    | .Constructor "Other" fs => do
+    | .Record "Other" fs => do
       let label  ← Codec.decodeField "label" fs
       let url    ← Codec.decodeField "url" fs
       pure <| .Other label url
@@ -127,7 +127,7 @@ deriving Repr, BEq
     
 instance : Decode Author where
   decode 
-    | .Constructor "Author" fs => do
+    | .Record "Author" fs => do
       let institution ← Codec.decodeField "institution" fs
       let name        ← Codec.decodeField "name" fs
       let url         ← Codec.decodeField "url" fs
@@ -145,7 +145,7 @@ deriving Repr
 
 instance : Decode MS where
   decode
-    | .Constructor "MS" fs => do
+    | .Record "MS" fs => do
       let id       ← Codec.decodeField "id" fs
       let authors  ← Codec.decodeField "authors" fs
       let citation ← Codec.decodeField "citation" fs

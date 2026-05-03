@@ -17,10 +17,6 @@ name = "Pubs"
 name = "pubs"
 root = "Main"
 
-[[lean_exe]]
-name = "test"
-root = "Test"
-
 [[require]]
 name = "markdown"
 git = "https://github.com/gmcninch-prof/lean4-markdown"
