@@ -18,16 +18,16 @@ See also `Test.lean` and the markdown output contained in the `Test` directory.
 ## Usage
 
 ```
-pubs <pubfile.mlml>
+pubs <pubfile.mlml> <cvOutputDir> <webOutputDir>
 ```
 
 For example:
 
 ```
-pubs data/publications.mlml
+pubs data/publications.mlml ~/cv/sections ~/website/pages
 ```
 
-This writes the two Markdown outputs to the configured target directories.
+This writes `cv-manuscripts.md` to `<cvOutputDir>` and `manuscripts.md` to `<webOutputDir>`.
 
 ## Building and installing
 

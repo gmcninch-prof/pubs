@@ -37,5 +37,5 @@ def main (args : List String) : IO Unit :=  do
       writeReport (outputDir := webOutputDir) <| web mslist 
     | .error e => IO.println e
   | _ => do
-    IO.println "usage: pubs <pubfile.mll>"
+    IO.println "usage: pubs <pubfile.mlml> <cvOutputDir> <webOutputDir>"
 
