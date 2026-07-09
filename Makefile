@@ -5,7 +5,7 @@ INSTALL_DIR     = $(HOME)/.local/bin
 
 REPO_OUTPUT_DIR = results 
 CV_OUTPUT_DIR   = /home/george/Prof-VC/cv-and-ms
-WEB_OUTPUT_DIR  = /home/george/Web-hakyll/prof/assets/
+WEB_OUTPUT_DIR  = /home/george/Web-hakyll/prof/pages
 
 DATA_FILE       = $(HOME)/Prof-VC/cv-and-ms/publications.mlml
 
